@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if DataCacheManager.shared.getUserCredential() != nil {
+            // MARK: TODO initiate proper viewcontroller
+        } else {
+            IntroRouter.createModule(asRoot: true)
+        }
         return true
     }
 
