@@ -75,6 +75,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="0.9921094184" blue="0.37501056960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="doLogin:" destination="Yrx-01-h27" eventType="touchUpInside" id="F2v-VW-VIO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b3-sg-h2b">
                                 <rect key="frame" x="67" y="626" width="161" height="21"/>
@@ -117,10 +120,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h17-wk-uUR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bqf-Di-jJb"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tfEmail" destination="0eF-hO-Q4Y" id="6nk-Ig-TE1"/>
+                        <outlet property="tfPassword" destination="iSZ-Ra-DOm" id="MeB-5E-iEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duP-nb-wSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="134"/>
+            <point key="canvasLocation" x="2388" y="133.5832083958021"/>
         </scene>
         <!--Intro Item View Controller-->
         <scene sceneID="ck1-N5-7uQ">
@@ -187,6 +196,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brv-yc-VN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="824"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ivz-yr-TFg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IpN-1s-J5s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UMU-2j-fzf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yrx-01-h27" kind="relationship" relationship="rootViewController" id="4HB-C9-O78"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJ1-lm-J2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1448.8" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

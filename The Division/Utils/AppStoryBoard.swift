@@ -11,6 +11,7 @@ import UIKit
 
 enum AppStoryBoard: String {
     case Main = "Main"
+    case Home = "Home"
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -21,4 +22,8 @@ enum MainViewControllers: String {
     case Intro = "IntroViewController"
     case IntroItem = "IntroItemViewController"
     case Login = "LoginViewController"
+}
+
+enum HomeViewControllers: String {
+    case Home = "HomeViewControler"
 }

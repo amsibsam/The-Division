@@ -10,8 +10,7 @@
 
 import UIKit
 
-class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtocol {
-
+class LoginPresenter: LoginPresenterProtocol {
     weak private var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
     private let router: LoginWireframeProtocol
@@ -21,5 +20,16 @@ class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
+    func login(email: String, password: String) {
+        interactor?.login(email: email, password: password)
+    }
+}
 
+extension LoginPresenter: LoginInteractorOutputProtocol {
+    func showLoginSucceeded() {
+        view?.showLoginSucceeded()
+    }
+    
+    
 }

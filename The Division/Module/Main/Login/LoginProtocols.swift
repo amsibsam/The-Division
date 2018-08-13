@@ -18,19 +18,34 @@ protocol LoginWireframeProtocol: class {
 protocol LoginPresenterProtocol: class {
 
     var interactor: LoginInteractorInputProtocol? { get set }
+    
+    /* ViewController -> Presenter */
+    func login(email: String, password: String)
 }
 
 //MARK: Interactor -
 protocol LoginInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func showLoginSucceeded()
 }
 
 protocol LoginInteractorInputProtocol: class {
 
     var presenter: LoginInteractorOutputProtocol?  { get set }
-
+    var dataManager: LoginDataManagerInputProtocol? { get set }
     /* Presenter -> Interactor */
+    func login(email: String, password: String)
+}
+
+//MARK: DataManager -
+protocol LoginDataManagerInputProtocol: class {
+    var interactor: LoginDataManagerOutputProtocol? { get set }
+    func login(email: String, password: String)
+}
+
+protocol LoginDataManagerOutputProtocol {
+    func showLoginSucceeded()
 }
 
 //MARK: View -
@@ -39,4 +54,5 @@ protocol LoginViewProtocol: class {
     var presenter: LoginPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func showLoginSucceeded()
 }

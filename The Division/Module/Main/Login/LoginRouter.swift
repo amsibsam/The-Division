@@ -19,12 +19,21 @@ class LoginRouter: LoginWireframeProtocol {
         let view = AppStoryBoard.Main.instance.instantiateViewController(withIdentifier: MainViewControllers.Login.rawValue) as! LoginViewController
         let interactor = LoginInteractor()
         let router = LoginRouter()
+        let dataManager: LoginDataManagerInputProtocol = LoginDataManager()
         let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
+        interactor.dataManager = dataManager
+        dataManager.interactor = interactor
         router.viewController = view
 
         return view
+    }
+    
+    static func createModule(asRoot: Bool) {
+        if asRoot {
+            UIApplication.appDelegate.window?.rootViewController = createModule()
+        }
     }
 }

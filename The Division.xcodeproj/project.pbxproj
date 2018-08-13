@@ -35,6 +35,8 @@
 		8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022521215CC300986215 /* LoginRouter.swift */; };
 		8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022621215CC300986215 /* LoginViewController.swift */; };
 		8E4B02302121629200986215 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B022F2121629200986215 /* Home.storyboard */; };
+		8E4B0232212165C800986215 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B0231212165C800986215 /* HomeViewController.swift */; };
+		8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B0234212173FF00986215 /* LoginDataManager.swift */; };
 		B0D4BA0D1D392EFF1333CB89 /* Pods_The_DivisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,8 @@
 		8E4B022521215CC300986215 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		8E4B022621215CC300986215 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8E4B022F2121629200986215 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		8E4B0231212165C800986215 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8E4B0234212173FF00986215 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		E3DED75EB0F5C59FB8569053 /* Pods-The Division.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +255,7 @@
 		8E4B022121215C9D00986215 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8E4B0233212173F000986215 /* DataManager */,
 				8E4B022221215CC300986215 /* LoginInteractor.swift */,
 				8E4B022321215CC300986215 /* LoginPresenter.swift */,
 				8E4B022421215CC300986215 /* LoginProtocols.swift */,
@@ -264,8 +269,17 @@
 			isa = PBXGroup;
 			children = (
 				8E4B022F2121629200986215 /* Home.storyboard */,
+				8E4B0231212165C800986215 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8E4B0233212173F000986215 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E4B0234212173FF00986215 /* LoginDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		917E2A1108452F03C77E4384 /* Pods */ = {
@@ -451,6 +465,8 @@
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
+				8E4B0232212165C800986215 /* HomeViewController.swift in Sources */,
+				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,

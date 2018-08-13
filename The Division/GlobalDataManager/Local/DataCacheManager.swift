@@ -12,6 +12,14 @@ class DataCacheManager {
     public static let shared: DataCacheManager = DataCacheManager()
     private let preference: UserDefaults = UserDefaults.standard
     
+    func setHasOpenIntro(hasOpen: Bool) {
+        preference.set(hasOpen, forKey: "has_open_intro")
+    }
+    
+    func hasOpenIntro() -> Bool {
+        return preference.bool(forKey: "has_open_intro") 
+    }
+    
     func saveUserCredential(token: String) {
         preference.set(token, forKey: "user_token")
     }

@@ -10,12 +10,35 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, LoginViewProtocol {
-
+class LoginViewController: UIViewController {
+    @IBOutlet var tfEmail: UITextField!
+    @IBOutlet var tfPassword: UITextField!
+    
 	var presenter: LoginPresenterProtocol?
 
-	override func viewDidLoad() {
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
     }
 
+    @IBAction func doLogin(_ sender: UIButton) {
+        presenter?.login(email: tfEmail.text!, password: tfPassword.text!)
+    }
+}
+
+extension LoginViewController: LoginViewProtocol {
+    func showLoginSucceeded() {
+        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: "HomeViewController")
+        UIApplication.appDelegate.window?.rootViewController = homeVC
+    }
 }

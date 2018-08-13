@@ -24,6 +24,7 @@ class IntroItemPresenter: IntroItemPresenterProtocol, IntroItemInteractorOutputP
     func goToLoginScreen() {
         if let sourceView = view {
             router.goToLoginScreen(from: sourceView)
+            DataCacheManager.shared.setHasOpenIntro(hasOpen: true)
         }
     }
 }

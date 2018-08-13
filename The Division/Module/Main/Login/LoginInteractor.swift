@@ -11,6 +11,18 @@
 import UIKit
 
 class LoginInteractor: LoginInteractorInputProtocol {
-
+    var dataManager: LoginDataManagerInputProtocol?
     weak var presenter: LoginInteractorOutputProtocol?
+    
+    func login(email: String, password: String) {
+        dataManager?.login(email: email, password: password)
+    }
+}
+
+extension LoginInteractor: LoginDataManagerOutputProtocol {
+    func showLoginSucceeded() {
+        presenter?.showLoginSucceeded()
+    }
+    
+    
 }

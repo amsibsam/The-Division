@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         if DataCacheManager.shared.getUserCredential() != nil {
             // MARK: TODO initiate proper viewcontroller
+        } else if DataCacheManager.shared.hasOpenIntro() {
+            LoginRouter.createModule(asRoot: true)
         } else {
             IntroRouter.createModule(asRoot: true)
         }
