@@ -23,6 +23,7 @@ class IntroItemViewController: UIViewController, IntroItemViewProtocol {
         super.viewDidLoad()
         lbContent.text = content
         viewContainer.backgroundColor = background
+        determineContentCollor()
     }
     
     private func determineContentCollor() {
