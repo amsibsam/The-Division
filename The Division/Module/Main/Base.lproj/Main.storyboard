@@ -32,9 +32,39 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYk-wN-3AM">
+                                <rect key="frame" x="132" y="600" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.67781686370000005" green="0.70286596489999997" blue="0.1531654452" alpha="0.67996309430000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jQF-8S-Cyp"/>
+                                    <constraint firstAttribute="width" constant="111" id="wyT-1F-LKD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <size key="titleShadowOffset" width="4" height="4"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="1" green="0.99210941840443012" blue="0.37501056957926915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getStarted:" destination="rdt-eb-zwa" eventType="touchUpInside" id="tml-M5-hFA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Cd4-CN-8G4" firstAttribute="bottom" secondItem="yYk-wN-3AM" secondAttribute="bottom" constant="37" id="3g1-ov-mE5"/>
+                            <constraint firstItem="yYk-wN-3AM" firstAttribute="centerX" secondItem="Cd4-CN-8G4" secondAttribute="centerX" id="Bqz-yg-YTK"/>
                             <constraint firstItem="gyL-Gb-vgU" firstAttribute="leading" secondItem="Cd4-CN-8G4" secondAttribute="leading" constant="10" id="Ew8-Jv-mcc"/>
                             <constraint firstItem="Cd4-CN-8G4" firstAttribute="trailing" secondItem="gyL-Gb-vgU" secondAttribute="trailing" constant="10" id="b7H-EM-MEJ"/>
                             <constraint firstItem="gyL-Gb-vgU" firstAttribute="centerY" secondItem="Cd4-CN-8G4" secondAttribute="centerY" id="gOT-1M-Pdq"/>
@@ -43,13 +73,14 @@
                         <viewLayoutGuide key="safeArea" id="Cd4-CN-8G4"/>
                     </view>
                     <connections>
+                        <outlet property="btnGetStarted" destination="yYk-wN-3AM" id="RTm-Jj-fiZ"/>
                         <outlet property="lbContent" destination="gyL-Gb-vgU" id="RqQ-Vq-jjH"/>
                         <outlet property="viewContainer" destination="7cG-fw-jPr" id="82h-87-J0v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brv-yc-VN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="817"/>
+            <point key="canvasLocation" x="479.19999999999999" y="816.34182908545733"/>
         </scene>
     </scenes>
 </document>

@@ -13,9 +13,11 @@ import UIKit
 class IntroItemViewController: UIViewController, IntroItemViewProtocol {
     @IBOutlet var lbContent: UILabel!
     @IBOutlet var viewContainer: UIView!
+    @IBOutlet var btnGetStarted: UIButton!
     
     var content: String = ""
     var background: UIColor = .black
+    var showStartButton: Bool = false
     
 	var presenter: IntroItemPresenterProtocol?
 
@@ -24,6 +26,17 @@ class IntroItemViewController: UIViewController, IntroItemViewProtocol {
         lbContent.text = content
         viewContainer.backgroundColor = background
         determineContentCollor()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if showStartButton {
+            btnGetStarted.zoomIn(duration: 2)
+        }
+    }
+    
+    @IBAction func getStarted(_ sender: UIButton) {
+        
     }
     
     private func determineContentCollor() {

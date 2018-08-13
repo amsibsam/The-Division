@@ -23,9 +23,9 @@ class IntroPresenter: IntroPresenterProtocol, IntroInteractorOutputProtocol {
     
     func getIntros() {
         var intros: [UIViewController] = []
-        intros.append(IntroItemRouter.createModule(content: "Welcome", background: .white))
-        intros.append(IntroItemRouter.createModule(content: "To", background: .gray))
-        intros.append(IntroItemRouter.createModule(content: "The Division", background: .black))
+        intros.append(IntroItemRouter.createModule(content: "Welcome", background: .white, showStartButton: false))
+        intros.append(IntroItemRouter.createModule(content: "To", background: .gray, showStartButton: false))
+        intros.append(IntroItemRouter.createModule(content: "The Division", background: .black, showStartButton: true))
         view?.showIntros(with: intros)
     }
 

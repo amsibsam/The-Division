@@ -14,11 +14,12 @@ class IntroItemRouter: IntroItemWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(content: String, background: UIColor) -> UIViewController {
+    static func createModule(content: String, background: UIColor, showStartButton: Bool) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AppStoryBoard.Main.instance.instantiateViewController(withIdentifier: MainViewControllers.IntroItem.rawValue) as! IntroItemViewController
         view.content = content
         view.background = background
+        view.showStartButton = showStartButton
         let interactor = IntroItemInteractor()
         let router = IntroItemRouter()
         let presenter = IntroItemPresenter(interface: view, interactor: interactor, router: router)

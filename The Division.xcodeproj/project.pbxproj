@@ -27,6 +27,8 @@
 		8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B02132121245F00986215 /* UIApplication+AppDelegate.swift */; };
 		8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B02152121251B00986215 /* AppStoryBoard.swift */; };
 		8E4B02192121289200986215 /* DataCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B02182121289200986215 /* DataCacheManager.swift */; };
+		8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B021A2121399E00986215 /* UIView+Inspectable.swift */; };
+		8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B021C21214D5C00986215 /* UIView+Animation.swift */; };
 		B0D4BA0D1D392EFF1333CB89 /* Pods_The_DivisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		8E4B02132121245F00986215 /* UIApplication+AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppDelegate.swift"; sourceTree = "<group>"; };
 		8E4B02152121251B00986215 /* AppStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryBoard.swift; sourceTree = "<group>"; };
 		8E4B02182121289200986215 /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
+		8E4B021A2121399E00986215 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
+		8E4B021C21214D5C00986215 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		E3DED75EB0F5C59FB8569053 /* Pods-The Division.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				8E4B02132121245F00986215 /* UIApplication+AppDelegate.swift */,
+				8E4B021A2121399E00986215 /* UIView+Inspectable.swift */,
+				8E4B021C21214D5C00986215 /* UIView+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
+				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
@@ -415,6 +422,7 @@
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,
+				8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */,
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
