@@ -11,7 +11,6 @@
 import UIKit
 
 class IntroItemPresenter: IntroItemPresenterProtocol, IntroItemInteractorOutputProtocol {
-
     weak private var view: IntroItemViewProtocol?
     var interactor: IntroItemInteractorInputProtocol?
     private let router: IntroItemWireframeProtocol
@@ -22,4 +21,9 @@ class IntroItemPresenter: IntroItemPresenterProtocol, IntroItemInteractorOutputP
         self.router = router
     }
 
+    func goToLoginScreen() {
+        if let sourceView = view {
+            router.goToLoginScreen(from: sourceView)
+        }
+    }
 }

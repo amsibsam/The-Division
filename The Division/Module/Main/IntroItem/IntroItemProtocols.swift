@@ -12,12 +12,16 @@ import Foundation
 
 //MARK: Wireframe -
 protocol IntroItemWireframeProtocol: class {
-
+    /* Presenter -> Router */
+    func goToLoginScreen(from view: IntroItemViewProtocol)
 }
 //MARK: Presenter -
 protocol IntroItemPresenterProtocol: class {
 
     var interactor: IntroItemInteractorInputProtocol? { get set }
+    
+    /* ViewController -> Presenter */
+    func goToLoginScreen()
 }
 
 //MARK: Interactor -

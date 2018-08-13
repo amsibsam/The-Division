@@ -30,4 +30,9 @@ class IntroItemRouter: IntroItemWireframeProtocol {
 
         return view
     }
+    
+    func goToLoginScreen(from view: IntroItemViewProtocol) {
+        let loginVc = LoginRouter.createModule()
+        UIApplication.appDelegate.window?.rootViewController = loginVc
+    }
 }

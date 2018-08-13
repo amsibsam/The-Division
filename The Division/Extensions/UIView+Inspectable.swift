@@ -15,7 +15,7 @@ import UIKit
 // cornerRadius, borderWidth, borderColor
 //
 extension UIView {
-    
+
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -47,7 +47,7 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable
     var shadowRadius: CGFloat {
         get {
@@ -60,7 +60,7 @@ extension UIView {
             layer.shadowRadius = shadowRadius
         }
     }
-    
+
 }
 
 //

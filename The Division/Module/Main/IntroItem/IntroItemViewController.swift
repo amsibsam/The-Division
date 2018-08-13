@@ -31,12 +31,12 @@ class IntroItemViewController: UIViewController, IntroItemViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if showStartButton {
-            btnGetStarted.zoomIn(duration: 2)
+            btnGetStarted.zoomIn(duration: 1.5)
         }
     }
     
     @IBAction func getStarted(_ sender: UIButton) {
-        
+        presenter?.goToLoginScreen()
     }
     
     private func determineContentCollor() {

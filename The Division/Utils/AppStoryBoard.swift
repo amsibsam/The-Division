@@ -20,4 +20,5 @@ enum AppStoryBoard: String {
 enum MainViewControllers: String {
     case Intro = "IntroViewController"
     case IntroItem = "IntroItemViewController"
+    case Login = "LoginViewController"
 }

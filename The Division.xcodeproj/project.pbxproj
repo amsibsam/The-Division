@@ -29,6 +29,12 @@
 		8E4B02192121289200986215 /* DataCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B02182121289200986215 /* DataCacheManager.swift */; };
 		8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B021A2121399E00986215 /* UIView+Inspectable.swift */; };
 		8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B021C21214D5C00986215 /* UIView+Animation.swift */; };
+		8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022221215CC300986215 /* LoginInteractor.swift */; };
+		8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022321215CC300986215 /* LoginPresenter.swift */; };
+		8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022421215CC300986215 /* LoginProtocols.swift */; };
+		8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022521215CC300986215 /* LoginRouter.swift */; };
+		8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022621215CC300986215 /* LoginViewController.swift */; };
+		8E4B02302121629200986215 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B022F2121629200986215 /* Home.storyboard */; };
 		B0D4BA0D1D392EFF1333CB89 /* Pods_The_DivisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +79,12 @@
 		8E4B02182121289200986215 /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
 		8E4B021A2121399E00986215 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
 		8E4B021C21214D5C00986215 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		8E4B022221215CC300986215 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		8E4B022321215CC300986215 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8E4B022421215CC300986215 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		8E4B022521215CC300986215 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		8E4B022621215CC300986215 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8E4B022F2121629200986215 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E3DED75EB0F5C59FB8569053 /* Pods-The Division.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +143,7 @@
 				8E4B02122121243500986215 /* Extensions */,
 				8E4B02112121242F00986215 /* Utils */,
 				8E4B01F52121220E00986215 /* SupportFile */,
-				8E4B01F4212121D500986215 /* DataManager */,
+				8E4B01F4212121D500986215 /* GlobalDataManager */,
 				8E4B01F32121218500986215 /* Module */,
 				8E4B01CE212118ED00986215 /* AppDelegate.swift */,
 				8E4B01DA212118F800986215 /* LaunchScreen.storyboard */,
@@ -152,17 +164,18 @@
 		8E4B01F32121218500986215 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				8E4B022E2121627A00986215 /* Home */,
 				8E4B0210212122FF00986215 /* Main */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		8E4B01F4212121D500986215 /* DataManager */ = {
+		8E4B01F4212121D500986215 /* GlobalDataManager */ = {
 			isa = PBXGroup;
 			children = (
 				8E4B02172121287200986215 /* Local */,
 			);
-			path = DataManager;
+			path = GlobalDataManager;
 			sourceTree = "<group>";
 		};
 		8E4B01F52121220E00986215 /* SupportFile */ = {
@@ -202,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				8E4B01D2212118ED00986215 /* Main.storyboard */,
+				8E4B022121215C9D00986215 /* Login */,
 				8E4B0203212122E000986215 /* IntroItem */,
 				8E4B01F62121227400986215 /* Intro */,
 			);
@@ -232,6 +246,26 @@
 				8E4B02182121289200986215 /* DataCacheManager.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		8E4B022121215C9D00986215 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8E4B022221215CC300986215 /* LoginInteractor.swift */,
+				8E4B022321215CC300986215 /* LoginPresenter.swift */,
+				8E4B022421215CC300986215 /* LoginProtocols.swift */,
+				8E4B022521215CC300986215 /* LoginRouter.swift */,
+				8E4B022621215CC300986215 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8E4B022E2121627A00986215 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8E4B022F2121629200986215 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		917E2A1108452F03C77E4384 /* Pods */ = {
@@ -332,6 +366,7 @@
 				8E4B01DC212118F800986215 /* LaunchScreen.storyboard in Resources */,
 				8E4B01D9212118F800986215 /* Assets.xcassets in Resources */,
 				8E4B01D4212118ED00986215 /* Main.storyboard in Resources */,
+				8E4B02302121629200986215 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,13 +446,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
+				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
+				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
+				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,
 				8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */,
+				8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */,
 				8E4B02002121228300986215 /* IntroRouter.swift in Sources */,
+				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
