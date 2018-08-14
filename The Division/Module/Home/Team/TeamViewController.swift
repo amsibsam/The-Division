@@ -10,7 +10,7 @@
 
 import UIKit
 
-class TeamViewController: UIViewController, TeamViewProtocol {
+class TeamViewController: LandscapeViewController, TeamViewProtocol {
 
 	var presenter: TeamPresenterProtocol?
 

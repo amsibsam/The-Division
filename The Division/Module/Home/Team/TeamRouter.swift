@@ -16,7 +16,7 @@ class TeamRouter: TeamWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = TeamViewController(nibName: nil, bundle: nil)
+        let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Team.rawValue) as! TeamViewController
         let interactor = TeamInteractor()
         let router = TeamRouter()
         let presenter = TeamPresenter(interface: view, interactor: interactor, router: router)

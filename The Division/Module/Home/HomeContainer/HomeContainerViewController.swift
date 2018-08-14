@@ -14,6 +14,7 @@ class HomeContainerViewController: LandscapeViewController {
 
     @IBOutlet var tablewViewMenu: UITableView!
     @IBOutlet var constraintMenuLeading: NSLayoutConstraint!
+    @IBOutlet var viewContainer: UIView!
     
     var isMenuAppear: Bool = false
     var presenter: HomeContainerPresenterProtocol?
@@ -31,6 +32,7 @@ class HomeContainerViewController: LandscapeViewController {
         super.viewDidLoad()
         setupTableView()
         presenter?.getMenuItem()
+        initiateContent()
     }
     
     @objc func closeMenuAction(_ sender: UIPanGestureRecognizer) {
@@ -53,6 +55,13 @@ class HomeContainerViewController: LandscapeViewController {
         }
         
         isMenuAppear = !isMenuAppear
+    }
+    
+    // MARK: Content view controller
+    private func initiateContent() {
+        let teamVC = TeamRouter.createModule()
+        addChildViewController(teamVC)
+        viewContainer.addSubview(teamVC.view)
     }
     
     // MARK: Private function
@@ -120,6 +129,7 @@ extension HomeContainerViewController: UITableViewDataSource {
         header.addSubview(lblTitle)
         return header
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems[section].count
