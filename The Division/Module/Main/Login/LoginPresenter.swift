@@ -22,12 +22,22 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func login(email: String, password: String) {
-        interactor?.login(email: email, password: password)
+        view?.showLoading()
+        func isValidForm() -> Bool {
+            return !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+        
+        if isValidForm() {
+            interactor?.login(email: email, password: password)
+        } else {
+            view?.showError(with: "Please fill ur username and password")
+        }
     }
 }
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
     func showLoginSucceeded() {
+        view?.dismissLoading()
         view?.showLoginSucceeded()
     }
     

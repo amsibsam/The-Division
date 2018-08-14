@@ -31,9 +31,7 @@ class LoginRouter: LoginWireframeProtocol {
         return view
     }
     
-    static func createModule(asRoot: Bool) {
-        if asRoot {
-            UIApplication.appDelegate.window?.rootViewController = createModule()
-        }
+    static func createModuleAsRoot() {
+        UIApplication.appDelegate.window?.rootViewController = createModule()
     }
 }

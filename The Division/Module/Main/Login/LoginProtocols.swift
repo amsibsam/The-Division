@@ -55,4 +55,7 @@ protocol LoginViewProtocol: class {
 
     /* Presenter -> ViewController */
     func showLoginSucceeded()
+    func showLoading()
+    func showError(with message: String)
+    func dismissLoading()
 }

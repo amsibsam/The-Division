@@ -28,6 +28,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        tfEmail.setLeftPaddingPoints(10)
+        tfPassword.setLeftPaddingPoints(10)
+//        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Home.rawValue)
+//        addChildViewController(homeVC)
+//        self.view.addSubview(homeVC.view)
+//        homeVC.view.isHidden = true
         
     }
 
@@ -37,8 +43,20 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewProtocol {
+    func showLoading() {
+        HUDUtils.showLoading()
+    }
+    
+    func showError(with message: String) {
+        HUDUtils.showError(with: message)
+    }
+    
+    func dismissLoading() {
+        HUDUtils.dismiss()
+    }
+    
     func showLoginSucceeded() {
-        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: "HomeViewController")
+        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: "HomeContainerViewController")
         UIApplication.appDelegate.window?.rootViewController = homeVC
     }
 }

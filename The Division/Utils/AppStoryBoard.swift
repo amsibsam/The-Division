@@ -25,5 +25,5 @@ enum MainViewControllers: String {
 }
 
 enum HomeViewControllers: String {
-    case Home = "HomeViewControler"
+    case Home = "HomeContainerViewController"
 }

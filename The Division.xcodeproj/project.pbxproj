@@ -35,8 +35,14 @@
 		8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022521215CC300986215 /* LoginRouter.swift */; };
 		8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022621215CC300986215 /* LoginViewController.swift */; };
 		8E4B02302121629200986215 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B022F2121629200986215 /* Home.storyboard */; };
-		8E4B0232212165C800986215 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B0231212165C800986215 /* HomeViewController.swift */; };
 		8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B0234212173FF00986215 /* LoginDataManager.swift */; };
+		8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC221226FED00A76E15 /* HUDUtils.swift */; };
+		8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC5212278F000A76E15 /* HomeContainerInteractor.swift */; };
+		8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC6212278F000A76E15 /* HomeContainerPresenter.swift */; };
+		8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC7212278F000A76E15 /* HomeContainerProtocols.swift */; };
+		8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC8212278F000A76E15 /* HomeContainerRouter.swift */; };
+		8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC9212278F000A76E15 /* HomeContainerViewController.swift */; };
+		8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD22122A09300A76E15 /* UITextField+Padding.swift */; };
 		B0D4BA0D1D392EFF1333CB89 /* Pods_The_DivisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +93,14 @@
 		8E4B022521215CC300986215 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		8E4B022621215CC300986215 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8E4B022F2121629200986215 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		8E4B0231212165C800986215 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8E4B0234212173FF00986215 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		8E766BC221226FED00A76E15 /* HUDUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDUtils.swift; sourceTree = "<group>"; };
+		8E766BC5212278F000A76E15 /* HomeContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerInteractor.swift; sourceTree = "<group>"; };
+		8E766BC6212278F000A76E15 /* HomeContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPresenter.swift; sourceTree = "<group>"; };
+		8E766BC7212278F000A76E15 /* HomeContainerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerProtocols.swift; sourceTree = "<group>"; };
+		8E766BC8212278F000A76E15 /* HomeContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerRouter.swift; sourceTree = "<group>"; };
+		8E766BC9212278F000A76E15 /* HomeContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerViewController.swift; sourceTree = "<group>"; };
+		8E766BD22122A09300A76E15 /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
 		E3DED75EB0F5C59FB8569053 /* Pods-The Division.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				8E4B02152121251B00986215 /* AppStoryBoard.swift */,
+				8E766BC221226FED00A76E15 /* HUDUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -240,6 +253,7 @@
 				8E4B02132121245F00986215 /* UIApplication+AppDelegate.swift */,
 				8E4B021A2121399E00986215 /* UIView+Inspectable.swift */,
 				8E4B021C21214D5C00986215 /* UIView+Animation.swift */,
+				8E766BD22122A09300A76E15 /* UITextField+Padding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,8 +282,8 @@
 		8E4B022E2121627A00986215 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8E766BC4212278DA00A76E15 /* HomeContainer */,
 				8E4B022F2121629200986215 /* Home.storyboard */,
-				8E4B0231212165C800986215 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -280,6 +294,18 @@
 				8E4B0234212173FF00986215 /* LoginDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8E766BC4212278DA00A76E15 /* HomeContainer */ = {
+			isa = PBXGroup;
+			children = (
+				8E766BC5212278F000A76E15 /* HomeContainerInteractor.swift */,
+				8E766BC6212278F000A76E15 /* HomeContainerPresenter.swift */,
+				8E766BC7212278F000A76E15 /* HomeContainerProtocols.swift */,
+				8E766BC8212278F000A76E15 /* HomeContainerRouter.swift */,
+				8E766BC9212278F000A76E15 /* HomeContainerViewController.swift */,
+			);
+			path = HomeContainer;
 			sourceTree = "<group>";
 		};
 		917E2A1108452F03C77E4384 /* Pods */ = {
@@ -404,12 +430,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,17 +489,21 @@
 			files = (
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
+				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
+				8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
-				8E4B0232212165C800986215 /* HomeViewController.swift in Sources */,
 				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
+				8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
+				8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,
 				8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */,
 				8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */,
+				8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */,
 				8E4B02002121228300986215 /* IntroRouter.swift in Sources */,
 				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
@@ -479,8 +511,10 @@
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,
 				8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */,
+				8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */,
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
+				8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,
 			);

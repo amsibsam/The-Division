@@ -10,30 +10,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home Container View Controller-->
         <scene sceneID="Tgf-pn-8i8">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="AUL-Ls-8F0" customClass="HomeViewController" customModule="The_Division" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeContainerViewController" id="AUL-Ls-8F0" customClass="HomeContainerViewController" customModule="The_Division" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PaD-EP-9Qc">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWc-Z7-rFN">
-                                <rect key="frame" x="312" y="177" width="46" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h7e-Ya-i06">
+                                <rect key="frame" x="-275" y="0.0" width="275" height="375"/>
+                                <color key="backgroundColor" red="1" green="0.9921094184" blue="0.37501056960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="ivG-jU-10p"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eyz-Y3-mZ3">
+                                        <rect key="frame" x="0.0" y="28" width="275" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eyz-Y3-mZ3" id="wWJ-J7-e4z">
+                                            <rect key="frame" x="0.0" y="0.0" width="275" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woa-SA-gCh">
+                                <rect key="frame" x="310" y="172" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showDrawer:" destination="AUL-Ls-8F0" eventType="touchUpInside" id="3Mx-SA-seP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="h7e-Ya-i06" firstAttribute="top" secondItem="LlN-6m-2ri" secondAttribute="top" id="EKt-Go-O5t"/>
+                            <constraint firstItem="h7e-Ya-i06" firstAttribute="leading" secondItem="LlN-6m-2ri" secondAttribute="leading" constant="-275" id="QMB-3I-wLd"/>
+                            <constraint firstItem="h7e-Ya-i06" firstAttribute="bottom" secondItem="LlN-6m-2ri" secondAttribute="bottom" id="kzz-xJ-xvF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LlN-6m-2ri"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zNX-gU-dTE" appends="YES" id="9os-6N-ldD"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="j9h-uZ-Zck"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="constraintMenuLeading" destination="QMB-3I-wLd" id="76g-kO-jQz"/>
+                        <outlet property="tablewViewMenu" destination="h7e-Ya-i06" id="yxC-Kh-pM6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnh-n3-3bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="zNX-gU-dTE">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="onGestureReaction:" destination="AUL-Ls-8F0" id="dM2-hB-yHe"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="815" y="79"/>
+            <point key="canvasLocation" x="814.54272863568224" y="77.599999999999994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mt9-7H-QA5">

@@ -36,7 +36,7 @@ extension IntroViewController: UIPageViewControllerDataSource {
         guard let introIndex = intros.index(of: viewController) else { return nil }
         let prevIndex = introIndex - 1
         
-        guard prevIndex >= 0 else { return intros.last }
+        guard prevIndex >= 0 else { return nil }
         guard intros.count > prevIndex else { return nil }
         
         return intros[prevIndex]
@@ -46,7 +46,7 @@ extension IntroViewController: UIPageViewControllerDataSource {
         guard let introIndex = intros.index(of: viewController) else { return nil }
         let nextIndex = introIndex + 1
         
-        guard nextIndex < intros.count else { return intros.first }
+        guard nextIndex < intros.count else { return nil }
         guard intros.count > nextIndex else { return nil }
         
         return intros[nextIndex]

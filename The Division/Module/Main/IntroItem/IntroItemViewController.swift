@@ -31,7 +31,7 @@ class IntroItemViewController: UIViewController, IntroItemViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if showStartButton {
-            btnGetStarted.zoomIn(duration: 1.5)
+            btnGetStarted.zoomIn(duration: 0.7)
         }
     }
     
