@@ -47,6 +47,12 @@
 		8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD62122B85900A76E15 /* LandscapeViewController.swift */; };
 		8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */; };
 		8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BDB2122BA3300A76E15 /* MenuItem.swift */; };
+		8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD02122CF360037BADB /* TeamInteractor.swift */; };
+		8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD12122CF360037BADB /* TeamPresenter.swift */; };
+		8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD22122CF360037BADB /* TeamProtocols.swift */; };
+		8EE92DD92122CF360037BADB /* TeamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD32122CF360037BADB /* TeamRouter.swift */; };
+		8EE92DDA2122CF360037BADB /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD42122CF360037BADB /* TeamViewController.swift */; };
+		8EE92DDB2122CF360037BADB /* TeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE92DD52122CF360037BADB /* TeamViewController.xib */; };
 		B0D4BA0D1D392EFF1333CB89 /* Pods_The_DivisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +115,12 @@
 		8E766BD62122B85900A76E15 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
 		8E766BDB2122BA3300A76E15 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		8EE92DD02122CF360037BADB /* TeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
+		8EE92DD12122CF360037BADB /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
+		8EE92DD22122CF360037BADB /* TeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProtocols.swift; sourceTree = "<group>"; };
+		8EE92DD32122CF360037BADB /* TeamRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRouter.swift; sourceTree = "<group>"; };
+		8EE92DD42122CF360037BADB /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		8EE92DD52122CF360037BADB /* TeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamViewController.xib; sourceTree = "<group>"; };
 		E3DED75EB0F5C59FB8569053 /* Pods-The Division.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,6 +303,7 @@
 		8E4B022E2121627A00986215 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8EE92DCF2122CED30037BADB /* Team */,
 				8E766BC4212278DA00A76E15 /* HomeContainer */,
 				8E4B022F2121629200986215 /* Home.storyboard */,
 				8E766BD62122B85900A76E15 /* LandscapeViewController.swift */,
@@ -326,6 +339,19 @@
 				8E766BDB2122BA3300A76E15 /* MenuItem.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		8EE92DCF2122CED30037BADB /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				8EE92DD02122CF360037BADB /* TeamInteractor.swift */,
+				8EE92DD12122CF360037BADB /* TeamPresenter.swift */,
+				8EE92DD22122CF360037BADB /* TeamProtocols.swift */,
+				8EE92DD32122CF360037BADB /* TeamRouter.swift */,
+				8EE92DD42122CF360037BADB /* TeamViewController.swift */,
+				8EE92DD52122CF360037BADB /* TeamViewController.xib */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 		917E2A1108452F03C77E4384 /* Pods */ = {
@@ -423,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE92DDB2122CF360037BADB /* TeamViewController.xib in Resources */,
 				8E4B01DC212118F800986215 /* LaunchScreen.storyboard in Resources */,
 				8E4B01D9212118F800986215 /* Assets.xcassets in Resources */,
 				8E4B01D4212118ED00986215 /* Main.storyboard in Resources */,
@@ -509,6 +536,7 @@
 			files = (
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
+				8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */,
 				8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */,
 				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
@@ -534,13 +562,17 @@
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,
 				8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */,
+				8EE92DDA2122CF360037BADB /* TeamViewController.swift in Sources */,
 				8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */,
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
+				8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */,
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
 				8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */,
+				8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
 				8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,
+				8EE92DD92122CF360037BADB /* TeamRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

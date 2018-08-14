@@ -45,7 +45,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="h7e-Ya-i06" firstAttribute="top" secondItem="LlN-6m-2ri" secondAttribute="top" id="EKt-Go-O5t"/>
