@@ -31,34 +31,56 @@ class HomeContainerViewController: UIViewController, HomeContainerViewProtocol {
         let value = UIInterfaceOrientationMask.landscape.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
+        let gestureClose = UIPanGestureRecognizer(target: self, action: #selector(self.closeMenuAction(_:)))
+        tablewViewMenu.addGestureRecognizer(gestureClose)
     }
-
+    
+    @objc func closeMenuAction(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        
+        tablewViewMenu.slide(horizontalTranslation: calculateClosingTranslation(xPosition: translation.x, gestureState: sender.state))
+    }
+    
     @IBAction func onGestureReaction(_ sender: UIScreenEdgePanGestureRecognizer) {
         let translation = sender.translation(in: view)
-        var xTranslation = translation.x > self.tablewViewMenu.frame.width ? self.tablewViewMenu.frame.width : translation.x
         
-        if xTranslation < (self.tablewViewMenu.frame.width / 3) && sender.state == .ended {
-            xTranslation = -xTranslation
-        } else if xTranslation > (self.tablewViewMenu.frame.width / 3) && sender.state == .ended {
-            xTranslation = self.tablewViewMenu.frame.width
-        }
-        
-        UIView.animate(withDuration: 0.3) {
-            self.tablewViewMenu.transform = CGAffineTransform(translationX: xTranslation, y: self.tablewViewMenu.layer.anchorPoint.y)
-        }
+        tablewViewMenu.slide(horizontalTranslation: calculateOpeningTranslation(xPosition: translation.x, gestureState: sender.state))
     }
     
     @IBAction func showDrawer(_ sender: UIButton) {
         if isMenuAppear {
-            UIView.animate(withDuration: 0.3) {
-                self.tablewViewMenu.transform = CGAffineTransform(translationX: -self.tablewViewMenu.frame.width, y: self.tablewViewMenu.layer.anchorPoint.y)
-            }
+            tablewViewMenu.slide(horizontalTranslation: -self.tablewViewMenu.frame.width)
         } else {
-            UIView.animate(withDuration: 0.3) {
-                self.tablewViewMenu.transform = CGAffineTransform(translationX: self.tablewViewMenu.frame.width, y: self.tablewViewMenu.layer.anchorPoint.y)
-            }
+            tablewViewMenu.slide(horizontalTranslation: self.tablewViewMenu.frame.width)
         }
         
         isMenuAppear = !isMenuAppear
+    }
+    
+    private func calculateOpeningTranslation(xPosition: CGFloat, gestureState: UIGestureRecognizerState) -> CGFloat {
+        var xTranslation = xPosition > tablewViewMenu.frame.width ? tablewViewMenu.frame.width : xPosition
+        if xTranslation < (tablewViewMenu.frame.width / 3) && gestureState == .ended {
+            xTranslation = -xPosition
+            isMenuAppear = false
+        } else if xTranslation > (tablewViewMenu.frame.width / 3) && gestureState == .ended {
+            xTranslation = tablewViewMenu.frame.width
+            isMenuAppear = true
+        }
+        
+        return xTranslation
+    }
+    
+    private func calculateClosingTranslation(xPosition: CGFloat, gestureState: UIGestureRecognizerState) -> CGFloat {
+        var xTranslation = xPosition > 0 ? 0 : xPosition
+        
+        if xTranslation > (-tablewViewMenu.frame.width / 3) && gestureState == .ended {
+            xTranslation = 0
+            isMenuAppear = true
+        } else if xTranslation < (-tablewViewMenu.frame.width / 3) && gestureState == .ended {
+            xTranslation = -tablewViewMenu.frame.width
+            isMenuAppear = false
+        }
+        
+        return tablewViewMenu.frame.width + xTranslation
     }
 }

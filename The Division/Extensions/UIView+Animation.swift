@@ -17,4 +17,10 @@ public extension UIView {
             self.transform = CGAffineTransform.identity
         }
     }
+    
+    func slide(horizontalTranslation: CGFloat) {
+        UIView.animate(withDuration: 0.3) {
+            self.transform = CGAffineTransform(translationX: horizontalTranslation, y: self.layer.anchorPoint.y)
+        }
+    }
 }
