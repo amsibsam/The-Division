@@ -10,8 +10,7 @@
 
 import UIKit
 
-class HomeContainerPresenter: HomeContainerPresenterProtocol, HomeContainerInteractorOutputProtocol {
-
+class HomeContainerPresenter: HomeContainerPresenterProtocol {
     weak private var view: HomeContainerViewProtocol?
     var interactor: HomeContainerInteractorInputProtocol?
     private let router: HomeContainerWireframeProtocol
@@ -21,5 +20,15 @@ class HomeContainerPresenter: HomeContainerPresenterProtocol, HomeContainerInter
         self.interactor = interactor
         self.router = router
     }
+    
+    func getMenuItem() {
+        interactor?.getMenuItem()
+    }
+    
+}
 
+extension HomeContainerPresenter: HomeContainerInteractorOutputProtocol {
+    func onGetMenuItemSucceed(menuItems: [[MenuItem]]) {
+        view?.onGetMenuItemSucceed(menuItems: menuItems)
+    }
 }

@@ -11,6 +11,16 @@
 import UIKit
 
 class HomeContainerInteractor: HomeContainerInteractorInputProtocol {
-
     weak var presenter: HomeContainerInteractorOutputProtocol?
+    var dataManager: HomeContainerDataManagerInputProtocol?
+    
+    func getMenuItem() {
+        dataManager?.getMenuItem()
+    }
+}
+
+extension HomeContainerInteractor: HomeContainerDataManagerOutputProtocol {
+    func onGetMenuItemSucceed(menuItems: [[MenuItem]]) {
+        presenter?.onGetMenuItemSucceed(menuItems: menuItems)
+    }
 }

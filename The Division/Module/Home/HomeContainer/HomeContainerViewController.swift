@@ -10,13 +10,14 @@
 
 import UIKit
 
-class HomeContainerViewController: UIViewController, HomeContainerViewProtocol {
+class HomeContainerViewController: LandscapeViewController {
 
     @IBOutlet var tablewViewMenu: UITableView!
     @IBOutlet var constraintMenuLeading: NSLayoutConstraint!
     
     var isMenuAppear: Bool = false
     var presenter: HomeContainerPresenterProtocol?
+    var menuItems: [[MenuItem]] = []
 
     override var shouldAutorotate: Bool {
         return true
@@ -28,11 +29,8 @@ class HomeContainerViewController: UIViewController, HomeContainerViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let value = UIInterfaceOrientationMask.landscape.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        
-        let gestureClose = UIPanGestureRecognizer(target: self, action: #selector(self.closeMenuAction(_:)))
-        tablewViewMenu.addGestureRecognizer(gestureClose)
+        setupTableView()
+        presenter?.getMenuItem()
     }
     
     @objc func closeMenuAction(_ sender: UIPanGestureRecognizer) {
@@ -55,6 +53,18 @@ class HomeContainerViewController: UIViewController, HomeContainerViewProtocol {
         }
         
         isMenuAppear = !isMenuAppear
+    }
+    
+    // MARK: Private function
+    private func setupTableView() {
+        let gestureClose = UIPanGestureRecognizer(target: self, action: #selector(self.closeMenuAction(_:)))
+        gestureClose.delegate = self
+        tablewViewMenu.addGestureRecognizer(gestureClose)
+        tablewViewMenu.delegate = self
+        tablewViewMenu.dataSource = self
+        tablewViewMenu.bounces = false
+        tablewViewMenu.tableFooterView = UIView()
+        
     }
     
     private func calculateOpeningTranslation(xPosition: CGFloat, gestureState: UIGestureRecognizerState) -> CGFloat {
@@ -82,5 +92,69 @@ class HomeContainerViewController: UIViewController, HomeContainerViewProtocol {
         }
         
         return tablewViewMenu.frame.width + xTranslation
+    }
+}
+
+// MARK: View Protocol
+extension HomeContainerViewController: HomeContainerViewProtocol {
+    func onGetMenuItemSucceed(menuItems: [[MenuItem]]) {
+        self.menuItems = menuItems
+        tablewViewMenu.reloadData()
+    }
+}
+
+// MARK: TableView DataSource
+extension HomeContainerViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: tablewViewMenu.frame.width, height: 40))
+        let divider = UIView(frame: CGRect(x: 0, y: 30, width: tablewViewMenu.frame.width, height: 3))
+        divider.backgroundColor = #colorLiteral(red: 1, green: 0.9921094184, blue: 0.3750105696, alpha: 1)
+        header.backgroundColor = #colorLiteral(red: 0.1494665567, green: 0.1596326825, blue: 0.1749108919, alpha: 1)
+        let lblTitle = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.frame.width, height: 30))
+        lblTitle.text = section == 0 ? "Team" : "Mission"
+        lblTitle.textColor = #colorLiteral(red: 1, green: 0.9921094184, blue: 0.3750105696, alpha: 1)
+        lblTitle.font = UIFont.boldSystemFont(ofSize: lblTitle.font.pointSize)
+        
+        
+        header.addSubview(divider)
+        header.addSubview(lblTitle)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItems[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let menuItem = menuItems[indexPath.section][indexPath.row]
+        let cell = UITableViewCell()
+        cell.backgroundColor = #colorLiteral(red: 0.1494665567, green: 0.1596326825, blue: 0.1749108919, alpha: 1)
+        cell.textLabel?.textColor = #colorLiteral(red: 1, green: 0.9921094184, blue: 0.3750105696, alpha: 1)
+        cell.textLabel?.text = menuItem.name
+        
+        let lbCount = UILabel(frame: CGRect(x: cell.frame.width - 70, y: 0, width: 40, height: 40))
+        lbCount.text = "\(menuItem.count)"
+        lbCount.textColor = #colorLiteral(red: 1, green: 0.9921094184, blue: 0.3750105696, alpha: 1)
+        cell.addSubview(lbCount)
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return menuItems.count
+    }
+}
+
+// MARK: TableView Delegate
+extension HomeContainerViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tablewViewMenu.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: Gesture Delegate
+extension HomeContainerViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

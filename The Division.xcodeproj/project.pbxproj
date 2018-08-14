@@ -43,6 +43,10 @@
 		8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC8212278F000A76E15 /* HomeContainerRouter.swift */; };
 		8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC9212278F000A76E15 /* HomeContainerViewController.swift */; };
 		8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD22122A09300A76E15 /* UITextField+Padding.swift */; };
+		8E766BD52122B4EC00A76E15 /* HomeContainerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD42122B4EC00A76E15 /* HomeContainerDataManager.swift */; };
+		8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD62122B85900A76E15 /* LandscapeViewController.swift */; };
+		8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */; };
+		8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BDB2122BA3300A76E15 /* MenuItem.swift */; };
 		B0D4BA0D1D392EFF1333CB89 /* Pods_The_DivisionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +105,10 @@
 		8E766BC8212278F000A76E15 /* HomeContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerRouter.swift; sourceTree = "<group>"; };
 		8E766BC9212278F000A76E15 /* HomeContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerViewController.swift; sourceTree = "<group>"; };
 		8E766BD22122A09300A76E15 /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
+		8E766BD42122B4EC00A76E15 /* HomeContainerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerDataManager.swift; sourceTree = "<group>"; };
+		8E766BD62122B85900A76E15 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
+		8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
+		8E766BDB2122BA3300A76E15 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		E3DED75EB0F5C59FB8569053 /* Pods-The Division.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +242,7 @@
 				8E4B022121215C9D00986215 /* Login */,
 				8E4B0203212122E000986215 /* IntroItem */,
 				8E4B01F62121227400986215 /* Intro */,
+				8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 			children = (
 				8E766BC4212278DA00A76E15 /* HomeContainer */,
 				8E4B022F2121629200986215 /* Home.storyboard */,
+				8E766BD62122B85900A76E15 /* LandscapeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -299,13 +309,23 @@
 		8E766BC4212278DA00A76E15 /* HomeContainer */ = {
 			isa = PBXGroup;
 			children = (
+				8E766BDA2122BA0800A76E15 /* Entity */,
 				8E766BC5212278F000A76E15 /* HomeContainerInteractor.swift */,
 				8E766BC6212278F000A76E15 /* HomeContainerPresenter.swift */,
 				8E766BC7212278F000A76E15 /* HomeContainerProtocols.swift */,
 				8E766BC8212278F000A76E15 /* HomeContainerRouter.swift */,
 				8E766BC9212278F000A76E15 /* HomeContainerViewController.swift */,
+				8E766BD42122B4EC00A76E15 /* HomeContainerDataManager.swift */,
 			);
 			path = HomeContainer;
+			sourceTree = "<group>";
+		};
+		8E766BDA2122BA0800A76E15 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8E766BDB2122BA3300A76E15 /* MenuItem.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		917E2A1108452F03C77E4384 /* Pods */ = {
@@ -489,6 +509,7 @@
 			files = (
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
+				8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */,
 				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
@@ -503,8 +524,10 @@
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,
 				8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */,
 				8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */,
+				8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */,
 				8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */,
 				8E4B02002121228300986215 /* IntroRouter.swift in Sources */,
+				8E766BD52122B4EC00A76E15 /* HomeContainerDataManager.swift in Sources */,
 				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
@@ -516,6 +539,7 @@
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
 				8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
+				8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

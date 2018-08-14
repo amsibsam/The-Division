@@ -19,10 +19,13 @@ class HomeContainerRouter: HomeContainerWireframeProtocol {
         let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Home.rawValue) as! HomeContainerViewController
         let interactor = HomeContainerInteractor()
         let router = HomeContainerRouter()
+        let dataManager = HomeContainerDataManager()
         let presenter = HomeContainerPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
+        dataManager.interactor = interactor
         interactor.presenter = presenter
+        interactor.dataManager = dataManager
         router.viewController = view
 
         return view

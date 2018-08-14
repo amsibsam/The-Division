@@ -10,7 +10,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: PortraitViewController {
     @IBOutlet var tfEmail: UITextField!
     @IBOutlet var tfPassword: UITextField!
     
@@ -26,8 +26,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
         tfEmail.setLeftPaddingPoints(10)
         tfPassword.setLeftPaddingPoints(10)
 //        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Home.rawValue)
