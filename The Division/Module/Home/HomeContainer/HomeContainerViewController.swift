@@ -47,16 +47,6 @@ class HomeContainerViewController: LandscapeViewController {
         tablewViewMenu.slide(horizontalTranslation: calculateOpeningTranslation(xPosition: translation.x, gestureState: sender.state))
     }
     
-    @IBAction func showDrawer(_ sender: UIButton) {
-        if isMenuAppear {
-            tablewViewMenu.slide(horizontalTranslation: -self.tablewViewMenu.frame.width)
-        } else {
-            tablewViewMenu.slide(horizontalTranslation: self.tablewViewMenu.frame.width)
-        }
-        
-        isMenuAppear = !isMenuAppear
-    }
-    
     // MARK: Content view controller
     private func initiateContent() {
         let teamVC = TeamRouter.createModule()
