@@ -47,6 +47,13 @@
 		8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD62122B85900A76E15 /* LandscapeViewController.swift */; };
 		8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */; };
 		8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BDB2122BA3300A76E15 /* MenuItem.swift */; };
+		8E87FAA22125022A00C8AD47 /* UIViewController+gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAA12125022A00C8AD47 /* UIViewController+gesture.swift */; };
+		8E87FAA721250C0400C8AD47 /* ContentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAA621250C0400C8AD47 /* ContentHeaderCell.swift */; };
+		8E87FAA921250C1900C8AD47 /* TeamMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAA821250C1900C8AD47 /* TeamMemberCell.swift */; };
+		8E87FAAB21250C2700C8AD47 /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAAA21250C2700C8AD47 /* MissionCell.swift */; };
+		8E87FAAE21250DF500C8AD47 /* TeamDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAAD21250DF500C8AD47 /* TeamDataManager.swift */; };
+		8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAB121250EBE00C8AD47 /* Member.swift */; };
+		8E87FACA2125540200C8AD47 /* UIImageView+AsyncLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAC92125540200C8AD47 /* UIImageView+AsyncLoad.swift */; };
 		8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD02122CF360037BADB /* TeamInteractor.swift */; };
 		8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD12122CF360037BADB /* TeamPresenter.swift */; };
 		8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD22122CF360037BADB /* TeamProtocols.swift */; };
@@ -114,6 +121,13 @@
 		8E766BD62122B85900A76E15 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
 		8E766BDB2122BA3300A76E15 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		8E87FAA12125022A00C8AD47 /* UIViewController+gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+gesture.swift"; sourceTree = "<group>"; };
+		8E87FAA621250C0400C8AD47 /* ContentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaderCell.swift; sourceTree = "<group>"; };
+		8E87FAA821250C1900C8AD47 /* TeamMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberCell.swift; sourceTree = "<group>"; };
+		8E87FAAA21250C2700C8AD47 /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
+		8E87FAAD21250DF500C8AD47 /* TeamDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataManager.swift; sourceTree = "<group>"; };
+		8E87FAB121250EBE00C8AD47 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		8E87FAC92125540200C8AD47 /* UIImageView+AsyncLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AsyncLoad.swift"; sourceTree = "<group>"; };
 		8EE92DD02122CF360037BADB /* TeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		8EE92DD12122CF360037BADB /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
 		8EE92DD22122CF360037BADB /* TeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProtocols.swift; sourceTree = "<group>"; };
@@ -248,10 +262,10 @@
 		8E4B0210212122FF00986215 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8E4B01D2212118ED00986215 /* Main.storyboard */,
 				8E4B022121215C9D00986215 /* Login */,
 				8E4B0203212122E000986215 /* IntroItem */,
 				8E4B01F62121227400986215 /* Intro */,
+				8E4B01D2212118ED00986215 /* Main.storyboard */,
 				8E766BD82122B8BE00A76E15 /* PortraitViewController.swift */,
 			);
 			path = Main;
@@ -273,6 +287,8 @@
 				8E4B021A2121399E00986215 /* UIView+Inspectable.swift */,
 				8E4B021C21214D5C00986215 /* UIView+Animation.swift */,
 				8E766BD22122A09300A76E15 /* UITextField+Padding.swift */,
+				8E87FAA12125022A00C8AD47 /* UIViewController+gesture.swift */,
+				8E87FAC92125540200C8AD47 /* UIImageView+AsyncLoad.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,7 +317,7 @@
 		8E4B022E2121627A00986215 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8EE92DCF2122CED30037BADB /* Team */,
+				8EE92DCF2122CED30037BADB /* Content */,
 				8E766BC4212278DA00A76E15 /* HomeContainer */,
 				8E4B022F2121629200986215 /* Home.storyboard */,
 				8E766BD62122B85900A76E15 /* LandscapeViewController.swift */,
@@ -339,9 +355,11 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		8EE92DCF2122CED30037BADB /* Team */ = {
+		8E87FAA321250B3300C8AD47 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				8E87FAB021250EAD00C8AD47 /* Entity */,
+				8E87FAAC21250DE400C8AD47 /* DataManager */,
 				8EE92DD02122CF360037BADB /* TeamInteractor.swift */,
 				8EE92DD12122CF360037BADB /* TeamPresenter.swift */,
 				8EE92DD22122CF360037BADB /* TeamProtocols.swift */,
@@ -349,6 +367,49 @@
 				8EE92DD42122CF360037BADB /* TeamViewController.swift */,
 			);
 			path = Team;
+			sourceTree = "<group>";
+		};
+		8E87FAA421250B4300C8AD47 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		8E87FAA521250B5000C8AD47 /* SharedCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E87FAA621250C0400C8AD47 /* ContentHeaderCell.swift */,
+				8E87FAA821250C1900C8AD47 /* TeamMemberCell.swift */,
+				8E87FAAA21250C2700C8AD47 /* MissionCell.swift */,
+			);
+			path = SharedCell;
+			sourceTree = "<group>";
+		};
+		8E87FAAC21250DE400C8AD47 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E87FAAD21250DF500C8AD47 /* TeamDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8E87FAB021250EAD00C8AD47 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8E87FAB121250EBE00C8AD47 /* Member.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8EE92DCF2122CED30037BADB /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				8E87FAA521250B5000C8AD47 /* SharedCell */,
+				8E87FAA421250B4300C8AD47 /* Mission */,
+				8E87FAA321250B3300C8AD47 /* Team */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		917E2A1108452F03C77E4384 /* Pods */ = {
@@ -530,10 +591,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E87FAAB21250C2700C8AD47 /* MissionCell.swift in Sources */,
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
 				8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */,
+				8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */,
 				8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */,
+				8E87FAA921250C1900C8AD47 /* TeamMemberCell.swift in Sources */,
 				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
@@ -545,8 +609,10 @@
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
 				8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
+				8E87FAA721250C0400C8AD47 /* ContentHeaderCell.swift in Sources */,
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,
 				8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */,
+				8E87FAAE21250DF500C8AD47 /* TeamDataManager.swift in Sources */,
 				8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */,
 				8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */,
 				8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */,
@@ -562,6 +628,8 @@
 				8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */,
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
 				8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */,
+				8E87FACA2125540200C8AD47 /* UIImageView+AsyncLoad.swift in Sources */,
+				8E87FAA22125022A00C8AD47 /* UIViewController+gesture.swift in Sources */,
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
 				8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */,
 				8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */,

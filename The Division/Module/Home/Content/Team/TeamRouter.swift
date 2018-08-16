@@ -14,15 +14,19 @@ class TeamRouter: TeamWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(with type: TeamDivision) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Team.rawValue) as! TeamViewController
+        view.teamDivision = type
         let interactor = TeamInteractor()
         let router = TeamRouter()
+        let dataManager = TeamDataManager()
         let presenter = TeamPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter
+        interactor.dataManager = dataManager
+        dataManager.interactor = interactor
         router.viewController = view
 
         return view

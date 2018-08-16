@@ -18,19 +18,25 @@ protocol TeamWireframeProtocol: class {
 protocol TeamPresenterProtocol: class {
 
     var interactor: TeamInteractorInputProtocol? { get set }
+    
+    /* ViewController -> Presenter */
+    func getTeamMember(on team: TeamDivision)
 }
 
 //MARK: Interactor -
 protocol TeamInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func onGetMemberSucceeded(with members: [Member])
 }
 
 protocol TeamInteractorInputProtocol: class {
 
     var presenter: TeamInteractorOutputProtocol?  { get set }
+    var dataManager: TeamDataManagerInputProtocol? { get set }
 
     /* Presenter -> Interactor */
+    func getTeamMember(on team: TeamDivision)
 }
 
 //MARK: View -
@@ -39,4 +45,19 @@ protocol TeamViewProtocol: class {
     var presenter: TeamPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func onGetMemberSucceeded(with members: [Member])
+}
+
+//MARK: DataManager -
+protocol TeamDataManagerInputProtocol: class {
+    var interactor: TeamDataManagerOutputProtocol? { get set }
+    
+    /* Interactor -> DataManager */
+    func getTeamMember(on team: TeamDivision)
+}
+
+protocol TeamDataManagerOutputProtocol : class {
+    
+    /* DataManager -> Interactor */
+    func onGetMemberSucceeded(with members: [Member])
 }

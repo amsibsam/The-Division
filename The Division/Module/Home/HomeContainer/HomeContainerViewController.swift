@@ -32,7 +32,7 @@ class HomeContainerViewController: LandscapeViewController {
         super.viewDidLoad()
         setupTableView()
         presenter?.getMenuItem()
-        initiateContent()
+        displaySelectedMenu()
     }
     
     @objc func closeMenuAction(_ sender: UIPanGestureRecognizer) {
@@ -47,13 +47,6 @@ class HomeContainerViewController: LandscapeViewController {
         tablewViewMenu.slide(horizontalTranslation: calculateOpeningTranslation(xPosition: translation.x, gestureState: sender.state))
     }
     
-    // MARK: Content view controller
-    private func initiateContent() {
-        let teamVC = TeamRouter.createModule()
-        addChildViewController(teamVC)
-        viewContainer.addSubview(teamVC.view)
-    }
-    
     // MARK: Private function
     private func setupTableView() {
         let gestureClose = UIPanGestureRecognizer(target: self, action: #selector(self.closeMenuAction(_:)))
@@ -62,8 +55,21 @@ class HomeContainerViewController: LandscapeViewController {
         tablewViewMenu.delegate = self
         tablewViewMenu.dataSource = self
         tablewViewMenu.bounces = false
+        tablewViewMenu.bouncesZoom = false
         tablewViewMenu.tableFooterView = UIView()
         
+    }
+    
+    private func displaySelectedMenu(section: Int = 0, divisionType: TeamDivision = .Transportation, missionType: String = "") {
+        // clear the container first
+        viewContainer.subviews.first?.removeFromSuperview()
+        if section == 0 {
+            let teamVC = TeamRouter.createModule(with: divisionType)
+            addChildViewController(teamVC)
+            viewContainer.addSubview(teamVC.view)
+        } else {
+            // MARK: TODO configure mission menu
+        }
     }
     
     private func calculateOpeningTranslation(xPosition: CGFloat, gestureState: UIGestureRecognizerState) -> CGFloat {
@@ -149,6 +155,12 @@ extension HomeContainerViewController: UITableViewDataSource {
 extension HomeContainerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tablewViewMenu.deselectRow(at: indexPath, animated: true)
+        tablewViewMenu.slide(horizontalTranslation: calculateClosingTranslation(xPosition: -tablewViewMenu.frame.width, gestureState: .ended))
+        
+        let menuItem = menuItems[indexPath.section][indexPath.row]
+        if let divisionType = TeamDivision(rawValue: menuItem.name) {
+            displaySelectedMenu(section: indexPath.section, divisionType: divisionType)
+        }
     }
 }
 

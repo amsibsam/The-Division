@@ -10,8 +10,7 @@
 
 import UIKit
 
-class TeamPresenter: TeamPresenterProtocol, TeamInteractorOutputProtocol {
-
+class TeamPresenter: TeamPresenterProtocol {
     weak private var view: TeamViewProtocol?
     var interactor: TeamInteractorInputProtocol?
     private let router: TeamWireframeProtocol
@@ -21,5 +20,16 @@ class TeamPresenter: TeamPresenterProtocol, TeamInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
+    func getTeamMember(on team: TeamDivision) {
+        interactor?.getTeamMember(on: team)
+    }
+}
 
+extension TeamPresenter: TeamInteractorOutputProtocol {
+    func onGetMemberSucceeded(with members: [Member]) {
+        view?.onGetMemberSucceeded(with: members)
+    }
+    
+    
 }

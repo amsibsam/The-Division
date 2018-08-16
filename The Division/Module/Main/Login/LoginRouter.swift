@@ -19,7 +19,7 @@ class LoginRouter: LoginWireframeProtocol {
         let view = AppStoryBoard.Main.instance.instantiateViewController(withIdentifier: MainViewControllers.Login.rawValue) as! LoginViewController
         let interactor = LoginInteractor()
         let router = LoginRouter()
-        let dataManager: LoginDataManagerInputProtocol = LoginDataManager()
+        let dataManager = LoginDataManager()
         let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
         
         view.presenter = presenter
