@@ -59,6 +59,8 @@
 		8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACD212563A100C8AD47 /* MissionProtocols.swift */; };
 		8E87FAD4212563A100C8AD47 /* MissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACE212563A100C8AD47 /* MissionRouter.swift */; };
 		8E87FAD5212563A100C8AD47 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACF212563A100C8AD47 /* MissionViewController.swift */; };
+		8E87FAD92125668400C8AD47 /* MissionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAD82125668400C8AD47 /* MissionDataManager.swift */; };
+		8E87FADC2125675B00C8AD47 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FADB2125675B00C8AD47 /* Mission.swift */; };
 		8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD02122CF360037BADB /* TeamInteractor.swift */; };
 		8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD12122CF360037BADB /* TeamPresenter.swift */; };
 		8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD22122CF360037BADB /* TeamProtocols.swift */; };
@@ -138,6 +140,8 @@
 		8E87FACD212563A100C8AD47 /* MissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionProtocols.swift; sourceTree = "<group>"; };
 		8E87FACE212563A100C8AD47 /* MissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRouter.swift; sourceTree = "<group>"; };
 		8E87FACF212563A100C8AD47 /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
+		8E87FAD82125668400C8AD47 /* MissionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDataManager.swift; sourceTree = "<group>"; };
+		8E87FADB2125675B00C8AD47 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		8EE92DD02122CF360037BADB /* TeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		8EE92DD12122CF360037BADB /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
 		8EE92DD22122CF360037BADB /* TeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProtocols.swift; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 		8E87FAA421250B4300C8AD47 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
+				8E87FADA2125675000C8AD47 /* Mission */,
+				8E87FAD72125666C00C8AD47 /* DataManager */,
 				8E87FACB212563A100C8AD47 /* MissionInteractor.swift */,
 				8E87FACC212563A100C8AD47 /* MissionPresenter.swift */,
 				8E87FACD212563A100C8AD47 /* MissionProtocols.swift */,
@@ -415,6 +421,22 @@
 				8E87FAB121250EBE00C8AD47 /* Member.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		8E87FAD72125666C00C8AD47 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E87FAD82125668400C8AD47 /* MissionDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8E87FADA2125675000C8AD47 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				8E87FADB2125675B00C8AD47 /* Mission.swift */,
+			);
+			path = Mission;
 			sourceTree = "<group>";
 		};
 		8EE92DCF2122CED30037BADB /* Content */ = {
@@ -624,6 +646,7 @@
 				8E87FAD1212563A100C8AD47 /* MissionInteractor.swift in Sources */,
 				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
 				8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */,
+				8E87FAD92125668400C8AD47 /* MissionDataManager.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
 				8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
@@ -653,6 +676,7 @@
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
 				8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */,
 				8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */,
+				8E87FADC2125675B00C8AD47 /* Mission.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
 				8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,

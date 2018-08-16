@@ -16,7 +16,7 @@ class MissionRouter: MissionWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = MissionViewController(nibName: nil, bundle: nil)
+        let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Mission.rawValue) as! MissionViewController
         let interactor = MissionInteractor()
         let router = MissionRouter()
         let presenter = MissionPresenter(interface: view, interactor: interactor, router: router)

@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MissionViewController: UIViewController, MissionViewProtocol {
+class MissionViewController: UIViewController {
 
 	var presenter: MissionPresenterProtocol?
 
@@ -18,4 +18,10 @@ class MissionViewController: UIViewController, MissionViewProtocol {
         super.viewDidLoad()
     }
 
+}
+
+extension MissionViewController: MissionViewProtocol {
+    func onGetMissionSucceeded(with missions: [Mission]) {
+        
+    }
 }

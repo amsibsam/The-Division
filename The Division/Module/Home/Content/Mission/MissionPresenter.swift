@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MissionPresenter: MissionPresenterProtocol, MissionInteractorOutputProtocol {
+class MissionPresenter: MissionPresenterProtocol {
 
     weak private var view: MissionViewProtocol?
     var interactor: MissionInteractorInputProtocol?
@@ -21,5 +21,15 @@ class MissionPresenter: MissionPresenterProtocol, MissionInteractorOutputProtoco
         self.interactor = interactor
         self.router = router
     }
+    
+    func getMission(with state: MissionState) {
+        interactor?.getMission(with: state)
+    }
 
+}
+
+extension MissionPresenter: MissionInteractorOutputProtocol {
+    func onGetMissionSucceeded(with missions: [Mission]) {
+        view?.onGetMissionSucceeded(with: missions      )
+    }
 }

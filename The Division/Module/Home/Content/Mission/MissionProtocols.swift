@@ -18,12 +18,16 @@ protocol MissionWireframeProtocol: class {
 protocol MissionPresenterProtocol: class {
 
     var interactor: MissionInteractorInputProtocol? { get set }
+    
+    /* ViewController -> Peresenter */
+    func getMission(with state: MissionState)
 }
 
 //MARK: Interactor -
 protocol MissionInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func onGetMissionSucceeded(with missions: [Mission])
 }
 
 protocol MissionInteractorInputProtocol: class {
@@ -31,6 +35,7 @@ protocol MissionInteractorInputProtocol: class {
     var presenter: MissionInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getMission(with state: MissionState)
 }
 
 //MARK: View -
@@ -39,4 +44,24 @@ protocol MissionViewProtocol: class {
     var presenter: MissionPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func onGetMissionSucceeded(with missions: [Mission])
+}
+
+//MARK: DataManager -
+protocol MissionDataManagerInputProtocol: class {
+    var interactor: MissionDataManagerOutputProtocol? { get set }
+    
+    /* Interactor -> DataManager */
+    func getMission(with state: MissionState)
+}
+
+protocol MissionDataManagerOutputProtocol: class {
+    /* DataManager -> Interactor */
+    func onGetMissionSucceeded(with missions: [Mission])
+}
+
+public enum MissionState: String {
+    case InProgress
+    case New
+    case Finished
 }
