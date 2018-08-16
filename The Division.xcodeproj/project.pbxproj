@@ -54,6 +54,11 @@
 		8E87FAAE21250DF500C8AD47 /* TeamDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAAD21250DF500C8AD47 /* TeamDataManager.swift */; };
 		8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAB121250EBE00C8AD47 /* Member.swift */; };
 		8E87FACA2125540200C8AD47 /* UIImageView+AsyncLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAC92125540200C8AD47 /* UIImageView+AsyncLoad.swift */; };
+		8E87FAD1212563A100C8AD47 /* MissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACB212563A100C8AD47 /* MissionInteractor.swift */; };
+		8E87FAD2212563A100C8AD47 /* MissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACC212563A100C8AD47 /* MissionPresenter.swift */; };
+		8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACD212563A100C8AD47 /* MissionProtocols.swift */; };
+		8E87FAD4212563A100C8AD47 /* MissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACE212563A100C8AD47 /* MissionRouter.swift */; };
+		8E87FAD5212563A100C8AD47 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACF212563A100C8AD47 /* MissionViewController.swift */; };
 		8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD02122CF360037BADB /* TeamInteractor.swift */; };
 		8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD12122CF360037BADB /* TeamPresenter.swift */; };
 		8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD22122CF360037BADB /* TeamProtocols.swift */; };
@@ -128,6 +133,11 @@
 		8E87FAAD21250DF500C8AD47 /* TeamDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataManager.swift; sourceTree = "<group>"; };
 		8E87FAB121250EBE00C8AD47 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		8E87FAC92125540200C8AD47 /* UIImageView+AsyncLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AsyncLoad.swift"; sourceTree = "<group>"; };
+		8E87FACB212563A100C8AD47 /* MissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractor.swift; sourceTree = "<group>"; };
+		8E87FACC212563A100C8AD47 /* MissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionPresenter.swift; sourceTree = "<group>"; };
+		8E87FACD212563A100C8AD47 /* MissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionProtocols.swift; sourceTree = "<group>"; };
+		8E87FACE212563A100C8AD47 /* MissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRouter.swift; sourceTree = "<group>"; };
+		8E87FACF212563A100C8AD47 /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
 		8EE92DD02122CF360037BADB /* TeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		8EE92DD12122CF360037BADB /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
 		8EE92DD22122CF360037BADB /* TeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProtocols.swift; sourceTree = "<group>"; };
@@ -372,6 +382,11 @@
 		8E87FAA421250B4300C8AD47 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
+				8E87FACB212563A100C8AD47 /* MissionInteractor.swift */,
+				8E87FACC212563A100C8AD47 /* MissionPresenter.swift */,
+				8E87FACD212563A100C8AD47 /* MissionProtocols.swift */,
+				8E87FACE212563A100C8AD47 /* MissionRouter.swift */,
+				8E87FACF212563A100C8AD47 /* MissionViewController.swift */,
 			);
 			path = Mission;
 			sourceTree = "<group>";
@@ -594,6 +609,7 @@
 				8E87FAAB21250C2700C8AD47 /* MissionCell.swift in Sources */,
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
+				8E87FAD5212563A100C8AD47 /* MissionViewController.swift in Sources */,
 				8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */,
 				8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */,
 				8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */,
@@ -604,6 +620,8 @@
 				8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
+				8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */,
+				8E87FAD1212563A100C8AD47 /* MissionInteractor.swift in Sources */,
 				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
 				8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
@@ -617,6 +635,7 @@
 				8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */,
 				8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */,
 				8E4B02002121228300986215 /* IntroRouter.swift in Sources */,
+				8E87FAD2212563A100C8AD47 /* MissionPresenter.swift in Sources */,
 				8E766BD52122B4EC00A76E15 /* HomeContainerDataManager.swift in Sources */,
 				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
@@ -627,6 +646,7 @@
 				8EE92DDA2122CF360037BADB /* TeamViewController.swift in Sources */,
 				8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */,
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
+				8E87FAD4212563A100C8AD47 /* MissionRouter.swift in Sources */,
 				8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */,
 				8E87FACA2125540200C8AD47 /* UIImageView+AsyncLoad.swift in Sources */,
 				8E87FAA22125022A00C8AD47 /* UIViewController+gesture.swift in Sources */,
