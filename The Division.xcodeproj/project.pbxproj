@@ -397,7 +397,7 @@
 		8E87FAA421250B4300C8AD47 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
-				8E87FADA2125675000C8AD47 /* Mission */,
+				8E87FADA2125675000C8AD47 /* Entity */,
 				8E87FAD72125666C00C8AD47 /* DataManager */,
 				8E87FACB212563A100C8AD47 /* MissionInteractor.swift */,
 				8E87FACC212563A100C8AD47 /* MissionPresenter.swift */,
@@ -443,12 +443,12 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
-		8E87FADA2125675000C8AD47 /* Mission */ = {
+		8E87FADA2125675000C8AD47 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				8E87FADB2125675B00C8AD47 /* Mission.swift */,
 			);
-			path = Mission;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		8E8823C3212A5AE00068C718 /* Base */ = {
