@@ -337,9 +337,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM8-DJ-28a">
-                                                <rect key="frame" x="8" y="43" width="605" height="40"/>
+                                                <rect key="frame" x="8" y="43" width="605" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="3K9-Ry-52J"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="83" id="vGW-6p-FiY"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ywb-3h-yGy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -355,7 +356,6 @@
                                             <constraint firstItem="QM8-DJ-28a" firstAttribute="leading" secondItem="9Bp-8i-8Oc" secondAttribute="leading" constant="8" id="Zxs-ET-xw4"/>
                                             <constraint firstItem="WGh-6k-vhz" firstAttribute="leading" secondItem="9Bp-8i-8Oc" secondAttribute="leading" constant="8" id="h33-pc-7O0"/>
                                             <constraint firstAttribute="trailing" secondItem="WGh-6k-vhz" secondAttribute="trailing" constant="8" id="i7j-Xb-psm"/>
-                                            <constraint firstAttribute="bottom" secondItem="QM8-DJ-28a" secondAttribute="bottom" priority="250" constant="2" id="sPF-4b-kGV"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
