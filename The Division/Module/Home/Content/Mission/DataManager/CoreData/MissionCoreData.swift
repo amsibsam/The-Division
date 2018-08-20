@@ -56,11 +56,29 @@ class MissionCoreData: BaseCoreData {
         }
     }
     
+    func getMission(byState: MissionState) -> [Mission]? {
+        do {
+            let request = MissionEntity.fetchRequest() as NSFetchRequest
+            request.predicate = NSPredicate(format: "state = %@", byState.rawValue)
+            
+            let filteredEntity: [MissionEntity] = try managedContext.fetch(request)
+            
+            let filteredMission: [Mission] = filteredEntity.map { (missionEntity) -> Mission in
+                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state!)!)
+            }
+
+            return filteredMission
+        } catch let error as NSError {
+            print("error fetch \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
     func getMission() -> [Mission]? {
         do {
-            let missionEntities: [MissionEntity] = try managedContext.fetch(MissionEntity.fetchRequest() )
+            let missionEntities: [MissionEntity] = try managedContext.fetch(MissionEntity.fetchRequest())
             let result: [Mission] = missionEntities.map({ (missionEntity) -> Mission in
-                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.description, state: MissionState(rawValue: missionEntity.state!)!)
+                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state!)!)
             })
             
             return result

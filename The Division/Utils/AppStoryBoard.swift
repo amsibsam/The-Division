@@ -18,6 +18,11 @@ enum AppStoryBoard: String {
     }
 }
 
+enum Navigation: String {
+    case Login = "LoginNavigation"
+    case Mission = "MissionNavigation"
+}
+
 enum MainViewControllers: String {
     case Intro = "IntroViewController"
     case IntroItem = "IntroItemViewController"
@@ -28,4 +33,5 @@ enum HomeViewControllers: String {
     case Home = "HomeContainerViewController"
     case Team = "TeamViewController"
     case Mission = "MissionViewController"
+    case MissionDetail = "MissionDetailViewController"
 }

@@ -66,6 +66,7 @@ class HomeContainerViewController: LandscapeViewController {
     private func displaySelectedMenu(section: Int = 1, divisionType: TeamDivision = .Transportation, missionType: MissionState = .New) {
         // clear the container first
         viewContainer.subviews.first?.removeFromSuperview()
+        
         if section == 0 {
             let teamVC = TeamRouter.createModule(with: divisionType)
             addChildViewController(teamVC)

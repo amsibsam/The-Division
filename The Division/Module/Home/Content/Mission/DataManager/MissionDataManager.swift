@@ -21,7 +21,7 @@ class MissionDataManager: MissionDataManagerInputProtocol {
     }
     
     func getMission(with state: MissionState) {
-        if let mission = MissionCoreData.shared.getMission() {
+        if let mission = MissionCoreData.shared.getMission(byState: state) {
             interactor?.onGetMissionSucceeded(with: mission)
         }
     }

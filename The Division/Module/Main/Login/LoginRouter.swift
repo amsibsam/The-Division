@@ -16,19 +16,24 @@ class LoginRouter: LoginWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = AppStoryBoard.Main.instance.instantiateViewController(withIdentifier: MainViewControllers.Login.rawValue) as! LoginViewController
-        let interactor = LoginInteractor()
-        let router = LoginRouter()
-        let dataManager = LoginDataManager()
-        let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
+        let navigation = AppStoryBoard.Main.instance.instantiateViewController(withIdentifier: Navigation.Login.rawValue)
+        if let view = navigation.childViewControllers.first as? LoginViewController {
+            
+            let interactor = LoginInteractor()
+            let router = LoginRouter()
+            let dataManager = LoginDataManager()
+            let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
+            
+            view.presenter = presenter
+            interactor.presenter = presenter
+            interactor.dataManager = dataManager
+            dataManager.interactor = interactor
+            router.viewController = view
+            
+            return navigation
+        }
         
-        view.presenter = presenter
-        interactor.presenter = presenter
-        interactor.dataManager = dataManager
-        dataManager.interactor = interactor
-        router.viewController = view
-
-        return view
+        return UIViewController()
     }
     
     static func createModuleAsRoot() {

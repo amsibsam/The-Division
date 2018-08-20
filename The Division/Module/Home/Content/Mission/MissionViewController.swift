@@ -21,6 +21,7 @@ class MissionViewController: LandscapeViewController {
         super.viewDidLoad()
         setupTableView()
         presenter?.getMission(with: missionState)
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupTableView() {
@@ -47,6 +48,16 @@ class MissionViewController: LandscapeViewController {
             }
         }))
         present(addMissionAlert, animated: true, completion: nil)
+    }
+    
+    private func setMissionToInProgress(at indexPath: IndexPath) {
+        var selectedMission = missions[indexPath.row]
+        selectedMission.state = .InProgress
+        presenter?.editMission(with: selectedMission)
+        missions.remove(at: indexPath.row)
+        tableViewMission.beginUpdates()
+        tableViewMission.deleteRows(at: [indexPath], with: .left)
+        tableViewMission.endUpdates()
     }
     
 }
@@ -90,6 +101,9 @@ extension MissionViewController: UITableViewDataSource {
 extension MissionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if missionState == .New {
+            presenter?.openMissionDetail(from: self)
+        }
     }
 }
 

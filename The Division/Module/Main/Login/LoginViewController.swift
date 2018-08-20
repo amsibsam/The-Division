@@ -28,10 +28,6 @@ class LoginViewController: PortraitViewController {
         super.viewDidLoad()
         tfEmail.setLeftPaddingPoints(10)
         tfPassword.setLeftPaddingPoints(10)
-//        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Home.rawValue)
-//        addChildViewController(homeVC)
-//        self.view.addSubview(homeVC.view)
-//        homeVC.view.isHidden = true
         
     }
 

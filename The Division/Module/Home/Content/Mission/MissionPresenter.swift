@@ -34,6 +34,9 @@ class MissionPresenter: MissionPresenterProtocol {
         interactor?.editMission(with: mission)
     }
     
+    func openMissionDetail(from view: MissionViewProtocol) {
+        router.openMissionDetail(from: view)
+    }
 
 }
 

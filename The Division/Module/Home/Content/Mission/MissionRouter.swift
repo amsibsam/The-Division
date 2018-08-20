@@ -16,19 +16,31 @@ class MissionRouter: MissionWireframeProtocol {
 
     static func createModule(with state: MissionState) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Mission.rawValue) as! MissionViewController
-        view.missionState = state
-        let interactor = MissionInteractor()
-        let router = MissionRouter()
-        let dataManager = MissionDataManager()
-        let presenter = MissionPresenter(interface: view, interactor: interactor, router: router)
+        let navigation = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: Navigation.Mission.rawValue)
+        navigation.navigationController?.navigationBar.tintColor = .black
+        if let view = navigation.childViewControllers.first as? MissionViewController {
+            view.missionState = state
+            let interactor = MissionInteractor()
+            let router = MissionRouter()
+            let dataManager = MissionDataManager()
+            let presenter = MissionPresenter(interface: view, interactor: interactor, router: router)
+            
+            view.presenter = presenter
+            dataManager.interactor = interactor
+            interactor.dataManager = dataManager
+            interactor.presenter = presenter
+            router.viewController = view
+            
+            return navigation
+        }
 
-        view.presenter = presenter
-        dataManager.interactor = interactor
-        interactor.dataManager = dataManager
-        interactor.presenter = presenter
-        router.viewController = view
-
-        return view
+        return UIViewController()
+    }
+    
+    func openMissionDetail(from view: MissionViewProtocol) {
+        let missionDetailVC = MissionDetailRouter.createModule()
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(missionDetailVC, animated: true)
+        }
     }
 }
