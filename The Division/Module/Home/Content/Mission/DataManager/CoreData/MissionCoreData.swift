@@ -16,46 +16,73 @@ class MissionCoreData: BaseCoreData {
     private let MISSION_DESCRIPTION = "missionDescription"
     private let MISSION_STATE = "state"
     
-    func save(mission: Mission) -> Mission? {
+    func add(mission: Mission) {
         let missionEntity = MissionEntity(entity: MissionEntity.entity(), insertInto: managedContext)
+        missionEntity.id = mission.id
         missionEntity.name = mission.name
         missionEntity.missionDescription = mission.description
         missionEntity.state = mission.state.rawValue
         
+        save()
+    }
+    
+    func addOrUpdate(mission: Mission) {
+        if let missionEntity = getMissionEntity(by: mission) {
+            missionEntity.name = mission.name
+            missionEntity.missionDescription = mission.description
+            missionEntity.state = mission.state.rawValue
+            save()
+        } else {
+            add(mission: mission)
+        }
+    }
+    
+    func getMission(by mission: Mission) -> Mission? {
         do {
-            try managedContext.save()
-            let mission = Mission(name: missionEntity.value(forKey: MISSION_NAME) as! String,
-                                  description: missionEntity.value(forKey: MISSION_DESCRIPTION) as! String,
-                                  state: MissionState(rawValue: missionEntity.value(forKey: MISSION_STATE) as! String)!)
-            return mission
+            let fetchRequest = MissionEntity.fetchRequest() as NSFetchRequest
+            fetchRequest.predicate = NSPredicate(format: "id = %@", mission.id)
+            let filteredEntity = try managedContext.fetch(fetchRequest)
+            
+            if let filterEntityResult = filteredEntity.first {
+                let result: Mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.description, state: MissionState(rawValue: filterEntityResult.state!)!)
+                
+                return result
+            }
+            
+            return nil
         } catch let error as NSError {
-            print("failed to save entity \(error)")
+            print("error fetch \(error), \(error.userInfo)")
             return nil
         }
     }
     
     func getMission() -> [Mission]? {
         do {
-            let missionEntities: [MissionEntity] = try managedContext.fetch(MissionEntity.fetchRequest())
+            let missionEntities: [MissionEntity] = try managedContext.fetch(MissionEntity.fetchRequest() )
             let result: [Mission] = missionEntities.map({ (missionEntity) -> Mission in
-                return Mission(name: missionEntity.name, description: missionEntity.description, state: MissionState(rawValue: missionEntity.state!)!)
+                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.description, state: MissionState(rawValue: missionEntity.state!)!)
             })
             
             return result
         } catch {
             return nil
         }
-        
-        
-        return nil
-        
-//        let missionEntity = fetch(entityName: String(describing: MissionEntity.self))
-//        guard let result: [Mission] = missionEntity?.map({ (missionEntity) -> Mission in
-//            return Mission(name: missionEntity.value(forKey: MISSION_NAME) as! String,
-//                           description: missionEntity.value(forKey: MISSION_DESCRIPTION) as! String,
-//                           state: MissionState(rawValue: missionEntity.value(forKey: MISSION_STATE) as! String) ?? .New)
-//        }) else { return nil }
-//
-//        return result
+    }
+    
+    private func getMissionEntity(by mission: Mission) -> MissionEntity? {
+        do {
+            let fetchRequest = MissionEntity.fetchRequest() as NSFetchRequest
+            fetchRequest.predicate = NSPredicate(format: "id = %@", mission.id)
+            let filteredEntity = try managedContext.fetch(fetchRequest)
+            
+            if let filterEntityResult = filteredEntity.first {
+                return filterEntityResult
+            }
+            
+            return nil
+        } catch let error as NSError {
+            print("error fetch \(error), \(error.userInfo)")
+            return nil
+        }
     }
 }

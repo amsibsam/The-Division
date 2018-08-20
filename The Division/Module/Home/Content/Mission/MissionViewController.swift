@@ -104,5 +104,6 @@ extension MissionViewController: MissionViewProtocol {
     func onGetMissionSucceeded(with missions: [Mission]) {
         self.missions.append(contentsOf: missions)
         tableViewMission.reloadData()
+        
     }
 }

@@ -11,7 +11,7 @@
 import UIKit
 
 class MissionInteractor: MissionInteractorInputProtocol {
-    
+
     weak var presenter: MissionInteractorOutputProtocol?
     var dataManager: MissionDataManagerInputProtocol?
     
@@ -21,6 +21,10 @@ class MissionInteractor: MissionInteractorInputProtocol {
     
     func createMission(with name: String, description: String) {
         dataManager?.createMission(with: name, description: description)
+    }
+    
+    func editMission(with mission: Mission) {
+        dataManager?.editMission(with: mission)
     }
 }
 

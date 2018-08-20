@@ -16,4 +16,12 @@ class BaseCoreData {
     init() {
         managedContext = UIApplication.appDelegate.persistentContainer.viewContext
     }
+    
+    func save() {
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("error save obj \(error), \(error.userInfo)")
+        }
+    }
 }

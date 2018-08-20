@@ -11,13 +11,13 @@ import CoreData
 import UIKit
 
 class MissionDataManager: MissionDataManagerInputProtocol {
+    
     var interactor: MissionDataManagerOutputProtocol?
     
     func createMission(with name: String, description: String) {
-        let mission = Mission(name: name, description: description, state: .New)
-        if let savedMission = MissionCoreData.shared.save(mission: mission) {
-            interactor?.onCreateMissionSucceeded(with: savedMission)
-        }
+        let mission = Mission(id: "\(NSDate().timeIntervalSince1970)", name: name, description: description, state: .New)
+        MissionCoreData.shared.add(mission: mission)
+        interactor?.onCreateMissionSucceeded(with: mission)
     }
     
     func getMission(with state: MissionState) {
@@ -26,4 +26,7 @@ class MissionDataManager: MissionDataManagerInputProtocol {
         }
     }
     
+    func editMission(with mission: Mission) {
+        MissionCoreData.shared.addOrUpdate(mission: mission)
+    }
 }

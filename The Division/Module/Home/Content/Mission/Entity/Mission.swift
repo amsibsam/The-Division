@@ -9,6 +9,7 @@
 import Foundation
 
 struct Mission {
+    var id: String = ""
     var name: String = ""
     var description: String = ""
     var state: MissionState = .New
@@ -16,7 +17,8 @@ struct Mission {
     var avatarURL: URL? = nil
     var assignee: Member? = nil
     
-    init(name: String, description: String, state: MissionState) {
+    init(id: String, name: String, description: String, state: MissionState) {
+        self.id = id
         self.name = name
         self.description = description
         self.state = state

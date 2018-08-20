@@ -11,7 +11,7 @@
 import UIKit
 
 class MissionPresenter: MissionPresenterProtocol {
-
+  
     weak private var view: MissionViewProtocol?
     var interactor: MissionInteractorInputProtocol?
     private let router: MissionWireframeProtocol
@@ -29,6 +29,11 @@ class MissionPresenter: MissionPresenterProtocol {
     func getMission(with state: MissionState) {
         interactor?.getMission(with: state)
     }
+
+    func editMission(with mission: Mission) {
+        interactor?.editMission(with: mission)
+    }
+    
 
 }
 

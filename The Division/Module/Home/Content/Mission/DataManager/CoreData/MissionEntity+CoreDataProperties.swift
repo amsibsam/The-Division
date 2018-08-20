@@ -20,5 +20,6 @@ extension MissionEntity {
     @NSManaged public var name: String
     @NSManaged public var missionDescription: String?
     @NSManaged public var state: String?
+    @NSManaged public var id: String
 
 }

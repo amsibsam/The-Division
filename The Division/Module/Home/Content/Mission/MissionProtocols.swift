@@ -22,6 +22,7 @@ protocol MissionPresenterProtocol: class {
     /* ViewController -> Peresenter */
     func getMission(with state: MissionState)
     func createMission(with name: String, description: String)
+    func editMission(with mission: Mission)
 }
 
 //MARK: Interactor -
@@ -37,6 +38,7 @@ protocol MissionInteractorInputProtocol: class {
     var presenter: MissionInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func editMission(with mission: Mission)
     func getMission(with state: MissionState)
     func createMission(with name: String, description: String)
 }
@@ -56,6 +58,7 @@ protocol MissionDataManagerInputProtocol: class {
     var interactor: MissionDataManagerOutputProtocol? { get set }
     
     /* Interactor -> DataManager */
+    func editMission(with mission: Mission)
     func getMission(with state: MissionState)
     func createMission(with name: String, description: String)
 }
