@@ -65,6 +65,8 @@
 		8E8823BE212A58870068C718 /* NSManagedObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823BD212A58870068C718 /* NSManagedObject+Helper.swift */; };
 		8E8823C0212A59410068C718 /* MissionCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823BF212A59410068C718 /* MissionCoreData.swift */; };
 		8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */; };
+		8E8823D7212A764C0068C718 /* MissionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */; };
+		8E8823D8212A764C0068C718 /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823D6212A764C0068C718 /* MissionEntity+CoreDataProperties.swift */; };
 		8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD02122CF360037BADB /* TeamInteractor.swift */; };
 		8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD12122CF360037BADB /* TeamPresenter.swift */; };
 		8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD22122CF360037BADB /* TeamProtocols.swift */; };
@@ -150,6 +152,8 @@
 		8E8823BD212A58870068C718 /* NSManagedObject+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Helper.swift"; sourceTree = "<group>"; };
 		8E8823BF212A59410068C718 /* MissionCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCoreData.swift; sourceTree = "<group>"; };
 		8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoreData.swift; sourceTree = "<group>"; };
+		8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8E8823D6212A764C0068C718 /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8EE92DD02122CF360037BADB /* TeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		8EE92DD12122CF360037BADB /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
 		8EE92DD22122CF360037BADB /* TeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProtocols.swift; sourceTree = "<group>"; };
@@ -437,8 +441,8 @@
 		8E87FAD72125666C00C8AD47 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				8E8823C4212A733F0068C718 /* CoreData */,
 				8E87FAD82125668400C8AD47 /* MissionDataManager.swift */,
-				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -457,6 +461,16 @@
 				8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		8E8823C4212A733F0068C718 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */,
+				8E8823D6212A764C0068C718 /* MissionEntity+CoreDataProperties.swift */,
+				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		8EE92DCF2122CED30037BADB /* Content */ = {
@@ -648,6 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8823D8212A764C0068C718 /* MissionEntity+CoreDataProperties.swift in Sources */,
 				8E87FAAB21250C2700C8AD47 /* MissionCell.swift in Sources */,
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
@@ -687,6 +702,7 @@
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
+				8E8823D7212A764C0068C718 /* MissionEntity+CoreDataClass.swift in Sources */,
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,
 				8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */,
 				8EE92DDA2122CF360037BADB /* TeamViewController.swift in Sources */,

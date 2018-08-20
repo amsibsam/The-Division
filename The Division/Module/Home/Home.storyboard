@@ -19,10 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-uB-4sA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-uB-4sA">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBb-Be-l8B">
+                                        <rect key="frame" x="302" y="172" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TBb-Be-l8B" firstAttribute="leading" secondItem="JfD-uB-4sA" secondAttribute="leading" constant="302" id="62o-UH-F7f"/>
+                                    <constraint firstAttribute="trailing" secondItem="TBb-Be-l8B" secondAttribute="trailing" constant="319" id="Xq0-Oz-hFN"/>
+                                    <constraint firstAttribute="bottom" secondItem="TBb-Be-l8B" secondAttribute="bottom" constant="173" id="fAe-an-sZn"/>
+                                    <constraint firstItem="TBb-Be-l8B" firstAttribute="top" secondItem="JfD-uB-4sA" secondAttribute="top" constant="172" id="hS5-dO-g4w"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h7e-Ya-i06">
                                 <rect key="frame" x="-275" y="0.0" width="275" height="375"/>
@@ -46,9 +57,13 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="JfD-uB-4sA" firstAttribute="leading" secondItem="h7e-Ya-i06" secondAttribute="trailing" id="01M-O2-8Rq"/>
+                            <constraint firstItem="JfD-uB-4sA" firstAttribute="bottom" secondItem="LlN-6m-2ri" secondAttribute="bottom" id="9vT-hu-Jbe"/>
                             <constraint firstItem="h7e-Ya-i06" firstAttribute="top" secondItem="LlN-6m-2ri" secondAttribute="top" id="EKt-Go-O5t"/>
                             <constraint firstItem="h7e-Ya-i06" firstAttribute="leading" secondItem="LlN-6m-2ri" secondAttribute="leading" constant="-275" id="QMB-3I-wLd"/>
+                            <constraint firstItem="JfD-uB-4sA" firstAttribute="top" secondItem="LlN-6m-2ri" secondAttribute="top" id="kDo-C1-Siu"/>
                             <constraint firstItem="h7e-Ya-i06" firstAttribute="bottom" secondItem="LlN-6m-2ri" secondAttribute="bottom" id="kzz-xJ-xvF"/>
+                            <constraint firstItem="JfD-uB-4sA" firstAttribute="trailing" secondItem="LlN-6m-2ri" secondAttribute="trailing" id="sqh-Qy-ILA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LlN-6m-2ri"/>
                         <connections>

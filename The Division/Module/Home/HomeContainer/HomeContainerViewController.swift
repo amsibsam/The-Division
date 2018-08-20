@@ -32,7 +32,10 @@ class HomeContainerViewController: LandscapeViewController {
         super.viewDidLoad()
         setupTableView()
         presenter?.getMenuItem()
-        displaySelectedMenu()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.displaySelectedMenu()
     }
     
     @objc func closeMenuAction(_ sender: UIPanGestureRecognizer) {

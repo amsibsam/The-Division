@@ -1,4 +1,4 @@
-//
+    //
 //  MissionViewController.swift
 //  The Division
 //
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MissionViewController: UIViewController {
+class MissionViewController: LandscapeViewController {
     @IBOutlet var tableViewMission: UITableView!
     
 	var presenter: MissionPresenterProtocol?
@@ -28,6 +28,25 @@ class MissionViewController: UIViewController {
         tableViewMission.dataSource = self
         tableViewMission.tableFooterView = UIView()
         tableViewMission.estimatedRowHeight = UITableViewAutomaticDimension
+    }
+    
+    private func displayAddMissionAlert() {
+        let addMissionAlert = UIAlertController(title: "Add Mission", message: nil, preferredStyle: .alert)
+        
+        addMissionAlert.addTextField { (tf) in
+            tf.placeholder = "Mission Name.."
+        }
+        addMissionAlert.addTextField { (tf) in
+            tf.placeholder = "Mission Description"
+        }
+        
+        addMissionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        addMissionAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (action) in
+            if let name = addMissionAlert.textFields?[0].text, let description = addMissionAlert.textFields?[1].text {
+                self.presenter?.createMission(with: name, description: description)
+            }
+        }))
+        present(addMissionAlert, animated: true, completion: nil)
     }
     
 }
@@ -54,8 +73,7 @@ extension MissionViewController: UITableViewDataSource {
         
         header.bindDataToView(in: .Mission, with: missionState.rawValue, and: missions.count)
         header.onAddDidTap = {
-            print("add did tap")
-            self.presenter?.createMission(with: "Test mission", description: "ini descriptionnya")
+            self.displayAddMissionAlert()
         }
         
         return header
@@ -77,7 +95,7 @@ extension MissionViewController: UITableViewDelegate {
 
 extension MissionViewController: MissionViewProtocol {
     func onCreateMissionSucceeded(with mission: Mission) {
-        self.missions.append(mission)
+        self.missions.insert(mission, at: 0)
         tableViewMission.beginUpdates()
         tableViewMission.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
         tableViewMission.endUpdates()

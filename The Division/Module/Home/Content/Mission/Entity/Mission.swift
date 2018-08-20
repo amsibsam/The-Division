@@ -11,12 +11,14 @@ import Foundation
 struct Mission {
     var name: String = ""
     var description: String = ""
+    var state: MissionState = .New
     var progress: Int = 0
     var avatarURL: URL? = nil
     var assignee: Member? = nil
     
-    init(name: String, description: String) {
+    init(name: String, description: String, state: MissionState) {
         self.name = name
         self.description = description
+        self.state = state
     }
 }

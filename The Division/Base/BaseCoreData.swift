@@ -16,15 +16,4 @@ class BaseCoreData {
     init() {
         managedContext = UIApplication.appDelegate.persistentContainer.viewContext
     }
-    
-    func fetch(entityName: String) -> [NSManagedObject]? {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
-        
-        do {
-            return try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("error fetch core data \(error)")
-            return nil
-        }
-    }
 }
