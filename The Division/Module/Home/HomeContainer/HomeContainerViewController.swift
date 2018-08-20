@@ -60,7 +60,7 @@ class HomeContainerViewController: LandscapeViewController {
         
     }
     
-    private func displaySelectedMenu(section: Int = 0, divisionType: TeamDivision = .Transportation, missionType: String = "") {
+    private func displaySelectedMenu(section: Int = 1, divisionType: TeamDivision = .Transportation, missionType: MissionState = .New) {
         // clear the container first
         viewContainer.subviews.first?.removeFromSuperview()
         if section == 0 {
@@ -68,7 +68,9 @@ class HomeContainerViewController: LandscapeViewController {
             addChildViewController(teamVC)
             viewContainer.addSubview(teamVC.view)
         } else {
-            // MARK: TODO configure mission menu
+            let missionVC = MissionRouter.createModule(with: missionType)
+            addChildViewController(missionVC)
+            viewContainer.addSubview(missionVC.view)
         }
     }
     
@@ -160,6 +162,8 @@ extension HomeContainerViewController: UITableViewDelegate {
         let menuItem = menuItems[indexPath.section][indexPath.row]
         if let divisionType = TeamDivision(rawValue: menuItem.name) {
             displaySelectedMenu(section: indexPath.section, divisionType: divisionType)
+        } else if let missionState = MissionState(rawValue: menuItem.name) {
+            displaySelectedMenu(section: indexPath.section, missionType: missionState)
         }
     }
 }

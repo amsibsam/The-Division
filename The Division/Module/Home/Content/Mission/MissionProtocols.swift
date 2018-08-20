@@ -21,6 +21,7 @@ protocol MissionPresenterProtocol: class {
     
     /* ViewController -> Peresenter */
     func getMission(with state: MissionState)
+    func createMission(with name: String, description: String)
 }
 
 //MARK: Interactor -
@@ -28,6 +29,7 @@ protocol MissionInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func onGetMissionSucceeded(with missions: [Mission])
+    func onCreateMissionSucceeded(with mission: Mission)
 }
 
 protocol MissionInteractorInputProtocol: class {
@@ -36,6 +38,7 @@ protocol MissionInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getMission(with state: MissionState)
+    func createMission(with name: String, description: String)
 }
 
 //MARK: View -
@@ -45,6 +48,7 @@ protocol MissionViewProtocol: class {
 
     /* Presenter -> ViewController */
     func onGetMissionSucceeded(with missions: [Mission])
+    func onCreateMissionSucceeded(with mission: Mission)
 }
 
 //MARK: DataManager -
@@ -53,15 +57,17 @@ protocol MissionDataManagerInputProtocol: class {
     
     /* Interactor -> DataManager */
     func getMission(with state: MissionState)
+    func createMission(with name: String, description: String)
 }
 
 protocol MissionDataManagerOutputProtocol: class {
     /* DataManager -> Interactor */
     func onGetMissionSucceeded(with missions: [Mission])
+    func onCreateMissionSucceeded(with mission: Mission)
 }
 
 public enum MissionState: String {
-    case InProgress
-    case New
-    case Finished
+    case InProgress = "In Progress"
+    case New = "New"
+    case Finished = "Finished"
 }

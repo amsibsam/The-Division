@@ -22,7 +22,21 @@ class ContentHeaderCell: UITableViewCell {
         onAddDidTap()
     }
     
-    func bindDataToView(with title: String, and count: Int) {
-        lbName.text = "\(title) (\(count) agent)"
+    func bindDataToView(in type: MenuType, with title: String, and count: Int) {
+        switch type {
+        case .Mission:
+            lbName.text = "\(title) mission (\(count) mission)"
+        case .Team:
+            lbName.text = "\(title) (\(count) agent)"
+        }
+        
+        if title.lowercased() == "in progress" || title.lowercased() == "finished" {
+            btnAdd.isHidden = true
+        }
     }
+}
+
+enum MenuType: String {
+    case Team
+    case Mission
 }

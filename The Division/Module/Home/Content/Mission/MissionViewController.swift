@@ -11,17 +11,80 @@
 import UIKit
 
 class MissionViewController: UIViewController {
-
+    @IBOutlet var tableViewMission: UITableView!
+    
 	var presenter: MissionPresenterProtocol?
+    var missionState: MissionState!
+    var missions: [Mission] = []
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        presenter?.getMission(with: missionState)
     }
+    
+    private func setupTableView() {
+        tableViewMission.delegate = self
+        tableViewMission.dataSource = self
+        tableViewMission.tableFooterView = UIView()
+        tableViewMission.estimatedRowHeight = UITableViewAutomaticDimension
+    }
+    
+}
 
+extension MissionViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return missions.count
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "ContentHeaderCell") as! ContentHeaderCell
+        
+        header.bindDataToView(in: .Mission, with: missionState.rawValue, and: missions.count)
+        header.onAddDidTap = {
+            print("add did tap")
+            self.presenter?.createMission(with: "Test mission", description: "ini descriptionnya")
+        }
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let mission = missions[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MissionCell", for: indexPath) as! MissionCell
+        cell.bindDataToView(with: mission)
+        return cell
+    }
+}
+
+extension MissionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension MissionViewController: MissionViewProtocol {
+    func onCreateMissionSucceeded(with mission: Mission) {
+        self.missions.append(mission)
+        tableViewMission.beginUpdates()
+        tableViewMission.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
+        tableViewMission.endUpdates()
+    }
+    
     func onGetMissionSucceeded(with missions: [Mission]) {
-        
+        self.missions.append(contentsOf: missions)
+        tableViewMission.reloadData()
     }
 }

@@ -12,15 +12,8 @@ class MissionCell: UITableViewCell {
     @IBOutlet var ivMission: UIImageView!
     @IBOutlet var lbName: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func bindDataToView(with mission: Mission) {
+        lbName.text = mission.name
     }
 
 }

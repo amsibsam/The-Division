@@ -87,7 +87,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faA-RK-7vu">
                                         <rect key="frame" x="20" y="117" width="627" height="232"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJY-Fs-1Se">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJY-Fs-1Se">
                                                 <rect key="frame" x="8" y="0.0" width="611" height="232"/>
                                                 <color key="backgroundColor" red="0.18601027370000001" green="0.18577088410000001" blue="0.10950189940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <prototypes>
@@ -95,7 +95,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="611" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQG-Kz-Rz7" id="gLN-5B-sa5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="611" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="611" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In progress Mission (3 missions)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN8-D3-jt6">
@@ -150,7 +150,7 @@
                                                         <rect key="frame" x="0.0" y="72" width="611" height="73"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JWL-HW-4ES" id="Fcr-SX-Gph">
-                                                            <rect key="frame" x="0.0" y="0.0" width="611" height="72.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="611" height="73"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E2S-uH-mcu">
@@ -175,6 +175,7 @@
                                                                 <constraint firstItem="E2S-uH-mcu" firstAttribute="leading" secondItem="Fcr-SX-Gph" secondAttribute="leading" constant="15" id="4tN-ZB-Jv9"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="gqi-g3-cYo" secondAttribute="trailing" constant="15" id="BN5-eq-Ehx"/>
                                                                 <constraint firstItem="gqi-g3-cYo" firstAttribute="centerY" secondItem="E2S-uH-mcu" secondAttribute="centerY" id="Nnl-uQ-Lso"/>
+                                                                <constraint firstItem="E2S-uH-mcu" firstAttribute="top" secondItem="Fcr-SX-Gph" secondAttribute="top" constant="9" id="QzL-3f-GVJ"/>
                                                                 <constraint firstItem="gqi-g3-cYo" firstAttribute="leading" secondItem="E2S-uH-mcu" secondAttribute="trailing" constant="8" id="SD5-Kb-Gw3"/>
                                                                 <constraint firstItem="E2S-uH-mcu" firstAttribute="centerY" secondItem="Fcr-SX-Gph" secondAttribute="centerY" id="vol-hn-ecj"/>
                                                             </constraints>
@@ -258,6 +259,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NjO-YY-q3F"/>
                     </view>
+                    <connections>
+                        <outlet property="tableViewMission" destination="rJY-Fs-1Se" id="7IS-kK-onW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ear-0i-d2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

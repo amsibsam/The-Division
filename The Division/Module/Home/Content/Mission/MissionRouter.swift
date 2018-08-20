@@ -14,14 +14,18 @@ class MissionRouter: MissionWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(with state: MissionState) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.Mission.rawValue) as! MissionViewController
+        view.missionState = state
         let interactor = MissionInteractor()
         let router = MissionRouter()
+        let dataManager = MissionDataManager()
         let presenter = MissionPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
+        dataManager.interactor = interactor
+        interactor.dataManager = dataManager
         interactor.presenter = presenter
         router.viewController = view
 

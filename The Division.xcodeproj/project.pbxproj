@@ -61,6 +61,10 @@
 		8E87FAD5212563A100C8AD47 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FACF212563A100C8AD47 /* MissionViewController.swift */; };
 		8E87FAD92125668400C8AD47 /* MissionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FAD82125668400C8AD47 /* MissionDataManager.swift */; };
 		8E87FADC2125675B00C8AD47 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87FADB2125675B00C8AD47 /* Mission.swift */; };
+		8E8823BC212A57170068C718 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823BB212A57170068C718 /* CoreDataHelper.swift */; };
+		8E8823BE212A58870068C718 /* NSManagedObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823BD212A58870068C718 /* NSManagedObject+Helper.swift */; };
+		8E8823C0212A59410068C718 /* MissionCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823BF212A59410068C718 /* MissionCoreData.swift */; };
+		8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */; };
 		8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD02122CF360037BADB /* TeamInteractor.swift */; };
 		8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD12122CF360037BADB /* TeamPresenter.swift */; };
 		8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE92DD22122CF360037BADB /* TeamProtocols.swift */; };
@@ -142,6 +146,10 @@
 		8E87FACF212563A100C8AD47 /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
 		8E87FAD82125668400C8AD47 /* MissionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDataManager.swift; sourceTree = "<group>"; };
 		8E87FADB2125675B00C8AD47 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		8E8823BB212A57170068C718 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		8E8823BD212A58870068C718 /* NSManagedObject+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Helper.swift"; sourceTree = "<group>"; };
+		8E8823BF212A59410068C718 /* MissionCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCoreData.swift; sourceTree = "<group>"; };
+		8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoreData.swift; sourceTree = "<group>"; };
 		8EE92DD02122CF360037BADB /* TeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		8EE92DD12122CF360037BADB /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
 		8EE92DD22122CF360037BADB /* TeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProtocols.swift; sourceTree = "<group>"; };
@@ -202,10 +210,11 @@
 		8E4B01CD212118ED00986215 /* The Division */ = {
 			isa = PBXGroup;
 			children = (
+				8E4B01F4212121D500986215 /* GlobalDataManager */,
+				8E4B01F52121220E00986215 /* SupportFile */,
+				8E8823C3212A5AE00068C718 /* Base */,
 				8E4B02122121243500986215 /* Extensions */,
 				8E4B02112121242F00986215 /* Utils */,
-				8E4B01F52121220E00986215 /* SupportFile */,
-				8E4B01F4212121D500986215 /* GlobalDataManager */,
 				8E4B01F32121218500986215 /* Module */,
 				8E4B01CE212118ED00986215 /* AppDelegate.swift */,
 				8E4B01DA212118F800986215 /* LaunchScreen.storyboard */,
@@ -303,6 +312,7 @@
 				8E766BD22122A09300A76E15 /* UITextField+Padding.swift */,
 				8E87FAA12125022A00C8AD47 /* UIViewController+gesture.swift */,
 				8E87FAC92125540200C8AD47 /* UIImageView+AsyncLoad.swift */,
+				8E8823BD212A58870068C718 /* NSManagedObject+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				8E4B02182121289200986215 /* DataCacheManager.swift */,
+				8E8823BB212A57170068C718 /* CoreDataHelper.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -427,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				8E87FAD82125668400C8AD47 /* MissionDataManager.swift */,
+				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -437,6 +449,14 @@
 				8E87FADB2125675B00C8AD47 /* Mission.swift */,
 			);
 			path = Mission;
+			sourceTree = "<group>";
+		};
+		8E8823C3212A5AE00068C718 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		8EE92DCF2122CED30037BADB /* Content */ = {
@@ -634,15 +654,18 @@
 				8E87FAD5212563A100C8AD47 /* MissionViewController.swift in Sources */,
 				8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */,
 				8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */,
+				8E8823BC212A57170068C718 /* CoreDataHelper.swift in Sources */,
 				8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */,
 				8E87FAA921250C1900C8AD47 /* TeamMemberCell.swift in Sources */,
 				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
+				8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */,
 				8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
 				8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */,
+				8E8823BE212A58870068C718 /* NSManagedObject+Helper.swift in Sources */,
 				8E87FAD1212563A100C8AD47 /* MissionInteractor.swift in Sources */,
 				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
 				8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */,
@@ -679,6 +702,7 @@
 				8E87FADC2125675B00C8AD47 /* Mission.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
 				8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */,
+				8E8823C0212A59410068C718 /* MissionCoreData.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,
 				8EE92DD92122CF360037BADB /* TeamRouter.swift in Sources */,
 			);

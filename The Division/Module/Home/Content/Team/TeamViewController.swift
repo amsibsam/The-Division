@@ -52,7 +52,7 @@ extension TeamViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "ContentHeaderCell") as! ContentHeaderCell
 
-        header.bindDataToView(with: teamDivision.rawValue, and: members.count)
+        header.bindDataToView(in: .Team, with: teamDivision.rawValue, and: members.count)
         header.onAddDidTap = {
             print("add did tap")
         }
