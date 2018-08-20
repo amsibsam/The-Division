@@ -21,19 +21,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-uB-4sA">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBb-Be-l8B">
-                                        <rect key="frame" x="302" y="172" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="TBb-Be-l8B" firstAttribute="leading" secondItem="JfD-uB-4sA" secondAttribute="leading" constant="302" id="62o-UH-F7f"/>
-                                    <constraint firstAttribute="trailing" secondItem="TBb-Be-l8B" secondAttribute="trailing" constant="319" id="Xq0-Oz-hFN"/>
-                                    <constraint firstAttribute="bottom" secondItem="TBb-Be-l8B" secondAttribute="bottom" constant="173" id="fAe-an-sZn"/>
-                                    <constraint firstItem="TBb-Be-l8B" firstAttribute="top" secondItem="JfD-uB-4sA" secondAttribute="top" constant="172" id="hS5-dO-g4w"/>
-                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h7e-Ya-i06">
                                 <rect key="frame" x="-275" y="0.0" width="275" height="343"/>
@@ -297,7 +285,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMJ-2p-uYb">
                                         <rect key="frame" x="53" y="8" width="112" height="156"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOH-jm-aCw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOH-jm-aCw">
                                                 <rect key="frame" x="5" y="3" width="102" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="zTe-lg-KYE"/>
@@ -307,8 +295,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhU-Jr-hF8">
-                                                <rect key="frame" x="5" y="132" width="102" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="5" y="132" width="102" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -349,7 +337,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM8-DJ-28a">
-                                                <rect key="frame" x="8" y="43" width="605" height="83"/>
+                                                <rect key="frame" x="8" y="43" width="605" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="3K9-Ry-52J"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -364,7 +355,7 @@
                                             <constraint firstItem="QM8-DJ-28a" firstAttribute="leading" secondItem="9Bp-8i-8Oc" secondAttribute="leading" constant="8" id="Zxs-ET-xw4"/>
                                             <constraint firstItem="WGh-6k-vhz" firstAttribute="leading" secondItem="9Bp-8i-8Oc" secondAttribute="leading" constant="8" id="h33-pc-7O0"/>
                                             <constraint firstAttribute="trailing" secondItem="WGh-6k-vhz" secondAttribute="trailing" constant="8" id="i7j-Xb-psm"/>
-                                            <constraint firstAttribute="bottom" secondItem="QM8-DJ-28a" secondAttribute="bottom" constant="2" id="sPF-4b-kGV"/>
+                                            <constraint firstAttribute="bottom" secondItem="QM8-DJ-28a" secondAttribute="bottom" priority="250" constant="2" id="sPF-4b-kGV"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -466,6 +457,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="v5g-Yz-4Ox"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="ivAgentAvatar" destination="dBO-re-wy3" id="eJe-Rf-wh8"/>
+                        <outlet property="lbAgentName" destination="VhU-Jr-hF8" id="ScE-UK-lon"/>
+                        <outlet property="lbMisisonProgress" destination="gYN-qA-zrV" id="Thv-Yl-CDc"/>
+                        <outlet property="lbMissionDescription" destination="QM8-DJ-28a" id="5CH-RO-3uz"/>
+                        <outlet property="lbMissionName" destination="WGh-6k-vhz" id="tlP-Jf-Pp7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6d-59-JK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

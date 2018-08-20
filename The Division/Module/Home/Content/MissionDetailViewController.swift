@@ -11,11 +11,24 @@
 import UIKit
 
 class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
-
+    
+    @IBOutlet var ivAgentAvatar: UIImageView!
+    @IBOutlet var lbAgentName: UILabel!
+    @IBOutlet var lbMissionName: UILabel!
+    @IBOutlet var lbMissionDescription: UILabel!
+    @IBOutlet var lbMisisonProgress: UILabel!
+    
 	var presenter: MissionDetailPresenterProtocol?
+    var mission: Mission!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        bindDataToView()
     }
 
+    private func bindDataToView() {
+        //MARK: TODO render avatar and agent data
+        lbMissionName.text = mission.name
+        lbMissionDescription.text = mission.description
+    }
 }

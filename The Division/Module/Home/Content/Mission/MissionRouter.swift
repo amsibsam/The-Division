@@ -17,7 +17,6 @@ class MissionRouter: MissionWireframeProtocol {
     static func createModule(with state: MissionState) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let navigation = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: Navigation.Mission.rawValue)
-        navigation.navigationController?.navigationBar.tintColor = .black
         if let view = navigation.childViewControllers.first as? MissionViewController {
             view.missionState = state
             let interactor = MissionInteractor()
@@ -37,8 +36,8 @@ class MissionRouter: MissionWireframeProtocol {
         return UIViewController()
     }
     
-    func openMissionDetail(from view: MissionViewProtocol) {
-        let missionDetailVC = MissionDetailRouter.createModule()
+    func openMissionDetail(from view: MissionViewProtocol, with mission: Mission) {
+        let missionDetailVC = MissionDetailRouter.createModule(with: mission)
         if let sourceView = view as? UIViewController {
             sourceView.navigationController?.pushViewController(missionDetailVC, animated: true)
         }

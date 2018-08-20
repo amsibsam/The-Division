@@ -102,7 +102,7 @@ extension MissionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if missionState == .New {
-            presenter?.openMissionDetail(from: self)
+            presenter?.openMissionDetail(from: self, with: missions[indexPath.row])
         }
     }
 }
