@@ -17,13 +17,21 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
     @IBOutlet var lbMissionName: UILabel!
     @IBOutlet var lbMissionDescription: UILabel!
     @IBOutlet var lbMisisonProgress: UILabel!
+    @IBOutlet var viewMissionDetailContainer: UIView!
     
 	var presenter: MissionDetailPresenterProtocol?
     var mission: Mission!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         bindDataToView()
+    }
+    
+    private func setupUI() {
+        viewMissionDetailContainer.layer.shadowOpacity = 0.7
+        viewMissionDetailContainer.layer.shadowColor = UIColor.yellow.cgColor
+        viewMissionDetailContainer.layer.shadowRadius = 10
     }
 
     private func bindDataToView() {

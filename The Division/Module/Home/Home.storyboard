@@ -463,6 +463,7 @@
                         <outlet property="lbMisisonProgress" destination="gYN-qA-zrV" id="Thv-Yl-CDc"/>
                         <outlet property="lbMissionDescription" destination="QM8-DJ-28a" id="5CH-RO-3uz"/>
                         <outlet property="lbMissionName" destination="WGh-6k-vhz" id="tlP-Jf-Pp7"/>
+                        <outlet property="viewMissionDetailContainer" destination="9Bp-8i-8Oc" id="zLX-Bk-zIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6d-59-JK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
