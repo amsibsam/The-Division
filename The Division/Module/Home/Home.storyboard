@@ -510,7 +510,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-MN-mNf">
-                                        <rect key="frame" x="238" y="230" width="91" height="30"/>
+                                        <rect key="frame" x="329" y="230" width="91" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="65k-M6-oIZ"/>
                                             <constraint firstAttribute="width" constant="91" id="asa-mJ-Gvp"/>
@@ -541,15 +541,39 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysk-O0-xeT">
+                                        <rect key="frame" x="147" y="230" width="91" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="RZS-8j-tj3"/>
+                                            <constraint firstAttribute="width" constant="91" id="Vg3-yB-giN"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.060063488579999998" green="0.57886446439999995" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancel:" destination="hXs-rk-lAJ" eventType="touchUpInside" id="A10-EL-sMz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Ysk-O0-xeT" firstAttribute="centerX" secondItem="Y4W-ul-jQl" secondAttribute="centerX" constant="-91" id="3Kf-PX-QsI"/>
+                                    <constraint firstItem="Ysk-O0-xeT" firstAttribute="top" secondItem="1Xe-MN-mNf" secondAttribute="top" id="4BC-qX-OvD"/>
                                     <constraint firstItem="1Xe-MN-mNf" firstAttribute="top" secondItem="TyJ-h9-rQS" secondAttribute="bottom" constant="70" id="4c4-Aj-Dtl"/>
                                     <constraint firstItem="IX1-Wr-ZY8" firstAttribute="top" secondItem="wxU-1k-rqo" secondAttribute="bottom" constant="8" id="Bxk-h6-EwT"/>
                                     <constraint firstItem="wxU-1k-rqo" firstAttribute="centerX" secondItem="Y4W-ul-jQl" secondAttribute="centerX" constant="-130" id="EVy-UR-v7i"/>
                                     <constraint firstItem="ItP-ft-wYL" firstAttribute="leading" secondItem="wxU-1k-rqo" secondAttribute="trailing" constant="29" id="MNR-dr-jB6"/>
                                     <constraint firstItem="wxU-1k-rqo" firstAttribute="top" secondItem="Y4W-ul-jQl" secondAttribute="top" constant="53" id="QXh-qU-mEh"/>
-                                    <constraint firstItem="1Xe-MN-mNf" firstAttribute="centerX" secondItem="Y4W-ul-jQl" secondAttribute="centerX" id="Rt1-q0-Fmb"/>
+                                    <constraint firstItem="1Xe-MN-mNf" firstAttribute="centerX" secondItem="Y4W-ul-jQl" secondAttribute="centerX" constant="91" id="Rt1-q0-Fmb"/>
                                     <constraint firstItem="IX1-Wr-ZY8" firstAttribute="centerX" secondItem="wxU-1k-rqo" secondAttribute="centerX" id="WF9-ya-igv"/>
                                     <constraint firstItem="ItP-ft-wYL" firstAttribute="top" secondItem="Y4W-ul-jQl" secondAttribute="top" constant="75" id="cgc-7H-X9e"/>
                                     <constraint firstItem="TyJ-h9-rQS" firstAttribute="leading" secondItem="wxU-1k-rqo" secondAttribute="trailing" constant="29" id="jWm-tG-sFW"/>

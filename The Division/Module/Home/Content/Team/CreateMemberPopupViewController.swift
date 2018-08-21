@@ -48,6 +48,9 @@ class CreateMemberPopupViewController: LandscapeViewController {
         }
     }
     
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     //MARK: private function
     private func setupUI() {
         let tapGestureAvatar = UITapGestureRecognizer(target: self, action: #selector(CreateMemberPopupViewController.didTapAvatar))
