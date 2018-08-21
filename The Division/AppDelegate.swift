@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             IntroRouter.createModuleAsRoot()
         }
+        
+        IQKeyboardManager.shared().isEnabled = true
         return true
     }
 
