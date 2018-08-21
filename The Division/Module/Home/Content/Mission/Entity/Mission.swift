@@ -24,3 +24,9 @@ struct Mission {
         self.state = state
     }
 }
+
+public enum MissionState: String {
+    case InProgress = "In Progress"
+    case New = "New"
+    case Finished = "Finished"
+}

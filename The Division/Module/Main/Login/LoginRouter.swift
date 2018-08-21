@@ -39,4 +39,8 @@ class LoginRouter: LoginWireframeProtocol {
     static func createModuleAsRoot() {
         UIApplication.appDelegate.window?.rootViewController = createModule()
     }
+    
+    func goToHome() {
+        UIApplication.appDelegate.window?.rootViewController = HomeContainerRouter.createModule()
+    }
 }

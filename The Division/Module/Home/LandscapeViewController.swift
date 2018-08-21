@@ -12,9 +12,12 @@ class LandscapeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let value = UIInterfaceOrientationMask.landscape.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+        setLandscapeOrientation()
         // Do any additional setup after loading the view.
     }
 
+    func setLandscapeOrientation() {
+        let value = UIInterfaceOrientationMask.landscape.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+    }
 }

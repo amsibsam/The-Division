@@ -16,12 +16,15 @@ class MissionCoreData: BaseCoreData {
     private let MISSION_DESCRIPTION = "missionDescription"
     private let MISSION_STATE = "state"
     
+    override private init() { }
+    
     func add(mission: Mission) {
         let missionEntity = MissionEntity(entity: MissionEntity.entity(), insertInto: managedContext)
         missionEntity.id = mission.id
         missionEntity.name = mission.name
         missionEntity.missionDescription = mission.description
         missionEntity.state = mission.state.rawValue
+//        missionEntity.pic = TeamCoreData.shared.
         
         save()
     }
@@ -44,7 +47,7 @@ class MissionCoreData: BaseCoreData {
             let filteredEntity = try managedContext.fetch(fetchRequest)
             
             if let filterEntityResult = filteredEntity.first {
-                let result: Mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.description, state: MissionState(rawValue: filterEntityResult.state!)!)
+                let result: Mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.description, state: MissionState(rawValue: filterEntityResult.state)!)
                 
                 return result
             }
@@ -64,7 +67,7 @@ class MissionCoreData: BaseCoreData {
             let filteredEntity: [MissionEntity] = try managedContext.fetch(request)
             
             let filteredMission: [Mission] = filteredEntity.map { (missionEntity) -> Mission in
-                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state!)!)
+                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state)!)
             }
 
             return filteredMission
@@ -78,7 +81,7 @@ class MissionCoreData: BaseCoreData {
         do {
             let missionEntities: [MissionEntity] = try managedContext.fetch(MissionEntity.fetchRequest())
             let result: [Mission] = missionEntities.map({ (missionEntity) -> Mission in
-                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state!)!)
+                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state)!)
             })
             
             return result

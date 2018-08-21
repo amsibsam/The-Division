@@ -12,7 +12,8 @@ import Foundation
 
 //MARK: Wireframe -
 protocol TeamWireframeProtocol: class {
-
+    /* Presenter -> Router */
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ())
 }
 //MARK: Presenter -
 protocol TeamPresenterProtocol: class {
@@ -21,6 +22,8 @@ protocol TeamPresenterProtocol: class {
     
     /* ViewController -> Presenter */
     func getTeamMember(on team: TeamDivision)
+    func addMember(with name: String, on team: TeamDivision, avatarUrl: String?)
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ())
 }
 
 //MARK: Interactor -
@@ -28,6 +31,7 @@ protocol TeamInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func onGetMemberSucceeded(with members: [Member])
+    func onSuccessAddMember(with member: Member)
 }
 
 protocol TeamInteractorInputProtocol: class {
@@ -37,6 +41,7 @@ protocol TeamInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getTeamMember(on team: TeamDivision)
+    func addMember(with member: Member)
 }
 
 //MARK: View -
@@ -46,6 +51,7 @@ protocol TeamViewProtocol: class {
 
     /* Presenter -> ViewController */
     func onGetMemberSucceeded(with members: [Member])
+    func onSuccessAddMember(with member: Member)
 }
 
 //MARK: DataManager -
@@ -54,10 +60,12 @@ protocol TeamDataManagerInputProtocol: class {
     
     /* Interactor -> DataManager */
     func getTeamMember(on team: TeamDivision)
+    func addMember(with member: Member)
 }
 
 protocol TeamDataManagerOutputProtocol : class {
     
     /* DataManager -> Interactor */
     func onGetMemberSucceeded(with members: [Member])
+    func onSuccessAddMember(with member: Member)
 }

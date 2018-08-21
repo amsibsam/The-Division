@@ -50,7 +50,6 @@ extension LoginViewController: LoginViewProtocol {
     }
     
     func showLoginSucceeded() {
-        let homeVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: "HomeContainerViewController")
-        UIApplication.appDelegate.window?.rootViewController = homeVC
+        presenter?.goToHome()
     }
 }

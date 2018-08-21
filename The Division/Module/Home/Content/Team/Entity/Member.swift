@@ -9,7 +9,16 @@
 import Foundation
 
 struct Member {
+    let id: String
     let name: String
+    let division: TeamDivision
     let missionCount: Int
-    let avatarURL: URL
+    var avatarURL: URL?
+}
+
+public enum TeamDivision: String {
+    case Transportation = "Transportation"
+    case Acara = "Acara"
+    case Keamanan = "Keamanan"
+    case Perlengkapan = "Perlengkapan"
 }

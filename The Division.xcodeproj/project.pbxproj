@@ -36,6 +36,11 @@
 		8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B022621215CC300986215 /* LoginViewController.swift */; };
 		8E4B02302121629200986215 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B022F2121629200986215 /* Home.storyboard */; };
 		8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B0234212173FF00986215 /* LoginDataManager.swift */; };
+		8E58BE31212BA85000CA7CF6 /* MemberEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BE2F212BA84F00CA7CF6 /* MemberEntity+CoreDataClass.swift */; };
+		8E58BE34212BA95700CA7CF6 /* TeamCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BE33212BA95700CA7CF6 /* TeamCoreData.swift */; };
+		8E58BE48212BC3CD00CA7CF6 /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BE46212BC3CD00CA7CF6 /* MemberEntity+CoreDataProperties.swift */; };
+		8E58BE4B212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BE4A212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift */; };
+		8E58BE4F212C015B00CA7CF6 /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BE4D212C015B00CA7CF6 /* MissionEntity+CoreDataProperties.swift */; };
 		8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC221226FED00A76E15 /* HUDUtils.swift */; };
 		8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC5212278F000A76E15 /* HomeContainerInteractor.swift */; };
 		8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E766BC6212278F000A76E15 /* HomeContainerPresenter.swift */; };
@@ -66,7 +71,6 @@
 		8E8823C0212A59410068C718 /* MissionCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823BF212A59410068C718 /* MissionCoreData.swift */; };
 		8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */; };
 		8E8823D7212A764C0068C718 /* MissionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */; };
-		8E8823DA212A98780068C718 /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823D9212A98780068C718 /* MissionEntity+CoreDataProperties.swift */; };
 		8E8823DC212AA7B90068C718 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823DB212AA7B90068C718 /* GradientView.swift */; };
 		8E8823E3212AAAAB0068C718 /* MissionDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823DD212AAAAB0068C718 /* MissionDetailInteractor.swift */; };
 		8E8823E4212AAAAB0068C718 /* MissionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8823DE212AAAAB0068C718 /* MissionDetailPresenter.swift */; };
@@ -129,6 +133,11 @@
 		8E4B022621215CC300986215 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8E4B022F2121629200986215 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8E4B0234212173FF00986215 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		8E58BE2F212BA84F00CA7CF6 /* MemberEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8E58BE33212BA95700CA7CF6 /* TeamCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCoreData.swift; sourceTree = "<group>"; };
+		8E58BE46212BC3CD00CA7CF6 /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E58BE4A212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemberPopupViewController.swift; sourceTree = "<group>"; };
+		8E58BE4D212C015B00CA7CF6 /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E766BC221226FED00A76E15 /* HUDUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDUtils.swift; sourceTree = "<group>"; };
 		8E766BC5212278F000A76E15 /* HomeContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerInteractor.swift; sourceTree = "<group>"; };
 		8E766BC6212278F000A76E15 /* HomeContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPresenter.swift; sourceTree = "<group>"; };
@@ -159,7 +168,6 @@
 		8E8823BF212A59410068C718 /* MissionCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCoreData.swift; sourceTree = "<group>"; };
 		8E8823C1212A5A5C0068C718 /* BaseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoreData.swift; sourceTree = "<group>"; };
 		8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8E8823D9212A98780068C718 /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E8823DB212AA7B90068C718 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8E8823DD212AAAAB0068C718 /* MissionDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailInteractor.swift; sourceTree = "<group>"; };
 		8E8823DE212AAAAB0068C718 /* MissionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailPresenter.swift; sourceTree = "<group>"; };
@@ -375,6 +383,28 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		8E58BE2A212BA7F400CA7CF6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8E58BE46212BC3CD00CA7CF6 /* MemberEntity+CoreDataProperties.swift */,
+				8E58BE2F212BA84F00CA7CF6 /* MemberEntity+CoreDataClass.swift */,
+				8E58BE33212BA95700CA7CF6 /* TeamCoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8E58BE49212BDD1D00CA7CF6 /* MissionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8E8823DD212AAAAB0068C718 /* MissionDetailInteractor.swift */,
+				8E8823DE212AAAAB0068C718 /* MissionDetailPresenter.swift */,
+				8E8823DF212AAAAB0068C718 /* MissionDetailProtocols.swift */,
+				8E8823E0212AAAAB0068C718 /* MissionDetailRouter.swift */,
+				8E8823E1212AAAAB0068C718 /* MissionDetailViewController.swift */,
+			);
+			path = MissionDetail;
+			sourceTree = "<group>";
+		};
 		8E766BC4212278DA00A76E15 /* HomeContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +437,7 @@
 				8EE92DD22122CF360037BADB /* TeamProtocols.swift */,
 				8EE92DD32122CF360037BADB /* TeamRouter.swift */,
 				8EE92DD42122CF360037BADB /* TeamViewController.swift */,
+				8E58BE4A212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -438,6 +469,7 @@
 		8E87FAAC21250DE400C8AD47 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				8E58BE2A212BA7F400CA7CF6 /* CoreData */,
 				8E87FAAD21250DF500C8AD47 /* TeamDataManager.swift */,
 			);
 			path = DataManager;
@@ -479,7 +511,7 @@
 		8E8823C4212A733F0068C718 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E8823D9212A98780068C718 /* MissionEntity+CoreDataProperties.swift */,
+				8E58BE4D212C015B00CA7CF6 /* MissionEntity+CoreDataProperties.swift */,
 				8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */,
 				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
 			);
@@ -489,14 +521,10 @@
 		8EE92DCF2122CED30037BADB /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				8E58BE49212BDD1D00CA7CF6 /* MissionDetail */,
 				8E87FAA521250B5000C8AD47 /* SharedCell */,
 				8E87FAA421250B4300C8AD47 /* Mission */,
 				8E87FAA321250B3300C8AD47 /* Team */,
-				8E8823DD212AAAAB0068C718 /* MissionDetailInteractor.swift */,
-				8E8823DE212AAAAB0068C718 /* MissionDetailPresenter.swift */,
-				8E8823DF212AAAAB0068C718 /* MissionDetailProtocols.swift */,
-				8E8823E0212AAAAB0068C718 /* MissionDetailRouter.swift */,
-				8E8823E1212AAAAB0068C718 /* MissionDetailViewController.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -680,7 +708,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E8823DA212A98780068C718 /* MissionEntity+CoreDataProperties.swift in Sources */,
 				8E87FAAB21250C2700C8AD47 /* MissionCell.swift in Sources */,
 				8E8823DC212AA7B90068C718 /* GradientView.swift in Sources */,
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
@@ -691,14 +718,17 @@
 				8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */,
 				8E8823BC212A57170068C718 /* CoreDataHelper.swift in Sources */,
 				8E766BD72122B85900A76E15 /* LandscapeViewController.swift in Sources */,
+				8E58BE48212BC3CD00CA7CF6 /* MemberEntity+CoreDataProperties.swift in Sources */,
 				8E87FAA921250C1900C8AD47 /* TeamMemberCell.swift in Sources */,
 				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
+				8E58BE4B212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
 				8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */,
 				8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
+				8E58BE4F212C015B00CA7CF6 /* MissionEntity+CoreDataProperties.swift in Sources */,
 				8E8823E3212AAAAB0068C718 /* MissionDetailInteractor.swift in Sources */,
 				8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */,
 				8E8823BE212A58870068C718 /* NSManagedObject+Helper.swift in Sources */,
@@ -718,6 +748,7 @@
 				8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */,
 				8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */,
 				8E4B02002121228300986215 /* IntroRouter.swift in Sources */,
+				8E58BE31212BA85000CA7CF6 /* MemberEntity+CoreDataClass.swift in Sources */,
 				8E87FAD2212563A100C8AD47 /* MissionPresenter.swift in Sources */,
 				8E766BD52122B4EC00A76E15 /* HomeContainerDataManager.swift in Sources */,
 				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
@@ -729,6 +760,7 @@
 				8E8823E5212AAAAB0068C718 /* MissionDetailProtocols.swift in Sources */,
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,
 				8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */,
+				8E58BE34212BA95700CA7CF6 /* TeamCoreData.swift in Sources */,
 				8EE92DDA2122CF360037BADB /* TeamViewController.swift in Sources */,
 				8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */,
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,

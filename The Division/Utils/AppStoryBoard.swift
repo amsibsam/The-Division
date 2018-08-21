@@ -34,4 +34,5 @@ enum HomeViewControllers: String {
     case Team = "TeamViewController"
     case Mission = "MissionViewController"
     case MissionDetail = "MissionDetailViewController"
+    case CreateMember = "CreateMemberPopupViewController"
 }

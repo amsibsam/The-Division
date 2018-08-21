@@ -22,7 +22,9 @@ class TeamMemberCell: UITableViewCell {
         lbName.text = member.name
         lbMissionCount.text = "\(member.missionCount) mission"
         lbMissionCount.text?.append(member.missionCount > 1 ? "s" : "")
-        ivAvatar.load(from: member.avatarURL)
+        if let avatarURL = member.avatarURL {
+            ivAvatar.load(from: avatarURL)
+        }
     }
 
 }

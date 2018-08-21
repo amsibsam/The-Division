@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MemberEntity" representedClassName=".MemberEntity" syncable="YES">
+        <attribute name="avatarUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="division" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="assignedMission" toMany="YES" deletionRule="Nullify" destinationEntity="MissionEntity" inverseName="pic" inverseEntity="MissionEntity" syncable="YES"/>
+    </entity>
     <entity name="MissionEntity" representedClassName=".MissionEntity" syncable="YES">
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="missionDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MemberEntity" inverseName="assignedMission" inverseEntity="MemberEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MissionEntity" positionX="-9450" positionY="-2140" width="144" height="103"/>
+        <element name="MissionEntity" positionX="-9648" positionY="-2142" width="144" height="118"/>
+        <element name="MemberEntity" positionX="-9441" positionY="-2124" width="128" height="118"/>
     </elements>
 </model>

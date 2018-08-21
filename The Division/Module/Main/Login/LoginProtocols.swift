@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LoginWireframeProtocol: class {
-
+    func goToHome()
 }
 //MARK: Presenter -
 protocol LoginPresenterProtocol: class {
@@ -21,6 +21,7 @@ protocol LoginPresenterProtocol: class {
     
     /* ViewController -> Presenter */
     func login(email: String, password: String)
+    func goToHome()
 }
 
 //MARK: Interactor -

@@ -2,7 +2,7 @@
 //  MissionEntity+CoreDataProperties.swift
 //  The Division
 //
-//  Created by MTMAC16 on 20/08/18.
+//  Created by MTMAC16 on 21/08/18.
 //  Copyright © 2018 bism. All rights reserved.
 //
 //
@@ -17,9 +17,10 @@ extension MissionEntity {
         return NSFetchRequest<MissionEntity>(entityName: "MissionEntity")
     }
 
-    @NSManaged public var name: String
-    @NSManaged public var missionDescription: String?
-    @NSManaged public var state: String?
     @NSManaged public var id: String
+    @NSManaged public var missionDescription: String
+    @NSManaged public var name: String
+    @NSManaged public var state: String
+    @NSManaged public var pic: MemberEntity?
 
 }

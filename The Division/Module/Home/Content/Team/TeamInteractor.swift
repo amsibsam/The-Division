@@ -19,9 +19,17 @@ class TeamInteractor: TeamInteractorInputProtocol {
         dataManager?.getTeamMember(on: team)
     }
     
+    func addMember(with member: Member) {
+        dataManager?.addMember(with: member)
+    }
+    
 }
 
 extension TeamInteractor: TeamDataManagerOutputProtocol {
+    func onSuccessAddMember(with member: Member) {
+        presenter?.onSuccessAddMember(with: member)
+    }
+    
     func onGetMemberSucceeded(with members: [Member]) {
         presenter?.onGetMemberSucceeded(with: members)
     }

@@ -69,9 +69,3 @@ protocol MissionDataManagerOutputProtocol: class {
     func onGetMissionSucceeded(with missions: [Mission])
     func onCreateMissionSucceeded(with mission: Mission)
 }
-
-public enum MissionState: String {
-    case InProgress = "In Progress"
-    case New = "New"
-    case Finished = "Finished"
-}

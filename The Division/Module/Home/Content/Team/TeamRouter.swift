@@ -31,4 +31,15 @@ class TeamRouter: TeamWireframeProtocol {
 
         return view
     }
+    
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ()) {
+        
+        if let sourceView = view as? UIViewController {
+            let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.CreateMember.rawValue) as! CreateMemberPopupViewController
+            view.completion = completion
+            view.modalPresentationStyle = .overCurrentContext
+            
+            sourceView.present(view, animated: true, completion: nil)
+        }
+    }
 }

@@ -33,6 +33,10 @@ class LoginPresenter: LoginPresenterProtocol {
             view?.showError(with: "Please fill ur username and password")
         }
     }
+    
+    func goToHome() {
+        router.goToHome()
+    }
 }
 
 extension LoginPresenter: LoginInteractorOutputProtocol {

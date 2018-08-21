@@ -29,7 +29,6 @@ class TeamViewController: LandscapeViewController {
         tableViewMember.tableFooterView = UIView()
         tableViewMember.estimatedRowHeight = UITableViewAutomaticDimension
     }
-
 }
 
 extension TeamViewController: UITableViewDataSource {
@@ -54,7 +53,9 @@ extension TeamViewController: UITableViewDataSource {
 
         header.bindDataToView(in: .Team, with: teamDivision.rawValue, and: members.count)
         header.onAddDidTap = {
-            print("add did tap")
+            self.presenter?.presentCreateTeamPopup(from: self, completion: { (name, division, avatar) in
+                self.presenter?.addMember(with: name, on: division, avatarUrl: nil)
+            })
         }
         
         return header
@@ -75,6 +76,13 @@ extension TeamViewController: UITableViewDelegate {
 }
 
 extension TeamViewController: TeamViewProtocol {
+    func onSuccessAddMember(with member: Member) {
+        self.members.insert(member, at: 0)
+        tableViewMember.beginUpdates()
+        tableViewMember.insertRows(at: [IndexPath(row: 0, section: 0)], with: .left)
+        tableViewMember.endUpdates()
+    }
+    
     func onGetMemberSucceeded(with members: [Member]) {
         self.members.append(contentsOf: members)
         tableViewMember.reloadData()
