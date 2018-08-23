@@ -28,3 +28,19 @@ class MockHomeContainerPresenter: HomeContainerInteractorOutputProtocol {
         callbackResult["onGetMenuItemSucceed"] = "menuItems" as AnyObject
     }
 }
+
+class MockMissionPresenter: MissionInteractorOutputProtocol {
+    var callbackResult = [String: AnyObject]()
+    
+    func onGetAllAgentSuceeded(with agents: [Member]) {
+        callbackResult["onGetAllAgentSuceeded"] = agents as AnyObject
+    }
+    
+    func onCreateMissionSucceeded(with mission: Mission) {
+        callbackResult["onCreateMissionSucceeded"] = mission as AnyObject
+    }
+    
+    func onGetMissionSucceeded(with missions: [Mission]) {
+        callbackResult["onGetMissionSucceeded"] = missions as AnyObject
+    }
+}

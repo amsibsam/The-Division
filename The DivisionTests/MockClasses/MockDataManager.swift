@@ -48,3 +48,28 @@ class MockHomeContainerDataManager: HomeContainerDataManagerInputProtocol {
         return menuItems
     }
 }
+
+class MockMissionDataManager: MissionDataManagerInputProtocol {
+    var interactor: MissionDataManagerOutputProtocol?
+    
+    func editMission(with mission: Mission) {
+        
+    }
+    
+    func getMission(with state: MissionState) {
+        // MARK: to do mocking data here
+//        interactor?.onGetMissionSucceeded(with: <#T##[Mission]#>)
+    }
+    
+    func createMission(with name: String, description: String, assignee: Member) {
+        // MARK: to do mocking data here
+//        interactor?.onCreateMissionSucceeded(with: <#T##Mission#>)
+    }
+    
+    func getAllAgent() {
+        // MARK: to do mocking data here
+//        interactor?.onGetAllAgentSucceeded(with: <#T##[Member]#>)
+    }
+    
+    
+}

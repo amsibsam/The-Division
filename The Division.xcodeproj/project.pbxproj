@@ -233,7 +233,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8E348223212E8D4E0025764A /* mockClasses */ = {
+		8E348223212E8D4E0025764A /* MockClasses */ = {
 			isa = PBXGroup;
 			children = (
 				8E34821B212E8C770025764A /* MockInteractor.swift */,
@@ -242,7 +242,7 @@
 				8E348221212E8D0E0025764A /* MockDataManager.swift */,
 				8E348225212E8F850025764A /* MockPresenter.swift */,
 			);
-			path = mockClasses;
+			path = MockClasses;
 			sourceTree = "<group>";
 		};
 		8E348224212E8D680025764A /* LoginTest */ = {
@@ -261,6 +261,13 @@
 				8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */,
 			);
 			path = HomeContainerTest;
+			sourceTree = "<group>";
+		};
+		8E34822D212E9D750025764A /* MissionTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MissionTest;
 			sourceTree = "<group>";
 		};
 		8E4B01C2212118EC00986215 = {
@@ -302,9 +309,10 @@
 		8E4B01E5212118F800986215 /* The DivisionTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E34822D212E9D750025764A /* MissionTest */,
 				8E348227212E995B0025764A /* HomeContainerTest */,
 				8E348224212E8D680025764A /* LoginTest */,
-				8E348223212E8D4E0025764A /* mockClasses */,
+				8E348223212E8D4E0025764A /* MockClasses */,
 				8E4B01E6212118F800986215 /* The_DivisionTests.swift */,
 				8E4B01E8212118F800986215 /* Info.plist */,
 			);

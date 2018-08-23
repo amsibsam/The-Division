@@ -40,3 +40,20 @@ class MockHomeViewController: UIViewController, HomeContainerViewProtocol {
         callbackResult["onGetMenuItemSucceed"] = "menuItems" as AnyObject
     }
 }
+
+class MockMissionViewControlelr: UIViewController, MissionViewProtocol {
+    var presenter: MissionPresenterProtocol?
+    var callbackResult = [String: AnyObject]()
+    
+    func onGetMissionSucceeded(with missions: [Mission]) {
+        callbackResult["onGetMissionSucceeded"] = missions as AnyObject
+    }
+    
+    func onCreateMissionSucceeded(with mission: Mission) {
+        callbackResult["onCreateMissionSucceeded"] = mission as AnyObject
+    }
+    
+    func onGetAllAgentSucceed(with agents: [Member]) {
+        callbackResult["onGetAllAgentSucceed"] = agents as AnyObject
+    }
+}
