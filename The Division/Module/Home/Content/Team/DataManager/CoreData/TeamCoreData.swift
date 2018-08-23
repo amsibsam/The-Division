@@ -27,10 +27,6 @@ class TeamCoreData: BaseCoreData {
         save()
     }
     
-//    func getRandomMember() -> Member? {
-//        
-//    }
-    
     func getMember() -> [Member]? {
         do {
             let memberEntities: [MemberEntity] = try managedContext.fetch(MemberEntity.fetchRequest())

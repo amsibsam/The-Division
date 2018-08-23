@@ -16,11 +16,17 @@ class MissionViewController: LandscapeViewController {
 	var presenter: MissionPresenterProtocol?
     var missionState: MissionState!
     var missions: [Mission] = []
+    var agents: [Member] = []
+    var selectedAgent: Member?
+    var tfAgent: UITextField?
+    
+    let agentPicker = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         presenter?.getMission(with: missionState)
+        presenter?.getAllAgent()
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -40,11 +46,22 @@ class MissionViewController: LandscapeViewController {
         addMissionAlert.addTextField { (tf) in
             tf.placeholder = "Mission Description"
         }
+        addMissionAlert.addTextField { (tf) in
+            tf.placeholder = "assignee"
+        }
+        
+        agentPicker.dataSource = self
+        agentPicker.delegate = self
+        tfAgent = addMissionAlert.textFields?[2]
+        tfAgent?.inputView = agentPicker
+        tfAgent?.addDoneButton(picker: agentPicker)
+        tfAgent?.text = selectedAgent?.name
         
         addMissionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         addMissionAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (action) in
             if let name = addMissionAlert.textFields?[0].text, let description = addMissionAlert.textFields?[1].text {
-                self.presenter?.createMission(with: name, description: description)
+                guard let assignee = self.selectedAgent else { return }
+                self.presenter?.createMission(with: name, description: description, assignee: assignee)
             }
         }))
         present(addMissionAlert, animated: true, completion: nil)
@@ -118,6 +135,32 @@ extension MissionViewController: MissionViewProtocol {
     func onGetMissionSucceeded(with missions: [Mission]) {
         self.missions.append(contentsOf: missions)
         tableViewMission.reloadData()
+    }
+    
+    func onGetAllAgentSucceed(with agents: [Member]) {
+        self.agents.append(contentsOf: agents)
+        selectedAgent = self.agents.first
+        agentPicker.reloadAllComponents()
+    }
+}
+
+extension MissionViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
         
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return agents.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return agents[row].name
+    }
+}
+    
+extension MissionViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedAgent = agents[row]
+        tfAgent?.text = selectedAgent?.name
     }
 }

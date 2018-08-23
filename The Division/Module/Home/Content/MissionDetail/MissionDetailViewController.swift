@@ -38,5 +38,6 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
         //MARK: TODO render avatar and agent data
         lbMissionName.text = mission.name
         lbMissionDescription.text = mission.description
+        lbAgentName.text = mission.assignee?.name ?? "-"
     }
 }

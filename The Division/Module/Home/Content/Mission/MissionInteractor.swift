@@ -19,12 +19,16 @@ class MissionInteractor: MissionInteractorInputProtocol {
         dataManager?.getMission(with: state)
     }
     
-    func createMission(with name: String, description: String) {
-        dataManager?.createMission(with: name, description: description)
+    func createMission(with name: String, description: String, assignee: Member) {
+        dataManager?.createMission(with: name, description: description, assignee: assignee)
     }
     
     func editMission(with mission: Mission) {
         dataManager?.editMission(with: mission)
+    }
+    
+    func getAllAgent() {
+        dataManager?.getAllAgent()
     }
 }
 
@@ -35,5 +39,9 @@ extension MissionInteractor: MissionDataManagerOutputProtocol {
     
     func onGetMissionSucceeded(with missions: [Mission]) {
         presenter?.onGetMissionSucceeded(with: missions)
+    }
+    
+    func onGetAllAgentSucceeded(with agents: [Member]) {
+        presenter?.onGetAllAgentSuceeded(with: agents)
     }
 }

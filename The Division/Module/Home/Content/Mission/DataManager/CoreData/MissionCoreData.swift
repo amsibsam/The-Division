@@ -24,7 +24,17 @@ class MissionCoreData: BaseCoreData {
         missionEntity.name = mission.name
         missionEntity.missionDescription = mission.description
         missionEntity.state = mission.state.rawValue
-//        missionEntity.pic = TeamCoreData.shared.
+        
+        do {
+            if let assignee = mission.assignee {
+                let req = MemberEntity.fetchRequest() as NSFetchRequest
+                req.predicate = NSPredicate(format: "id = %@", assignee.id)
+                let result = try managedContext.fetch(req)
+                missionEntity.pic = result.first
+            }
+        } catch let error as NSError {
+            print("error get member \(error), \(error.userInfo)")
+        }
         
         save()
     }
@@ -47,9 +57,13 @@ class MissionCoreData: BaseCoreData {
             let filteredEntity = try managedContext.fetch(fetchRequest)
             
             if let filterEntityResult = filteredEntity.first {
-                let result: Mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.description, state: MissionState(rawValue: filterEntityResult.state)!)
+                var mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.missionDescription , state: MissionState(rawValue: filterEntityResult.state)!)
                 
-                return result
+                if let pic = filterEntityResult.pic {
+                    mission.assignee = Member(id: pic.id, name: pic.name, division: TeamDivision(rawValue: pic.division)!, missionCount: 0, avatarURL: nil)
+                }
+                
+                return mission
             }
             
             return nil
@@ -67,7 +81,13 @@ class MissionCoreData: BaseCoreData {
             let filteredEntity: [MissionEntity] = try managedContext.fetch(request)
             
             let filteredMission: [Mission] = filteredEntity.map { (missionEntity) -> Mission in
-                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state)!)
+                var mission = Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription , state: MissionState(rawValue: missionEntity.state)!)
+                
+                if let pic = missionEntity.pic {
+                    mission.assignee = Member(id: pic.id, name: pic.name, division: TeamDivision(rawValue: pic.division)!, missionCount: 0, avatarURL: nil)
+                }
+                
+                return mission
             }
 
             return filteredMission
@@ -81,7 +101,13 @@ class MissionCoreData: BaseCoreData {
         do {
             let missionEntities: [MissionEntity] = try managedContext.fetch(MissionEntity.fetchRequest())
             let result: [Mission] = missionEntities.map({ (missionEntity) -> Mission in
-                return Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription ?? "", state: MissionState(rawValue: missionEntity.state)!)
+                var mission = Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription , state: MissionState(rawValue: missionEntity.state)!)
+                
+                if let pic = missionEntity.pic {
+                    mission.assignee = Member(id: pic.id, name: pic.name, division: TeamDivision(rawValue: pic.division)!, missionCount: 0, avatarURL: nil)
+                }
+                
+                return mission
             })
             
             return result

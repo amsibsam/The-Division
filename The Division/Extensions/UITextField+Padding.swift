@@ -20,4 +20,16 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+    
+    func addDoneButton(picker: UIPickerView) {
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: picker.frame.height, width: UIScreen.main.bounds.width, height: 40))
+        let btnDone = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonDidTap))
+        
+        toolbar.setItems([btnDone], animated: true)
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonDidTap() {
+        self.resignFirstResponder()
+    }
 }

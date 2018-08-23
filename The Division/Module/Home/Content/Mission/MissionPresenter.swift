@@ -22,8 +22,8 @@ class MissionPresenter: MissionPresenterProtocol {
         self.router = router
     }
     
-    func createMission(with name: String, description: String) {
-        interactor?.createMission(with: name, description: description)
+    func createMission(with name: String, description: String, assignee: Member) {
+        interactor?.createMission(with: name, description: description, assignee: assignee)
     }
     
     func getMission(with state: MissionState) {
@@ -37,6 +37,10 @@ class MissionPresenter: MissionPresenterProtocol {
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission) {
         router.openMissionDetail(from: view, with: mission)
     }
+    
+    func getAllAgent() {
+        interactor?.getAllAgent()
+    }
 
 }
 
@@ -47,5 +51,9 @@ extension MissionPresenter: MissionInteractorOutputProtocol {
     
     func onGetMissionSucceeded(with missions: [Mission]) {
         view?.onGetMissionSucceeded(with: missions      )
+    }
+    
+    func onGetAllAgentSuceeded(with agents: [Member]) {
+        view?.onGetAllAgentSucceed(with: agents)
     }
 }

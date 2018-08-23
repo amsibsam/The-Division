@@ -60,8 +60,7 @@ class CreateMemberPopupViewController: LandscapeViewController {
         divisionPicker.delegate = self
         divisionPicker.dataSource = self
         tfDivision.inputView = divisionPicker
-        
-        addDoneButton()
+        tfDivision.addDoneButton(picker: divisionPicker)
     }
     
     private func pickAvatar() {
@@ -71,22 +70,11 @@ class CreateMemberPopupViewController: LandscapeViewController {
         present(pickerVC, animated: true, completion: nil)
     }
     
-    private func addDoneButton() {
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: divisionPicker.frame.height, width: UIScreen.main.bounds.width, height: 40))
-        let btnDone = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(CreateMemberPopupViewController.didTapDone))
-        
-        toolbar.setItems([btnDone], animated: true)
-        tfDivision.inputAccessoryView = toolbar
-    }
-    
     //MARK: selector function
     @objc func didTapAvatar() {
         pickAvatar()
     }
-    
-    @objc func didTapDone() {
-        tfDivision.resignFirstResponder()
-    }
+
 }
 
 extension CreateMemberPopupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

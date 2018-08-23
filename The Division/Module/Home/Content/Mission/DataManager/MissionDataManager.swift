@@ -14,8 +14,9 @@ class MissionDataManager: MissionDataManagerInputProtocol {
     
     var interactor: MissionDataManagerOutputProtocol?
     
-    func createMission(with name: String, description: String) {
-        let mission = Mission(id: "\(NSDate().timeIntervalSince1970)", name: name, description: description, state: .New)
+    func createMission(with name: String, description: String, assignee: Member) {
+        var mission = Mission(id: "\(NSDate().timeIntervalSince1970)", name: name, description: description, state: .New)
+        mission.assignee = assignee
         MissionCoreData.shared.add(mission: mission)
         interactor?.onCreateMissionSucceeded(with: mission)
     }
@@ -28,5 +29,11 @@ class MissionDataManager: MissionDataManagerInputProtocol {
     
     func editMission(with mission: Mission) {
         MissionCoreData.shared.addOrUpdate(mission: mission)
+    }
+    
+    func getAllAgent() {
+        if let agents = TeamCoreData.shared.getMember() {
+            interactor?.onGetAllAgentSucceeded(with: agents)
+        }
     }
 }

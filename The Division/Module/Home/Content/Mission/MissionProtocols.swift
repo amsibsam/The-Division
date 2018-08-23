@@ -21,9 +21,10 @@ protocol MissionPresenterProtocol: class {
     
     /* ViewController -> Peresenter */
     func getMission(with state: MissionState)
-    func createMission(with name: String, description: String)
+    func createMission(with name: String, description: String, assignee: Member)
     func editMission(with mission: Mission)
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission)
+    func getAllAgent()
 }
 
 //MARK: Interactor -
@@ -32,6 +33,7 @@ protocol MissionInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func onGetMissionSucceeded(with missions: [Mission])
     func onCreateMissionSucceeded(with mission: Mission)
+    func onGetAllAgentSuceeded(with agents: [Member])
 }
 
 protocol MissionInteractorInputProtocol: class {
@@ -41,7 +43,8 @@ protocol MissionInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func editMission(with mission: Mission)
     func getMission(with state: MissionState)
-    func createMission(with name: String, description: String)
+    func createMission(with name: String, description: String, assignee: Member)
+    func getAllAgent()
 }
 
 //MARK: View -
@@ -52,6 +55,7 @@ protocol MissionViewProtocol: class {
     /* Presenter -> ViewController */
     func onGetMissionSucceeded(with missions: [Mission])
     func onCreateMissionSucceeded(with mission: Mission)
+    func onGetAllAgentSucceed(with agents: [Member])
 }
 
 //MARK: DataManager -
@@ -61,11 +65,13 @@ protocol MissionDataManagerInputProtocol: class {
     /* Interactor -> DataManager */
     func editMission(with mission: Mission)
     func getMission(with state: MissionState)
-    func createMission(with name: String, description: String)
+    func createMission(with name: String, description: String, assignee: Member)
+    func getAllAgent()
 }
 
 protocol MissionDataManagerOutputProtocol: class {
     /* DataManager -> Interactor */
     func onGetMissionSucceeded(with missions: [Mission])
     func onCreateMissionSucceeded(with mission: Mission)
+    func onGetAllAgentSucceeded(with agents: [Member])
 }
