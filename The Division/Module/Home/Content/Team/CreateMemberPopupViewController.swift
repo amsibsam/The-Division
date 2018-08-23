@@ -15,12 +15,12 @@ class CreateMemberPopupViewController: LandscapeViewController {
     private let divisionPicker = UIPickerView()
     
     
-    var completion: ((String, TeamDivision, Data?) -> ())!
+    var completion: ((String, TeamDivision, UIImage?) -> ())!
     let divisions: [String] = ["Transportation", "Acara", "Keamanan", "Perlengkapan"]
-    var selectedAvatar: Data? {
+    var selectedAvatar: UIImage? {
         didSet {
-            guard let avatarData = selectedAvatar else { return }
-            ivMemberAvatar.image = UIImage(data: avatarData)
+            guard selectedAvatar != nil else { return }
+            ivMemberAvatar.image = selectedAvatar
         }
     }
     
@@ -80,7 +80,7 @@ class CreateMemberPopupViewController: LandscapeViewController {
 extension CreateMemberPopupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let imageData = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.selectedAvatar = UIImagePNGRepresentation(imageData)
+            self.selectedAvatar = imageData
         }
         picker.dismiss(animated: true, completion: nil)
     }

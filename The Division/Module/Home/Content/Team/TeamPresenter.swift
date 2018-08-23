@@ -25,12 +25,12 @@ class TeamPresenter: TeamPresenterProtocol {
         interactor?.getTeamMember(on: team)
     }
     
-    func addMember(with name: String, on team: TeamDivision, avatarUrl: String?) {
-        let member = Member(id: "\(NSDate().timeIntervalSince1970)", name: name, division: team, missionCount: 0, avatarURL: URL(string: avatarUrl ?? "http://"))
+    func addMember(with name: String, on team: TeamDivision, avatarUrl: String?, image: UIImage?) {
+        let member = Member(id: "\(NSDate().timeIntervalSince1970)", name: name, division: team, missionCount: 0, avatarURL: URL(string: avatarUrl ?? "http://"), pict: image)
         interactor?.addMember(with: member)
     }
     
-    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ()) {
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, UIImage?) -> ()) {
         router.presentCreateTeamPopup(from: view, completion: completion)
     }
 }

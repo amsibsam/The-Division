@@ -54,7 +54,7 @@ extension TeamViewController: UITableViewDataSource {
         header.bindDataToView(in: .Team, with: teamDivision.rawValue, and: members.count)
         header.onAddDidTap = {
             self.presenter?.presentCreateTeamPopup(from: self, completion: { (name, division, avatar) in
-                self.presenter?.addMember(with: name, on: division, avatarUrl: nil)
+                self.presenter?.addMember(with: name, on: division, avatarUrl: nil, image: avatar)
             })
         }
         

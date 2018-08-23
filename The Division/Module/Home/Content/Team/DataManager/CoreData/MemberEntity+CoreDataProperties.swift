@@ -21,7 +21,8 @@ extension MemberEntity {
     @NSManaged public var division: String
     @NSManaged public var id: String
     @NSManaged public var name: String
-    @NSManaged public var assignedMission: NSSet
+    @NSManaged public var pictData: NSData?
+    @NSManaged public var assignedMission: NSSet?
 
 }
 

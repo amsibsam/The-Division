@@ -9,11 +9,12 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol TeamWireframeProtocol: class {
     /* Presenter -> Router */
-    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ())
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, UIImage?) -> ())
 }
 //MARK: Presenter -
 protocol TeamPresenterProtocol: class {
@@ -22,8 +23,8 @@ protocol TeamPresenterProtocol: class {
     
     /* ViewController -> Presenter */
     func getTeamMember(on team: TeamDivision)
-    func addMember(with name: String, on team: TeamDivision, avatarUrl: String?)
-    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ())
+    func addMember(with name: String, on team: TeamDivision, avatarUrl: String?, image: UIImage?)
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, UIImage?) -> ())
 }
 
 //MARK: Interactor -

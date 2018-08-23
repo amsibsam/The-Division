@@ -9,10 +9,15 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 public class MemberEntity: NSManagedObject {
     var avatarURL: URL? {
         return URL(string: self.avatarUrl ?? "http://")
+    }
+    
+    var pict: UIImage? {
+        guard let data = pictData as? Data else { return nil }
+        return UIImage(data: data)
     }
 }

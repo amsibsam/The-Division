@@ -12,13 +12,19 @@ class TeamDataManager: TeamDataManagerInputProtocol {
     var interactor: TeamDataManagerOutputProtocol?
     
     func getTeamMember(on team: TeamDivision) {
-        if let members = TeamCoreData.shared.getMember(on: team) {
-            interactor?.onGetMemberSucceeded(with: members)
+        TeamCoreData.shared.getMember(on: team) { (members) in
+            if let results = members {
+                self.interactor?.onGetMemberSucceeded(with: results)
+            }
         }
     }
     
     func addMember(with member: Member) {
-        TeamCoreData.shared.add(member: member)
-        interactor?.onSuccessAddMember(with: member)
+        TeamCoreData.shared.add(member: member) { success in
+            if success {
+                self.interactor?.onSuccessAddMember(with: member)
+            }
+        }
+        
     }
 }

@@ -39,5 +39,6 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
         lbMissionName.text = mission.name
         lbMissionDescription.text = mission.description
         lbAgentName.text = mission.assignee?.name ?? "-"
+        ivAgentAvatar.image = mission.assignee?.pict
     }
 }

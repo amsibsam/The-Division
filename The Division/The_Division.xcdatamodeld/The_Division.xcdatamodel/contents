@@ -5,6 +5,7 @@
         <attribute name="division" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="pictData" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="assignedMission" toMany="YES" deletionRule="Nullify" destinationEntity="MissionEntity" inverseName="pic" inverseEntity="MissionEntity" syncable="YES"/>
     </entity>
     <entity name="MissionEntity" representedClassName=".MissionEntity" syncable="YES">
@@ -22,7 +23,7 @@
         <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MissionEntity" inverseName="objective" inverseEntity="MissionEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MemberEntity" positionX="-9441" positionY="-2124" width="128" height="120"/>
+        <element name="MemberEntity" positionX="-9441" positionY="-2124" width="128" height="135"/>
         <element name="MissionEntity" positionX="-9648" positionY="-2142" width="144" height="150"/>
         <element name="ObjectiveEntity" positionX="-9540" positionY="-2088" width="128" height="90"/>
     </elements>

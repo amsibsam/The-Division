@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Member {
     let id: String
@@ -14,6 +15,7 @@ struct Member {
     let division: TeamDivision
     let missionCount: Int
     var avatarURL: URL?
+    var pict: UIImage?
 }
 
 public enum TeamDivision: String {

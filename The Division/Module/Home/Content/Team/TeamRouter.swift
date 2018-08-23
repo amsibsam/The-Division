@@ -32,7 +32,7 @@ class TeamRouter: TeamWireframeProtocol {
         return view
     }
     
-    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, Data?) -> ()) {
+    func presentCreateTeamPopup(from view: TeamViewProtocol, completion: @escaping (String, TeamDivision, UIImage?) -> ()) {
         
         if let sourceView = view as? UIViewController {
             let view = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.CreateMember.rawValue) as! CreateMemberPopupViewController

@@ -17,23 +17,31 @@ class MissionDataManager: MissionDataManagerInputProtocol {
     func createMission(with name: String, description: String, assignee: Member) {
         var mission = Mission(id: "\(NSDate().timeIntervalSince1970)", name: name, description: description, state: .New)
         mission.assignee = assignee
-        MissionCoreData.shared.add(mission: mission)
-        interactor?.onCreateMissionSucceeded(with: mission)
+        MissionCoreData.shared.add(mission: mission) { missions in
+            self.interactor?.onCreateMissionSucceeded(with: mission)
+        }
+        
     }
     
     func getMission(with state: MissionState) {
-        if let mission = MissionCoreData.shared.getMission(byState: state) {
-            interactor?.onGetMissionSucceeded(with: mission)
+        MissionCoreData.shared.getMission(byState: state) { missions in
+            if let result = missions {
+                self.interactor?.onGetMissionSucceeded(with: result)
+            }
         }
     }
     
     func editMission(with mission: Mission) {
-        MissionCoreData.shared.addOrUpdate(mission: mission)
+        MissionCoreData.shared.addOrUpdate(mission: mission) { _ in
+            
+        }
     }
     
     func getAllAgent() {
-        if let agents = TeamCoreData.shared.getMember() {
-            interactor?.onGetAllAgentSucceeded(with: agents)
+        TeamCoreData.shared.getMember() { members in
+            if let agents = members {
+                self.interactor?.onGetAllAgentSucceeded(with: agents)
+            }
         }
     }
 }

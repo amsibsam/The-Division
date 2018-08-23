@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		7DDB68A34FB9459E302E7AC8 /* Pods_The_Division.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84365F5ACB55DDF07A888DF8 /* Pods_The_Division.framework */; };
 		8E348205212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348203212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift */; };
-		8E34820E212E44090025764A /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348208212E44090025764A /* MemberEntity+CoreDataProperties.swift */; };
 		8E348210212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */; };
 		8E348212212E44090025764A /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */; };
+		8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -104,9 +104,9 @@
 		6C7D34AF34C3D27F6710C78F /* Pods-The Division.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.release.xcconfig"; sourceTree = "<group>"; };
 		84365F5ACB55DDF07A888DF8 /* Pods_The_Division.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Division.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E348203212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8E348208212E44090025764A /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 		8E58BE2A212BA7F400CA7CF6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E348208212E44090025764A /* MemberEntity+CoreDataProperties.swift */,
+				8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */,
 				8E58BE2F212BA84F00CA7CF6 /* MemberEntity+CoreDataClass.swift */,
 				8E58BE33212BA95700CA7CF6 /* TeamCoreData.swift */,
 			);
@@ -747,11 +747,11 @@
 				8E348205212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift in Sources */,
 				8E87FAD92125668400C8AD47 /* MissionDataManager.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
+				8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */,
 				8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
 				8E87FAA721250C0400C8AD47 /* ContentHeaderCell.swift in Sources */,
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,
-				8E34820E212E44090025764A /* MemberEntity+CoreDataProperties.swift in Sources */,
 				8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */,
 				8E87FAAE21250DF500C8AD47 /* TeamDataManager.swift in Sources */,
 				8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */,
