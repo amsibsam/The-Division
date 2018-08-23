@@ -23,19 +23,21 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func login(email: String, password: String) {
         view?.showLoading()
-        func isValidForm() -> Bool {
-            return !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        }
-        
-        if isValidForm() {
+        if isValidLoginData(email: email, password: password) {
             interactor?.login(email: email, password: password)
+            view?.dismissLoading()
         } else {
-            view?.showError(with: "Please fill ur username and password")
+            view?.showError(with: "Please fill your email and password")
+            view?.dismissLoading()
         }
     }
     
     func goToHome() {
         router.goToHome()
+    }
+    
+    func isValidLoginData(email: String, password: String) -> Bool {
+        return !email.isEmpty && !password.isEmpty
     }
 }
 
@@ -45,5 +47,8 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
         view?.showLoginSucceeded()
     }
     
-    
+    func showError(with message: String) {
+        view?.dismissLoading()
+        view?.showError(with: message)
+    }
 }

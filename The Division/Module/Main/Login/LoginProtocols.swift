@@ -29,6 +29,7 @@ protocol LoginInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func showLoginSucceeded()
+    func showError(with message: String)
 }
 
 protocol LoginInteractorInputProtocol: class {
@@ -47,6 +48,7 @@ protocol LoginDataManagerInputProtocol: class {
 
 protocol LoginDataManagerOutputProtocol {
     func showLoginSucceeded()
+    func showError(with message: String)
 }
 
 //MARK: View -

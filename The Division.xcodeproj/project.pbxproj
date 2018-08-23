@@ -12,6 +12,7 @@
 		8E348210212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */; };
 		8E348212212E44090025764A /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */; };
 		8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */; };
+		8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348217212E7C8D0025764A /* LoginPresenterTest.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -107,6 +108,7 @@
 		8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E348217212E7C8D0025764A /* LoginPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				8E4B01E6212118F800986215 /* The_DivisionTests.swift */,
 				8E4B01E8212118F800986215 /* Info.plist */,
+				8E348217212E7C8D0025764A /* LoginPresenterTest.swift */,
 			);
 			path = "The DivisionTests";
 			sourceTree = "<group>";
@@ -794,6 +797,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */,
 				8E4B01E7212118F800986215 /* The_DivisionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

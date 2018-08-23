@@ -24,5 +24,7 @@ extension LoginInteractor: LoginDataManagerOutputProtocol {
         presenter?.showLoginSucceeded()
     }
     
-    
+    func showError(with message: String) {
+        presenter?.showError(with: message)
+    }
 }
