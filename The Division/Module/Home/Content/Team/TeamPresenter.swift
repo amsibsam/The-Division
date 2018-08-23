@@ -26,7 +26,7 @@ class TeamPresenter: TeamPresenterProtocol {
     }
     
     func addMember(with name: String, on team: TeamDivision, avatarUrl: String?, image: UIImage?) {
-        let member = Member(id: "\(NSDate().timeIntervalSince1970)", name: name, division: team, missionCount: 0, avatarURL: URL(string: avatarUrl ?? "http://"), pict: image)
+        let member = Member(id: "\(NSDate().timeIntervalSince1970)", name: name, division: team, missionCount: 0, avatarURL: avatarUrl == nil ? nil : URL(string: avatarUrl ?? ""), pict: image)
         interactor?.addMember(with: member)
     }
     

@@ -21,7 +21,7 @@ class TeamCoreData: BaseCoreData {
             memberEntity.id = member.id
             memberEntity.name = member.name
             memberEntity.division = member.division.rawValue
-            if let pict = member.pict, let pictData = UIImagePNGRepresentation(pict) {
+            if let pict = member.pict, let pictData = UIImageJPEGRepresentation(pict, 0.5) {
                 memberEntity.pictData = pictData as NSData?
             }
             

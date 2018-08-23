@@ -24,6 +24,8 @@ class TeamMemberCell: UITableViewCell {
         lbMissionCount.text?.append(member.missionCount > 1 ? "s" : "")
         if let avatarURL = member.avatarURL {
             ivAvatar.load(from: avatarURL)
+        } else if let pict = member.pict {
+            ivAvatar.image = pict
         }
     }
 
