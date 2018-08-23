@@ -15,14 +15,14 @@ class LoginPresenterTest: XCTestCase {
     var interactor: MockLoginInteractor!
     var router: MockLoginRouter!
     var viewController: MockLoginViewController!
-    var dataManager: MockDataManager!
+    var dataManager: MockLoginDataManager!
     
     override func setUp() {
         super.setUp()
         self.router = MockLoginRouter()
         self.viewController = MockLoginViewController()
         self.interactor = MockLoginInteractor()
-        self.dataManager = MockDataManager()
+        self.dataManager = MockLoginDataManager()
         
         presenter = LoginPresenter(interface: viewController, interactor: interactor, router: router)
         interactor.presenter = presenter
@@ -48,6 +48,7 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["showError"]?.description, "Please fill your email and password")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
         XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "")
+        XCTAssertFalse(((router.callbackResult["goToHome"]?.description) != nil), "")
     }
     
     func testEmptyPassword() {
@@ -59,6 +60,7 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["showError"]?.description, "Please fill your email and password")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
         XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "")
+        XCTAssertFalse(((router.callbackResult["goToHome"]?.description) != nil), "")
     }
     
     func testWrongPasswordOrEmail() {
@@ -70,6 +72,7 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["showError"]?.description, "wrong username or password")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
         XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "")
+        XCTAssertFalse(((router.callbackResult["goToHome"]?.description) != nil), "")
     }
     
     func testSucceedLogin() {
@@ -80,72 +83,9 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["showLoading"]?.description, "")
         XCTAssertEqual(viewController.callbackResult["showLoginSucceed"]?.description, "")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
+        XCTAssertEqual(router.callbackResult["goToHome"]?.description, "")
         XCTAssertFalse(((viewController.callbackResult["showError"]?.description) != nil), "wrong username or password")
         XCTAssertFalse(((viewController.callbackResult["showError"]?.description) != nil), "Please fill your email and password")
     }
-    
-    class MockLoginInteractor: LoginInteractorInputProtocol, LoginDataManagerOutputProtocol {
 
-        var presenter: LoginInteractorOutputProtocol?
-        
-        var dataManager: LoginDataManagerInputProtocol?
-        
-        func login(email: String, password: String) {
-            dataManager?.login(email: email, password: password)
-        }
-        
-        func showLoginSucceeded() {
-            presenter?.showLoginSucceeded()
-        }
-        
-        func showError(with message: String) {
-            presenter?.showError(with: message)
-        }
-        
-    }
-    
-    class MockLoginViewController: UIViewController, LoginViewProtocol {
-        var presenter: LoginPresenterProtocol?
-        var callbackResult = [String: AnyObject]()
-        
-        func showLoginSucceeded() {
-            callbackResult["showLoginSucceed"] = "" as AnyObject
-        }
-        
-        func showLoading() {
-            callbackResult["showLoading"] = "" as AnyObject
-        }
-        
-        func showError(with message: String) {
-            callbackResult["showError"] = message as AnyObject
-        }
-        
-        func dismissLoading() {
-            callbackResult["dismissLoading"] = "" as AnyObject
-        }
-    }
-    
-    class MockLoginRouter : LoginWireframeProtocol {
-        var callbackResult = [String: AnyObject]()
-        
-        func goToHome() {
-            callbackResult["goToHome"] = "" as AnyObject
-        }
-        
-        
-    }
-    
-    class MockDataManager: LoginDataManagerInputProtocol {
-        var interactor: LoginDataManagerOutputProtocol?
-        
-        func login(email: String, password: String) {
-            if email == "amsibsam" && password == "123" {
-                interactor?.showLoginSucceeded()
-            } else {
-                interactor?.showError(with: "wrong username or password")
-            }
-        }
-        
-        
-    }
 }

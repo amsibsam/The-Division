@@ -13,6 +13,14 @@
 		8E348212212E44090025764A /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */; };
 		8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */; };
 		8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348217212E7C8D0025764A /* LoginPresenterTest.swift */; };
+		8E34821A212E8AF00025764A /* LoginInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348219212E8AF00025764A /* LoginInteractorTest.swift */; };
+		8E34821C212E8C770025764A /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34821B212E8C770025764A /* MockInteractor.swift */; };
+		8E34821E212E8CA30025764A /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34821D212E8CA30025764A /* MockViewController.swift */; };
+		8E348220212E8CD80025764A /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34821F212E8CD80025764A /* MockRouter.swift */; };
+		8E348222212E8D0E0025764A /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348221212E8D0E0025764A /* MockDataManager.swift */; };
+		8E348226212E8F850025764A /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348225212E8F850025764A /* MockPresenter.swift */; };
+		8E348229212E99740025764A /* HomeContainerPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348228212E99740025764A /* HomeContainerPresenterTest.swift */; };
+		8E34822B212E99820025764A /* HomeContainerInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -109,6 +117,14 @@
 		8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E348217212E7C8D0025764A /* LoginPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
+		8E348219212E8AF00025764A /* LoginInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTest.swift; sourceTree = "<group>"; };
+		8E34821B212E8C770025764A /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
+		8E34821D212E8CA30025764A /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		8E34821F212E8CD80025764A /* MockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouter.swift; sourceTree = "<group>"; };
+		8E348221212E8D0E0025764A /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		8E348225212E8F850025764A /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
+		8E348228212E99740025764A /* HomeContainerPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPresenterTest.swift; sourceTree = "<group>"; };
+		8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerInteractorTest.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +233,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E348223212E8D4E0025764A /* mockClasses */ = {
+			isa = PBXGroup;
+			children = (
+				8E34821B212E8C770025764A /* MockInteractor.swift */,
+				8E34821D212E8CA30025764A /* MockViewController.swift */,
+				8E34821F212E8CD80025764A /* MockRouter.swift */,
+				8E348221212E8D0E0025764A /* MockDataManager.swift */,
+				8E348225212E8F850025764A /* MockPresenter.swift */,
+			);
+			path = mockClasses;
+			sourceTree = "<group>";
+		};
+		8E348224212E8D680025764A /* LoginTest */ = {
+			isa = PBXGroup;
+			children = (
+				8E348217212E7C8D0025764A /* LoginPresenterTest.swift */,
+				8E348219212E8AF00025764A /* LoginInteractorTest.swift */,
+			);
+			path = LoginTest;
+			sourceTree = "<group>";
+		};
+		8E348227212E995B0025764A /* HomeContainerTest */ = {
+			isa = PBXGroup;
+			children = (
+				8E348228212E99740025764A /* HomeContainerPresenterTest.swift */,
+				8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */,
+			);
+			path = HomeContainerTest;
+			sourceTree = "<group>";
+		};
 		8E4B01C2212118EC00986215 = {
 			isa = PBXGroup;
 			children = (
@@ -256,9 +302,11 @@
 		8E4B01E5212118F800986215 /* The DivisionTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E348227212E995B0025764A /* HomeContainerTest */,
+				8E348224212E8D680025764A /* LoginTest */,
+				8E348223212E8D4E0025764A /* mockClasses */,
 				8E4B01E6212118F800986215 /* The_DivisionTests.swift */,
 				8E4B01E8212118F800986215 /* Info.plist */,
-				8E348217212E7C8D0025764A /* LoginPresenterTest.swift */,
 			);
 			path = "The DivisionTests";
 			sourceTree = "<group>";
@@ -797,7 +845,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E348229212E99740025764A /* HomeContainerPresenterTest.swift in Sources */,
 				8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */,
+				8E34821A212E8AF00025764A /* LoginInteractorTest.swift in Sources */,
+				8E348220212E8CD80025764A /* MockRouter.swift in Sources */,
+				8E348222212E8D0E0025764A /* MockDataManager.swift in Sources */,
+				8E34822B212E99820025764A /* HomeContainerInteractorTest.swift in Sources */,
+				8E34821E212E8CA30025764A /* MockViewController.swift in Sources */,
+				8E34821C212E8C770025764A /* MockInteractor.swift in Sources */,
+				8E348226212E8F850025764A /* MockPresenter.swift in Sources */,
 				8E4B01E7212118F800986215 /* The_DivisionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
