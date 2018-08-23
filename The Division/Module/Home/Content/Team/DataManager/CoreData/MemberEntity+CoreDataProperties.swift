@@ -2,7 +2,7 @@
 //  MemberEntity+CoreDataProperties.swift
 //  The Division
 //
-//  Created by MTMAC16 on 21/08/18.
+//  Created by MTMAC16 on 23/08/18.
 //  Copyright © 2018 bism. All rights reserved.
 //
 //
@@ -17,11 +17,11 @@ extension MemberEntity {
         return NSFetchRequest<MemberEntity>(entityName: "MemberEntity")
     }
 
-    @NSManaged public var id: String
-    @NSManaged public var name: String
     @NSManaged public var avatarUrl: String?
     @NSManaged public var division: String
-    @NSManaged public var assignedMission: NSSet?
+    @NSManaged public var id: String
+    @NSManaged public var name: String
+    @NSManaged public var assignedMission: NSSet
 
 }
 

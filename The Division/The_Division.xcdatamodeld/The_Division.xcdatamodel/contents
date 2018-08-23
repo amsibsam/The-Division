@@ -8,14 +8,22 @@
         <relationship name="assignedMission" toMany="YES" deletionRule="Nullify" destinationEntity="MissionEntity" inverseName="pic" inverseEntity="MissionEntity" syncable="YES"/>
     </entity>
     <entity name="MissionEntity" representedClassName=".MissionEntity" syncable="YES">
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="missionDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="objective" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ObjectiveEntity" inverseName="mission" inverseEntity="ObjectiveEntity" syncable="YES"/>
         <relationship name="pic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MemberEntity" inverseName="assignedMission" inverseEntity="MemberEntity" syncable="YES"/>
     </entity>
+    <entity name="ObjectiveEntity" representedClassName=".ObjectiveEntity" syncable="YES">
+        <attribute name="isComplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="objective" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MissionEntity" inverseName="objective" inverseEntity="MissionEntity" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="MissionEntity" positionX="-9648" positionY="-2142" width="144" height="118"/>
-        <element name="MemberEntity" positionX="-9441" positionY="-2124" width="128" height="118"/>
+        <element name="MemberEntity" positionX="-9441" positionY="-2124" width="128" height="120"/>
+        <element name="MissionEntity" positionX="-9648" positionY="-2142" width="144" height="150"/>
+        <element name="ObjectiveEntity" positionX="-9540" positionY="-2088" width="128" height="90"/>
     </elements>
 </model>
