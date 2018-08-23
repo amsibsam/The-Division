@@ -26,6 +26,6 @@ class MockHomeContainerRouter : HomeContainerWireframeProtocol {
 class MockMissionRouter: MissionRouter {
     var callbackResult = [String: AnyObject]()
     override func openMissionDetail(from view: MissionViewProtocol, with mission: Mission) {
-        callbackResult["openMissionDetail"] = "" as AnyObject
+        callbackResult["openMissionDetail"] = mission as AnyObject
     }
 }

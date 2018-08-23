@@ -57,18 +57,24 @@ class MockMissionDataManager: MissionDataManagerInputProtocol {
     }
     
     func getMission(with state: MissionState) {
-        // MARK: to do mocking data here
-//        interactor?.onGetMissionSucceeded(with: <#T##[Mission]#>)
+        switch state {
+        case .New:
+            interactor?.onGetMissionSucceeded(with: [Mission(id: "test01", name: "testMissino", description: "testMissino", state: .New)])
+        case .InProgress:
+            interactor?.onGetMissionSucceeded(with: [Mission(id: "test01", name: "testMissino", description: "testMissino", state: .InProgress)])
+        case .Finished:
+            interactor?.onGetMissionSucceeded(with: [Mission(id: "test01", name: "testMissino", description: "testMissino", state: .Finished)])
+        }
     }
     
     func createMission(with name: String, description: String, assignee: Member) {
-        // MARK: to do mocking data here
-//        interactor?.onCreateMissionSucceeded(with: <#T##Mission#>)
+        var createMission = Mission(id: "createMissionTest01", name: name, description: description, state: .New)
+        createMission.assignee = assignee
+        interactor?.onCreateMissionSucceeded(with: createMission)
     }
     
     func getAllAgent() {
-        // MARK: to do mocking data here
-//        interactor?.onGetAllAgentSucceeded(with: <#T##[Member]#>)
+        interactor?.onGetAllAgentSucceeded(with: [Member(id: "testMember01", name: "testMember", division: .Transportation, missionCount: 0, avatarURL: nil, pict: nil)])
     }
     
     

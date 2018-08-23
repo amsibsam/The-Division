@@ -41,7 +41,7 @@ class MockHomeViewController: UIViewController, HomeContainerViewProtocol {
     }
 }
 
-class MockMissionViewControlelr: UIViewController, MissionViewProtocol {
+class MockMissionViewController: UIViewController, MissionViewProtocol {
     var presenter: MissionPresenterProtocol?
     var callbackResult = [String: AnyObject]()
     
