@@ -41,7 +41,7 @@ class TeamCoreData: BaseCoreData {
             do {
                 let memberEntities: [MemberEntity] = try self.managedContext.fetch(MemberEntity.fetchRequest())
                 let result = memberEntities.map { (memberEntity) -> Member in
-                    return Member(id: memberEntity.id, name: memberEntity.name, division: TeamDivision(rawValue: memberEntity.division)!, missionCount: 0, avatarURL: memberEntity.avatarURL, pict: memberEntity.pict)
+                    return Member(id: memberEntity.id, name: memberEntity.name, division: TeamDivision(rawValue: memberEntity.division)!, missionCount: memberEntity.assignedMission?.count ?? 0, avatarURL: memberEntity.avatarURL, pict: memberEntity.pict)
                 }
                 
                 DispatchQueue.main.async {
@@ -65,7 +65,7 @@ class TeamCoreData: BaseCoreData {
                 
                 let memberEntities: [MemberEntity] = try self.managedContext.fetch(request)
                 let result = memberEntities.map { (memberEntity) -> Member in
-                    return Member(id: memberEntity.id, name: memberEntity.name, division: TeamDivision(rawValue: memberEntity.division)!, missionCount: 0, avatarURL: memberEntity.avatarURL, pict: memberEntity.pict)
+                    return Member(id: memberEntity.id, name: memberEntity.name, division: TeamDivision(rawValue: memberEntity.division)!, missionCount: memberEntity.assignedMission?.count ?? 0, avatarURL: memberEntity.avatarURL, pict: memberEntity.pict)
                 }
                 
                 DispatchQueue.main.async {
