@@ -23,6 +23,8 @@
 		8E34822B212E99820025764A /* HomeContainerInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */; };
 		8E34822F212EA0C90025764A /* MissionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34822E212EA0C90025764A /* MissionPresenterTest.swift */; };
 		8E348231212EA0D60025764A /* MissionInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348230212EA0D60025764A /* MissionInteractorTest.swift */; };
+		8E42097F212FB03700E7F697 /* LoginDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */; };
+		8E420981212FB23200E7F697 /* TestingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420980212FB23200E7F697 /* TestingConstant.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -129,6 +131,8 @@
 		8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerInteractorTest.swift; sourceTree = "<group>"; };
 		8E34822E212EA0C90025764A /* MissionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionPresenterTest.swift; sourceTree = "<group>"; };
 		8E348230212EA0D60025764A /* MissionInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractorTest.swift; sourceTree = "<group>"; };
+		8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTest.swift; sourceTree = "<group>"; };
+		8E420980212FB23200E7F697 /* TestingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingConstant.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 			children = (
 				8E348217212E7C8D0025764A /* LoginPresenterTest.swift */,
 				8E348219212E8AF00025764A /* LoginInteractorTest.swift */,
+				8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				8E348223212E8D4E0025764A /* MockClasses */,
 				8E4B01E6212118F800986215 /* The_DivisionTests.swift */,
 				8E4B01E8212118F800986215 /* Info.plist */,
+				8E420980212FB23200E7F697 /* TestingConstant.swift */,
 			);
 			path = "The DivisionTests";
 			sourceTree = "<group>";
@@ -861,6 +867,7 @@
 			files = (
 				8E348229212E99740025764A /* HomeContainerPresenterTest.swift in Sources */,
 				8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */,
+				8E420981212FB23200E7F697 /* TestingConstant.swift in Sources */,
 				8E34821A212E8AF00025764A /* LoginInteractorTest.swift in Sources */,
 				8E348231212EA0D60025764A /* MissionInteractorTest.swift in Sources */,
 				8E348220212E8CD80025764A /* MockRouter.swift in Sources */,
@@ -871,6 +878,7 @@
 				8E34821C212E8C770025764A /* MockInteractor.swift in Sources */,
 				8E348226212E8F850025764A /* MockPresenter.swift in Sources */,
 				8E4B01E7212118F800986215 /* The_DivisionTests.swift in Sources */,
+				8E42097F212FB03700E7F697 /* LoginDataManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

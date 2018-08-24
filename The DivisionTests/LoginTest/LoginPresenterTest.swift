@@ -41,13 +41,13 @@ class LoginPresenterTest: XCTestCase {
     
     func testEmptyUsername() {
         let form = (email:"",password:"123")
-        XCTAssertFalse(presenter.isValidLoginData(email: form.email, password: form.password))
+        XCTAssertFalse(presenter.isValidLoginData(email: form.email, password: form.password), "should return false")
         
         presenter.login(email: form.email, password: form.password)
         XCTAssertEqual(viewController.callbackResult["showLoading"]?.description, "")
         XCTAssertEqual(viewController.callbackResult["showError"]?.description, "Please fill your email and password")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
-        XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "")
+        XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "showLoginSucceed")
         XCTAssertFalse(((router.callbackResult["goToHome"]?.description) != nil), "")
     }
     
@@ -59,7 +59,7 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["showLoading"]?.description, "")
         XCTAssertEqual(viewController.callbackResult["showError"]?.description, "Please fill your email and password")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
-        XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "")
+        XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "showLoginSucceed")
         XCTAssertFalse(((router.callbackResult["goToHome"]?.description) != nil), "")
     }
     
@@ -71,7 +71,7 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["showLoading"]?.description, "")
         XCTAssertEqual(viewController.callbackResult["showError"]?.description, "wrong username or password")
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
-        XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "")
+        XCTAssertFalse(((viewController.callbackResult["showLoginSucceed"]?.description) != nil), "showLoginSucceed")
         XCTAssertFalse(((router.callbackResult["goToHome"]?.description) != nil), "")
     }
     
@@ -85,7 +85,6 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertEqual(viewController.callbackResult["dismissLoading"]?.description, "")
         XCTAssertEqual(router.callbackResult["goToHome"]?.description, "")
         XCTAssertFalse(((viewController.callbackResult["showError"]?.description) != nil), "wrong username or password")
-        XCTAssertFalse(((viewController.callbackResult["showError"]?.description) != nil), "Please fill your email and password")
     }
 
 }

@@ -14,16 +14,20 @@ class MockLoginInteractor: LoginInteractorInputProtocol, LoginDataManagerOutputP
     
     var dataManager: LoginDataManagerInputProtocol?
     
+    var callbackResult = [String: AnyObject]()
+    
     func login(email: String, password: String) {
         dataManager?.login(email: email, password: password)
     }
     
     func showLoginSucceeded() {
         presenter?.showLoginSucceeded()
+        callbackResult["showLoginSucceeded"] = "" as AnyObject
     }
     
     func showError(with message: String) {
         presenter?.showError(with: message)
+        callbackResult["showError"] = message as AnyObject
     }
     
 }

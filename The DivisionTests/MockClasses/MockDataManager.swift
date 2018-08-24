@@ -14,9 +14,9 @@ class MockLoginDataManager: LoginDataManagerInputProtocol {
     
     func login(email: String, password: String) {
         if email == "amsibsam" && password == "123" {
-            interactor?.showLoginSucceeded()
+            self.interactor?.showLoginSucceeded()
         } else {
-            interactor?.showError(with: "wrong username or password")
+            self.interactor?.showError(with: "wrong username or password")
         }
     }
 }
