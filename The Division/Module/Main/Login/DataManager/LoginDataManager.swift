@@ -13,7 +13,7 @@ class LoginDataManager: LoginDataManagerInputProtocol {
     
     func login(email: String, password: String) {
         DataCacheManager.shared.saveUserCredential(token: password)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.interactor?.showLoginSucceeded()
         }
     }

@@ -19,9 +19,9 @@ class MissionCoreData: BaseCoreData {
     override private init() { }
     
     func add(mission: Mission, completion: @escaping (Bool) -> Void) {
-        DispatchQueue.global(qos: .background).async {
+        doBackgroundTask { (context) in
             do {
-                let missionEntity = MissionEntity(entity: MissionEntity.entity(), insertInto: self.managedContext)
+                let missionEntity = MissionEntity(entity: MissionEntity.entity(), insertInto: context)
                 missionEntity.id = mission.id
                 missionEntity.name = mission.name
                 missionEntity.missionDescription = mission.description
@@ -30,11 +30,11 @@ class MissionCoreData: BaseCoreData {
                 if let assignee = mission.assignee {
                     let req = MemberEntity.fetchRequest() as NSFetchRequest
                     req.predicate = NSPredicate(format: "id = %@", assignee.id)
-                    let result = try self.managedContext.fetch(req)
+                    let result = try context.fetch(req)
                     missionEntity.pic = result.first
                 }
                 
-                self.save()
+                try context.save()
                 DispatchQueue.main.async {
                     completion(true)
                 }
@@ -48,27 +48,35 @@ class MissionCoreData: BaseCoreData {
     }
     
     func addOrUpdate(mission: Mission, completion: @escaping (Bool) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            if let missionEntity = self.getMissionEntity(by: mission) {
-                missionEntity.name = mission.name
-                missionEntity.missionDescription = mission.description
-                missionEntity.state = mission.state.rawValue
-                self.save()
-                DispatchQueue.main.async {
-                    completion(true)
+        doBackgroundTask { (context) in
+            do {
+                if let missionEntity = self.getMissionEntity(by: mission) {
+                    missionEntity.name = mission.name
+                    missionEntity.missionDescription = mission.description
+                    missionEntity.state = mission.state.rawValue
+                    try context.save()
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                } else {
+                    self.add(mission: mission, completion: completion)
                 }
-            } else {
-                self.add(mission: mission, completion: completion)
+            } catch let error as NSError {
+                print("error edit member \(error), \(error.userInfo)")
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
+            
         }
     }
     
     func getMission(by mission: Mission, completion: @escaping (Mission?) -> Void) {
-        DispatchQueue.global(qos: .background).async {
+        doBackgroundTask { (context) in
             do {
                 let fetchRequest = MissionEntity.fetchRequest() as NSFetchRequest
                 fetchRequest.predicate = NSPredicate(format: "id = %@", mission.id)
-                let filteredEntity = try self.managedContext.fetch(fetchRequest)
+                let filteredEntity = try context.fetch(fetchRequest)
                 
                 if let filterEntityResult = filteredEntity.first {
                     var mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.missionDescription , state: MissionState(rawValue: filterEntityResult.state)!)
@@ -95,12 +103,12 @@ class MissionCoreData: BaseCoreData {
     }
     
     func getMission(byState: MissionState, completion: @escaping ([Mission]?) -> Void){
-        DispatchQueue.global(qos: .background).async {
+        doBackgroundTask { (context) in
             do {
                 let request = MissionEntity.fetchRequest() as NSFetchRequest
                 request.predicate = NSPredicate(format: "state = %@", byState.rawValue)
                 
-                let filteredEntity: [MissionEntity] = try self.managedContext.fetch(request)
+                let filteredEntity: [MissionEntity] = try context.fetch(request)
                 
                 let filteredMission: [Mission] = filteredEntity.map { (missionEntity) -> Mission in
                     var mission = Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription , state: MissionState(rawValue: missionEntity.state)!)
@@ -122,12 +130,15 @@ class MissionCoreData: BaseCoreData {
                 }
             }
         }
+        DispatchQueue.global(qos: .background).async {
+            
+        }
     }
     
     func getMission(completion: @escaping ([Mission]?) -> Void) {
-        DispatchQueue.global(qos: .background).async {
+        doBackgroundTask { (context) in
             do {
-                let missionEntities: [MissionEntity] = try self.managedContext.fetch(MissionEntity.fetchRequest())
+                let missionEntities: [MissionEntity] = try context.fetch(MissionEntity.fetchRequest())
                 let result: [Mission] = missionEntities.map({ (missionEntity) -> Mission in
                     var mission = Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription , state: MissionState(rawValue: missionEntity.state)!)
                     
@@ -147,6 +158,7 @@ class MissionCoreData: BaseCoreData {
                 }
             }
         }
+
     }
     
     private func getMissionEntity(by mission: Mission) -> MissionEntity? {

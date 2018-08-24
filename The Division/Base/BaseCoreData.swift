@@ -24,4 +24,9 @@ class BaseCoreData {
             print("error save obj \(error), \(error.userInfo)")
         }
     }
+    
+    func doBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+        UIApplication.appDelegate.persistentContainer.performBackgroundTask(block)
+    }
+    
 }

@@ -25,6 +25,7 @@
 		8E348231212EA0D60025764A /* MissionInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348230212EA0D60025764A /* MissionInteractorTest.swift */; };
 		8E42097F212FB03700E7F697 /* LoginDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */; };
 		8E420981212FB23200E7F697 /* TestingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420980212FB23200E7F697 /* TestingConstant.swift */; };
+		8E420983212FD52E00E7F697 /* HomeContainerDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -133,6 +134,7 @@
 		8E348230212EA0D60025764A /* MissionInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractorTest.swift; sourceTree = "<group>"; };
 		8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTest.swift; sourceTree = "<group>"; };
 		8E420980212FB23200E7F697 /* TestingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingConstant.swift; sourceTree = "<group>"; };
+		8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerDataManagerTest.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				8E348228212E99740025764A /* HomeContainerPresenterTest.swift */,
 				8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */,
+				8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */,
 			);
 			path = HomeContainerTest;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				8E34821C212E8C770025764A /* MockInteractor.swift in Sources */,
 				8E348226212E8F850025764A /* MockPresenter.swift in Sources */,
 				8E4B01E7212118F800986215 /* The_DivisionTests.swift in Sources */,
+				8E420983212FD52E00E7F697 /* HomeContainerDataManagerTest.swift in Sources */,
 				8E42097F212FB03700E7F697 /* LoginDataManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

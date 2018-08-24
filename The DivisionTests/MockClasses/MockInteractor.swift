@@ -37,12 +37,15 @@ class MockHomeContainerInteractor: HomeContainerInteractorInputProtocol, HomeCon
     
     var dataManager: HomeContainerDataManagerInputProtocol?
     
+    var callbackResult = [String: AnyObject]()
+    
     func getMenuItem() {
         dataManager?.getMenuItem()
     }
     
     func onGetMenuItemSucceed(menuItems: [[MenuItem]]) {
         presenter?.onGetMenuItemSucceed(menuItems: menuItems)
+        callbackResult["onGetMenuItemSucceed"] = menuItems as AnyObject
     }
 }
 
