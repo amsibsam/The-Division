@@ -54,6 +54,8 @@ class MockMissionInteractor: MissionInteractorInputProtocol, MissionDataManagerO
     
     var dataManager: MissionDataManagerInputProtocol?
     
+    var callbackResult = [String: AnyObject]()
+    
     func editMission(with mission: Mission) {
         dataManager?.editMission(with: mission)
     }
@@ -72,13 +74,16 @@ class MockMissionInteractor: MissionInteractorInputProtocol, MissionDataManagerO
     
     func onGetMissionSucceeded(with missions: [Mission]) {
         presenter?.onGetMissionSucceeded(with: missions)
+        callbackResult["onGetMissionSucceeded"] = missions as AnyObject
     }
     
     func onCreateMissionSucceeded(with mission: Mission) {
         presenter?.onCreateMissionSucceeded(with: mission)
+        callbackResult["onCreateMissionSucceeded"] = mission as AnyObject
     }
     
     func onGetAllAgentSucceeded(with agents: [Member]) {
         presenter?.onGetAllAgentSuceeded(with: agents)
+        callbackResult["onGetAllAgentSucceeded"] = agents as AnyObject
     }
 }

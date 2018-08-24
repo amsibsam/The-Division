@@ -25,7 +25,7 @@ class MockHomeContainerPresenter: HomeContainerInteractorOutputProtocol {
     var callbackResult = [String: AnyObject]()
     
     func onGetMenuItemSucceed(menuItems: [[MenuItem]]) {
-        callbackResult["onGetMenuItemSucceed"] = "menuItems" as AnyObject
+        callbackResult["onGetMenuItemSucceed"] = menuItems as AnyObject
     }
 }
 

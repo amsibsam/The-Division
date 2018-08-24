@@ -7,11 +7,22 @@
 //
 
 import XCTest
+@testable import The_Division
 
 class HomeContainerInteractorTest: XCTestCase {
+    var interactor: HomeContainerInteractor!
+    var presenter: MockHomeContainerPresenter!
+    var dataManager: MockHomeContainerDataManager!
     
     override func setUp() {
         super.setUp()
+        interactor = HomeContainerInteractor()
+        presenter = MockHomeContainerPresenter()
+        dataManager = MockHomeContainerDataManager()
+        
+        interactor.presenter = presenter
+        dataManager.interactor = interactor
+        interactor.dataManager = dataManager
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -19,10 +30,11 @@ class HomeContainerInteractorTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testSuccessDisplayMenuItem() {
+        interactor.getMenuItem()
+        
+        XCTAssert(presenter.callbackResult["onGetMenuItemSucceed"] is [[MenuItem]])
     }
     
     func testPerformanceExample() {
