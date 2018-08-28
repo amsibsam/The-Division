@@ -64,8 +64,8 @@ class MockMissionInteractor: MissionInteractorInputProtocol, MissionDataManagerO
         dataManager?.getMission(with: state)
     }
     
-    func createMission(with name: String, description: String, assignee: Member) {
-        dataManager?.createMission(with: name, description: description, assignee: assignee)
+    func createMission(with name: String, description: String, assignee: Member, objective: [Objective]) {
+        dataManager?.createMission(with: name, description: description, assignee: assignee, objective: objective)
     }
     
     func getAllAgent() {

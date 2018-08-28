@@ -33,7 +33,7 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
     }
     
     @IBAction func showPartner(_ sender: UIButton) {
-        
+        presenter?.presentPartner(from: self)
     }
     
     @IBAction func showObjective(_ sender: UIButton) {

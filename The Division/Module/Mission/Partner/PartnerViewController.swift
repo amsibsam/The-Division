@@ -10,12 +10,80 @@
 
 import UIKit
 
-class PartnerViewController: LandscapeViewController, PartnerViewProtocol {
+class PartnerViewController: LandscapeViewController {
 
-	var presenter: PartnerPresenterProtocol?
+    @IBOutlet var collectionViewPartner: UICollectionView!
+    @IBOutlet var mainContainer: UIView!
+    var presenter: PartnerPresenterProtocol?
+    var dummyPartner: [Member]!
+    var currentPossition: Int = 0
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        dummyPartner = [
+            Member(id: "1", name: "a", division: .Transportation, missionCount: 0, avatarURL: nil, pict: nil),
+            Member(id: "2", name: "b", division: .Transportation, missionCount: 0, avatarURL: nil, pict: nil)
+        ]
+        
+        setupUI()
     }
+    @IBAction func next(_ sender: UIButton) {
+        if (dummyPartner.count > 1) && (currentPossition < (dummyPartner.count - 1)) {
+            currentPossition += 1
+            collectionViewPartner.scrollToItem(at: IndexPath(row: currentPossition, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    @IBAction func previous(_ sender: UIButton) {
+        if currentPossition > 0 {
+            currentPossition -= 1
+            collectionViewPartner.scrollToItem(at: IndexPath(row: currentPossition, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    private func setupUI() {
+        let tapGestuer = UITapGestureRecognizer(target: self, action: #selector(PartnerViewController.exit))
+        mainContainer.addGestureRecognizer(tapGestuer)
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
+        collectionViewPartner.delegate = self
+        collectionViewPartner.dataSource = self
+        collectionViewPartner.isUserInteractionEnabled = false
+    }
+    
+    @objc func exit() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func doOnTappedAround(_ sender: UIGestureRecognizer) {
+        super.doOnTappedAround(sender)
+        dismiss(animated: true, completion: nil)
+    }
+}
 
+extension PartnerViewController: PartnerViewProtocol {
+    
+}
+
+extension PartnerViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dummyPartner.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PartnerCell", for: indexPath)
+        
+        return cell
+    }
+    
+    
+}
+
+extension PartnerViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionViewPartner.deselectItem(at: indexPath, animated: true)
+    }
 }

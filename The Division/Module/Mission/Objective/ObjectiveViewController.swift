@@ -28,6 +28,7 @@ class ObjectiveViewController: LandscapeViewController {
     }
 
     @IBAction func save(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -55,6 +56,6 @@ extension ObjectiveViewController: UITableViewDataSource {
 
 extension ObjectiveViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

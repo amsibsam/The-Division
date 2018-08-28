@@ -67,7 +67,7 @@ class MockMissionDataManager: MissionDataManagerInputProtocol {
         }
     }
     
-    func createMission(with name: String, description: String, assignee: Member) {
+    func createMission(with name: String, description: String, assignee: Member, objective: [Objective]) {
         var createMission = Mission(id: "createMissionTest01", name: name, description: description, state: .New)
         createMission.assignee = assignee
         interactor?.onCreateMissionSucceeded(with: createMission)

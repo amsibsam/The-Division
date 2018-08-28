@@ -36,6 +36,14 @@ class MissionDetailRouter: MissionDetailWireframeProtocol {
         if let sourceView = view as? UIViewController {
             sourceView.present(objectiveVC, animated: true, completion: nil)
         }
+    }
+    
+    func presentPartner(from view: MissionDetailViewProtocol) {
+        let partnerVC = PartnerRouter.createModule()
+        partnerVC.modalPresentationStyle = .overCurrentContext
         
+        if let sourceView = view as? UIViewController {
+            sourceView.present(partnerVC, animated: true, completion: nil)
+        }
     }
 }

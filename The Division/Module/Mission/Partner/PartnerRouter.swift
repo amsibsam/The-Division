@@ -16,7 +16,7 @@ class PartnerRouter: PartnerWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = PartnerViewController(nibName: nil, bundle: nil)
+        let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: MissionViewControllers.Partner.rawValue) as! PartnerViewController
         let interactor = PartnerInteractor()
         let router = PartnerRouter()
         let presenter = PartnerPresenter(interface: view, interactor: interactor, router: router)

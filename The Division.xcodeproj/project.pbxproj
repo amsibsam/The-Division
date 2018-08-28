@@ -51,6 +51,7 @@
 		8E42EFC52134FB8500F66546 /* PartnerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFBF2134FB8500F66546 /* PartnerRouter.swift */; };
 		8E42EFC62134FB8500F66546 /* PartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFC02134FB8500F66546 /* PartnerViewController.swift */; };
 		8E42EFC921351B6B00F66546 /* ObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFC821351B6B00F66546 /* ObjectiveCell.swift */; };
+		8E42EFCB21353B2100F66546 /* PartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFCA21353B2100F66546 /* PartnerCell.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -185,6 +186,7 @@
 		8E42EFBF2134FB8500F66546 /* PartnerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRouter.swift; sourceTree = "<group>"; };
 		8E42EFC02134FB8500F66546 /* PartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewController.swift; sourceTree = "<group>"; };
 		8E42EFC821351B6B00F66546 /* ObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveCell.swift; sourceTree = "<group>"; };
+		8E42EFCA21353B2100F66546 /* PartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCell.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				8E42EFBE2134FB8500F66546 /* PartnerProtocols.swift */,
 				8E42EFBF2134FB8500F66546 /* PartnerRouter.swift */,
 				8E42EFC02134FB8500F66546 /* PartnerViewController.swift */,
+				8E42EFCA21353B2100F66546 /* PartnerCell.swift */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -976,6 +979,7 @@
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,
 				8E4B021D21214D5C00986215 /* UIView+Animation.swift in Sources */,
 				8E42EFC921351B6B00F66546 /* ObjectiveCell.swift in Sources */,
+				8E42EFCB21353B2100F66546 /* PartnerCell.swift in Sources */,
 				8E58BE34212BA95700CA7CF6 /* TeamCoreData.swift in Sources */,
 				8EE92DDA2122CF360037BADB /* TeamViewController.swift in Sources */,
 				8E766BCE212278F000A76E15 /* HomeContainerRouter.swift in Sources */,

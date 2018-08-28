@@ -57,7 +57,7 @@ class MissionInteractorTest: XCTestCase {
     
     func testCreateMission() {
         let member = Member(id: "testMember01", name: "testMember", division: .Transportation, missionCount: 0, avatarURL: nil, pict: nil)
-        interactor.createMission(with: "CreateTest", description: "CreateTest", assignee: member)
+        interactor.createMission(with: "CreateTest", description: "CreateTest", assignee: member, objective: [])
         
         XCTAssertEqual((presenter.callbackResult["onCreateMissionSucceeded"] as! Mission).name, "CreateTest")
         XCTAssertEqual((presenter.callbackResult["onCreateMissionSucceeded"] as! Mission).description, "CreateTest")

@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol MissionDetailWireframeProtocol: class {
     func presentObjective(from view: MissionDetailViewProtocol)
+    func presentPartner(from view: MissionDetailViewProtocol)
 }
 //MARK: Presenter -
 protocol MissionDetailPresenterProtocol: class {
@@ -21,6 +22,7 @@ protocol MissionDetailPresenterProtocol: class {
     
     /* ViewController -> Presenter */
     func presentObjective(from view: MissionDetailViewProtocol)
+    func presentPartner(from view: MissionDetailViewProtocol)
 }
 
 //MARK: Interactor -

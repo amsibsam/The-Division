@@ -76,7 +76,7 @@ class MissionDataManagerTest: XCTestCase {
 
     func testCreateMission() {
         let member = Member(id: "testMember01", name: "testMember", division: .Transportation, missionCount: 0, avatarURL: nil, pict: nil)
-        dataManager.createMission(with: "testingMission", description: "just testing", assignee: member)
+        dataManager.createMission(with: "testingMission", description: "just testing", assignee: member, objective: [])
 
         XCTAssertEqual((interactor.callbackResult["onCreateMissionSucceeded"] as! Mission).name, "testingMission")
         XCTAssertEqual((interactor.callbackResult["onCreateMissionSucceeded"] as! Mission).description, "just testing")
