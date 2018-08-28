@@ -28,6 +28,18 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
         bindDataToView()
     }
     
+    @IBAction func showNote(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func showPartner(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func showObjective(_ sender: UIButton) {
+        
+    }
+    
     private func setupUI() {
         viewMissionDetailContainer.layer.shadowOpacity = 0.7
         viewMissionDetailContainer.layer.shadowColor = UIColor.yellow.cgColor

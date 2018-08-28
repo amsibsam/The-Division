@@ -11,7 +11,7 @@
 import UIKit
 
 class MissionPresenter: MissionPresenterProtocol {
-  
+    
     weak private var view: MissionViewProtocol?
     var interactor: MissionInteractorInputProtocol?
     private let router: MissionWireframeProtocol
@@ -36,6 +36,10 @@ class MissionPresenter: MissionPresenterProtocol {
     
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission) {
         router.openMissionDetail(from: view, with: mission)
+    }
+    
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member]) {
+        router.presentCreateMissionPopup(from: view, with: agents)
     }
     
     func getAllAgent() {

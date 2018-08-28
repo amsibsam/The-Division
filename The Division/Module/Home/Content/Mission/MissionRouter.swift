@@ -29,11 +29,9 @@ class MissionRouter: MissionWireframeProtocol {
             interactor.dataManager = dataManager
             interactor.presenter = presenter
             router.viewController = view
-            
-            return navigation
         }
-
-        return UIViewController()
+        
+        return navigation
     }
     
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission) {
@@ -41,5 +39,16 @@ class MissionRouter: MissionWireframeProtocol {
         if let sourceView = view as? UIViewController {
             sourceView.navigationController?.pushViewController(missionDetailVC, animated: true)
         }
+    }
+    
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member]) {
+        if let sourceView = view as? UIViewController {
+            if let createMissionPopupVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.CreateMission.rawValue) as? CreateMissioPopupViewController {
+                createMissionPopupVC.agents = agents
+                createMissionPopupVC.modalPresentationStyle = .overCurrentContext
+                sourceView.present(createMissionPopupVC, animated: true, completion: nil)
+            }
+        }
+        
     }
 }

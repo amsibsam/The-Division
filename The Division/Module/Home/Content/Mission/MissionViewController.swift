@@ -101,7 +101,8 @@ extension MissionViewController: UITableViewDataSource {
         
         header.bindDataToView(in: .Mission, with: missionState.rawValue, and: missions.count)
         header.onAddDidTap = {
-            self.displayAddMissionAlert()
+            self.presenter?.presentCreateMissionPopup(from: self, with: self.agents)
+//            self.displayAddMissionAlert()
         }
         
         return header

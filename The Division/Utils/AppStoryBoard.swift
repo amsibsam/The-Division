@@ -12,6 +12,7 @@ import UIKit
 enum AppStoryBoard: String {
     case Main = "Main"
     case Home = "Home"
+    case Mission = "Mission"
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -35,4 +36,5 @@ enum HomeViewControllers: String {
     case Mission = "MissionViewController"
     case MissionDetail = "MissionDetailViewController"
     case CreateMember = "CreateMemberPopupViewController"
+    case CreateMission = "CreateMissionPopupViewController"
 }

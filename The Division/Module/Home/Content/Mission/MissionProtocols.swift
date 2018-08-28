@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol MissionWireframeProtocol: class {
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission)
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member])
 }
 //MARK: Presenter -
 protocol MissionPresenterProtocol: class {
@@ -24,6 +25,7 @@ protocol MissionPresenterProtocol: class {
     func createMission(with name: String, description: String, assignee: Member)
     func editMission(with mission: Mission)
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission)
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member])
     func getAllAgent()
 }
 
