@@ -37,36 +37,6 @@ class MissionViewController: LandscapeViewController {
         tableViewMission.estimatedRowHeight = UITableViewAutomaticDimension
     }
     
-    private func displayAddMissionAlert() {
-        let addMissionAlert = UIAlertController(title: "Add Mission", message: nil, preferredStyle: .alert)
-        
-        addMissionAlert.addTextField { (tf) in
-            tf.placeholder = "Mission Name.."
-        }
-        addMissionAlert.addTextField { (tf) in
-            tf.placeholder = "Mission Description"
-        }
-        addMissionAlert.addTextField { (tf) in
-            tf.placeholder = "assignee"
-        }
-        
-        agentPicker.dataSource = self
-        agentPicker.delegate = self
-        tfAgent = addMissionAlert.textFields?[2]
-        tfAgent?.inputView = agentPicker
-        tfAgent?.addDoneButton(picker: agentPicker)
-        tfAgent?.text = selectedAgent?.name
-        
-        addMissionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        addMissionAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (action) in
-            if let name = addMissionAlert.textFields?[0].text, let description = addMissionAlert.textFields?[1].text {
-                guard let assignee = self.selectedAgent else { return }
-                self.presenter?.createMission(with: name, description: description, assignee: assignee)
-            }
-        }))
-        present(addMissionAlert, animated: true, completion: nil)
-    }
-    
     private func setMissionToInProgress(at indexPath: IndexPath) {
         var selectedMission = missions[indexPath.row]
         selectedMission.state = .InProgress
@@ -101,8 +71,9 @@ extension MissionViewController: UITableViewDataSource {
         
         header.bindDataToView(in: .Mission, with: missionState.rawValue, and: missions.count)
         header.onAddDidTap = {
-            self.presenter?.presentCreateMissionPopup(from: self, with: self.agents)
-//            self.displayAddMissionAlert()
+            self.presenter?.presentCreateMissionPopup(from: self, with: self.agents, completion: { (title, description, assignee, objectives) in
+                self.presenter?.createMission(with: title, description: description, assignee: assignee, objective: objectives)
+            })
         }
         
         return header

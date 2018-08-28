@@ -14,8 +14,9 @@ class MissionDataManager: MissionDataManagerInputProtocol {
     
     var interactor: MissionDataManagerOutputProtocol?
     
-    func createMission(with name: String, description: String, assignee: Member) {
+    func createMission(with name: String, description: String, assignee: Member, objective: [Objective]) {
         var mission = Mission(id: "\(NSDate().timeIntervalSince1970)", name: name, description: description, state: .New)
+        mission.objective = objective
         mission.assignee = assignee
         self.interactor?.onCreateMissionSucceeded(with: mission)
         MissionCoreData.shared.add(mission: mission) { missions in

@@ -41,11 +41,12 @@ class MissionRouter: MissionWireframeProtocol {
         }
     }
     
-    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member]) {
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member], completion: @escaping (String, String, Member, [Objective]) -> Void) {
         if let sourceView = view as? UIViewController {
             if let createMissionPopupVC = AppStoryBoard.Home.instance.instantiateViewController(withIdentifier: HomeViewControllers.CreateMission.rawValue) as? CreateMissioPopupViewController {
                 createMissionPopupVC.agents = agents
                 createMissionPopupVC.modalPresentationStyle = .overCurrentContext
+                createMissionPopupVC.completion = completion
                 sourceView.present(createMissionPopupVC, animated: true, completion: nil)
             }
         }

@@ -13,7 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol MissionWireframeProtocol: class {
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission)
-    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member])
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member], completion: @escaping (String, String, Member, [Objective]) -> Void)
 }
 //MARK: Presenter -
 protocol MissionPresenterProtocol: class {
@@ -22,10 +22,10 @@ protocol MissionPresenterProtocol: class {
     
     /* ViewController -> Peresenter */
     func getMission(with state: MissionState)
-    func createMission(with name: String, description: String, assignee: Member)
+    func createMission(with name: String, description: String, assignee: Member, objective: [Objective])
     func editMission(with mission: Mission)
     func openMissionDetail(from view: MissionViewProtocol, with mission: Mission)
-    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member])
+    func presentCreateMissionPopup(from view: MissionViewProtocol, with agents: [Member], completion: @escaping (String, String, Member, [Objective]) -> Void)
     func getAllAgent()
 }
 
@@ -45,7 +45,7 @@ protocol MissionInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func editMission(with mission: Mission)
     func getMission(with state: MissionState)
-    func createMission(with name: String, description: String, assignee: Member)
+    func createMission(with name: String, description: String, assignee: Member, objective: [Objective])
     func getAllAgent()
 }
 
@@ -67,7 +67,7 @@ protocol MissionDataManagerInputProtocol: class {
     /* Interactor -> DataManager */
     func editMission(with mission: Mission)
     func getMission(with state: MissionState)
-    func createMission(with name: String, description: String, assignee: Member)
+    func createMission(with name: String, description: String, assignee: Member, objective: [Objective])
     func getAllAgent()
 }
 

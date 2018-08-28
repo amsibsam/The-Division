@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7DDB68A34FB9459E302E7AC8 /* Pods_The_Division.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84365F5ACB55DDF07A888DF8 /* Pods_The_Division.framework */; };
-		8E348205212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348203212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift */; };
-		8E348210212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */; };
-		8E348212212E44090025764A /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */; };
 		8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */; };
 		8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348217212E7C8D0025764A /* LoginPresenterTest.swift */; };
 		8E34821A212E8AF00025764A /* LoginInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348219212E8AF00025764A /* LoginInteractorTest.swift */; };
@@ -35,6 +32,24 @@
 		8E42EF902134D9C900F66546 /* AddMissionObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF8F2134D9C900F66546 /* AddMissionObjectiveCell.swift */; };
 		8E42EF922134D9D700F66546 /* MissionObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF912134D9D700F66546 /* MissionObjectiveCell.swift */; };
 		8E42EF942134E78800F66546 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF932134E78800F66546 /* Objective.swift */; };
+		8E42EF9E2134F92900F66546 /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */; };
+		8E42EF9F2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */; };
+		8E42EFA02134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9C2134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift */; };
+		8E42EFAA2134FB1E00F66546 /* ObjectiveInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */; };
+		8E42EFAB2134FB1E00F66546 /* ObjectivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */; };
+		8E42EFAC2134FB1E00F66546 /* ObjectiveProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA62134FB1E00F66546 /* ObjectiveProtocols.swift */; };
+		8E42EFAD2134FB1E00F66546 /* ObjectiveRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA72134FB1E00F66546 /* ObjectiveRouter.swift */; };
+		8E42EFAE2134FB1E00F66546 /* ObjectiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA82134FB1E00F66546 /* ObjectiveViewController.swift */; };
+		8E42EFB62134FB6F00F66546 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFB02134FB6F00F66546 /* NoteInteractor.swift */; };
+		8E42EFB72134FB6F00F66546 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFB12134FB6F00F66546 /* NotePresenter.swift */; };
+		8E42EFB82134FB6F00F66546 /* NoteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFB22134FB6F00F66546 /* NoteProtocols.swift */; };
+		8E42EFB92134FB6F00F66546 /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFB32134FB6F00F66546 /* NoteRouter.swift */; };
+		8E42EFBA2134FB6F00F66546 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFB42134FB6F00F66546 /* NoteViewController.swift */; };
+		8E42EFC22134FB8500F66546 /* PartnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFBC2134FB8500F66546 /* PartnerInteractor.swift */; };
+		8E42EFC32134FB8500F66546 /* PartnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFBD2134FB8500F66546 /* PartnerPresenter.swift */; };
+		8E42EFC42134FB8500F66546 /* PartnerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFBE2134FB8500F66546 /* PartnerProtocols.swift */; };
+		8E42EFC52134FB8500F66546 /* PartnerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFBF2134FB8500F66546 /* PartnerRouter.swift */; };
+		8E42EFC62134FB8500F66546 /* PartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFC02134FB8500F66546 /* PartnerViewController.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -126,9 +141,6 @@
 		5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_DivisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7D34AF34C3D27F6710C78F /* Pods-The Division.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.release.xcconfig"; sourceTree = "<group>"; };
 		84365F5ACB55DDF07A888DF8 /* Pods_The_Division.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Division.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E348203212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E348217212E7C8D0025764A /* LoginPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
 		8E348219212E8AF00025764A /* LoginInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTest.swift; sourceTree = "<group>"; };
@@ -153,6 +165,24 @@
 		8E42EF8F2134D9C900F66546 /* AddMissionObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionObjectiveCell.swift; sourceTree = "<group>"; };
 		8E42EF912134D9D700F66546 /* MissionObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionObjectiveCell.swift; sourceTree = "<group>"; };
 		8E42EF932134E78800F66546 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
+		8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8E42EF9C2134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveInteractor.swift; sourceTree = "<group>"; };
+		8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivePresenter.swift; sourceTree = "<group>"; };
+		8E42EFA62134FB1E00F66546 /* ObjectiveProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveProtocols.swift; sourceTree = "<group>"; };
+		8E42EFA72134FB1E00F66546 /* ObjectiveRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveRouter.swift; sourceTree = "<group>"; };
+		8E42EFA82134FB1E00F66546 /* ObjectiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveViewController.swift; sourceTree = "<group>"; };
+		8E42EFB02134FB6F00F66546 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
+		8E42EFB12134FB6F00F66546 /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
+		8E42EFB22134FB6F00F66546 /* NoteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProtocols.swift; sourceTree = "<group>"; };
+		8E42EFB32134FB6F00F66546 /* NoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRouter.swift; sourceTree = "<group>"; };
+		8E42EFB42134FB6F00F66546 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		8E42EFBC2134FB8500F66546 /* PartnerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerInteractor.swift; sourceTree = "<group>"; };
+		8E42EFBD2134FB8500F66546 /* PartnerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPresenter.swift; sourceTree = "<group>"; };
+		8E42EFBE2134FB8500F66546 /* PartnerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerProtocols.swift; sourceTree = "<group>"; };
+		8E42EFBF2134FB8500F66546 /* PartnerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRouter.swift; sourceTree = "<group>"; };
+		8E42EFC02134FB8500F66546 /* PartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewController.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -316,10 +346,49 @@
 		8E42EF892134D38F00F66546 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
+				8E42EFA32134FAF500F66546 /* Partner */,
+				8E42EFA22134FAEE00F66546 /* Note */,
+				8E42EFA12134FAE700F66546 /* Objective */,
 				8E58BE49212BDD1D00CA7CF6 /* MissionDetail */,
 				8E42EF8A2134D3C600F66546 /* Mission.storyboard */,
 			);
 			path = Mission;
+			sourceTree = "<group>";
+		};
+		8E42EFA12134FAE700F66546 /* Objective */ = {
+			isa = PBXGroup;
+			children = (
+				8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */,
+				8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */,
+				8E42EFA62134FB1E00F66546 /* ObjectiveProtocols.swift */,
+				8E42EFA72134FB1E00F66546 /* ObjectiveRouter.swift */,
+				8E42EFA82134FB1E00F66546 /* ObjectiveViewController.swift */,
+			);
+			path = Objective;
+			sourceTree = "<group>";
+		};
+		8E42EFA22134FAEE00F66546 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				8E42EFB02134FB6F00F66546 /* NoteInteractor.swift */,
+				8E42EFB12134FB6F00F66546 /* NotePresenter.swift */,
+				8E42EFB22134FB6F00F66546 /* NoteProtocols.swift */,
+				8E42EFB32134FB6F00F66546 /* NoteRouter.swift */,
+				8E42EFB42134FB6F00F66546 /* NoteViewController.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		8E42EFA32134FAF500F66546 /* Partner */ = {
+			isa = PBXGroup;
+			children = (
+				8E42EFBC2134FB8500F66546 /* PartnerInteractor.swift */,
+				8E42EFBD2134FB8500F66546 /* PartnerPresenter.swift */,
+				8E42EFBE2134FB8500F66546 /* PartnerProtocols.swift */,
+				8E42EFBF2134FB8500F66546 /* PartnerRouter.swift */,
+				8E42EFC02134FB8500F66546 /* PartnerViewController.swift */,
+			);
+			path = Partner;
 			sourceTree = "<group>";
 		};
 		8E4B01C2212118EC00986215 = {
@@ -633,9 +702,9 @@
 		8E8823C4212A733F0068C718 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E34820A212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift */,
-				8E348203212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift */,
-				8E34820C212E44090025764A /* MissionEntity+CoreDataProperties.swift */,
+				8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */,
+				8E42EF9C2134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift */,
+				8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */,
 				8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */,
 				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
 			);
@@ -835,12 +904,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E87FAAB21250C2700C8AD47 /* MissionCell.swift in Sources */,
+				8E42EFAC2134FB1E00F66546 /* ObjectiveProtocols.swift in Sources */,
+				8E42EFC42134FB8500F66546 /* PartnerProtocols.swift in Sources */,
 				8E8823DC212AA7B90068C718 /* GradientView.swift in Sources */,
 				8E4B02192121289200986215 /* DataCacheManager.swift in Sources */,
 				8E8823E4212AAAAB0068C718 /* MissionDetailPresenter.swift in Sources */,
 				8E4B022A21215CC300986215 /* LoginProtocols.swift in Sources */,
 				8E87FAD5212563A100C8AD47 /* MissionViewController.swift in Sources */,
-				8E348210212E44090025764A /* ObjectiveEntity+CoreDataProperties.swift in Sources */,
 				8EE92DD82122CF360037BADB /* TeamProtocols.swift in Sources */,
 				8E87FAB221250EBE00C8AD47 /* Member.swift in Sources */,
 				8E8823BC212A57170068C718 /* CoreDataHelper.swift in Sources */,
@@ -848,32 +918,39 @@
 				8E87FAA921250C1900C8AD47 /* TeamMemberCell.swift in Sources */,
 				8E766BCC212278F000A76E15 /* HomeContainerPresenter.swift in Sources */,
 				8E4B021B2121399E00986215 /* UIView+Inspectable.swift in Sources */,
+				8E42EFB72134FB6F00F66546 /* NotePresenter.swift in Sources */,
 				8E58BE4B212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift in Sources */,
 				8E42EF942134E78800F66546 /* Objective.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
+				8E42EFAB2134FB1E00F66546 /* ObjectivePresenter.swift in Sources */,
 				8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */,
 				8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */,
 				8E4B01FF2121228300986215 /* IntroProtocols.swift in Sources */,
 				8E4B022B21215CC300986215 /* LoginRouter.swift in Sources */,
 				8E8823E3212AAAAB0068C718 /* MissionDetailInteractor.swift in Sources */,
 				8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */,
-				8E348212212E44090025764A /* MissionEntity+CoreDataProperties.swift in Sources */,
+				8E42EFB62134FB6F00F66546 /* NoteInteractor.swift in Sources */,
+				8E42EF9E2134F92900F66546 /* MissionEntity+CoreDataProperties.swift in Sources */,
 				8E8823BE212A58870068C718 /* NSManagedObject+Helper.swift in Sources */,
 				8E87FAD1212563A100C8AD47 /* MissionInteractor.swift in Sources */,
 				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
 				8E42EF922134D9D700F66546 /* MissionObjectiveCell.swift in Sources */,
+				8E42EFC22134FB8500F66546 /* PartnerInteractor.swift in Sources */,
 				8E42EF8D2134D56800F66546 /* CreateMissionPopupViewController.swift in Sources */,
+				8E42EFB82134FB6F00F66546 /* NoteProtocols.swift in Sources */,
 				8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */,
 				8E8823E7212AAAAB0068C718 /* MissionDetailViewController.swift in Sources */,
-				8E348205212E42C30025764A /* ObjectiveEntity+CoreDataClass.swift in Sources */,
 				8E87FAD92125668400C8AD47 /* MissionDataManager.swift in Sources */,
+				8E42EFC52134FB8500F66546 /* PartnerRouter.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
 				8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */,
 				8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
+				8E42EFC32134FB8500F66546 /* PartnerPresenter.swift in Sources */,
 				8E87FAA721250C0400C8AD47 /* ContentHeaderCell.swift in Sources */,
 				8E4B02142121245F00986215 /* UIApplication+AppDelegate.swift in Sources */,
 				8E4B02162121251B00986215 /* AppStoryBoard.swift in Sources */,
+				8E42EFBA2134FB6F00F66546 /* NoteViewController.swift in Sources */,
 				8E87FAAE21250DF500C8AD47 /* TeamDataManager.swift in Sources */,
 				8E4B022C21215CC300986215 /* LoginViewController.swift in Sources */,
 				8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */,
@@ -882,7 +959,9 @@
 				8E58BE31212BA85000CA7CF6 /* MemberEntity+CoreDataClass.swift in Sources */,
 				8E87FAD2212563A100C8AD47 /* MissionPresenter.swift in Sources */,
 				8E766BD52122B4EC00A76E15 /* HomeContainerDataManager.swift in Sources */,
+				8E42EFAA2134FB1E00F66546 /* ObjectiveInteractor.swift in Sources */,
 				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
+				8E42EFAE2134FB1E00F66546 /* ObjectiveViewController.swift in Sources */,
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
 				8E8823E6212AAAAB0068C718 /* MissionDetailRouter.swift in Sources */,
@@ -897,18 +976,23 @@
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
 				8E87FAD4212563A100C8AD47 /* MissionRouter.swift in Sources */,
 				8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */,
+				8E42EFA02134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift in Sources */,
 				8E87FACA2125540200C8AD47 /* UIImageView+AsyncLoad.swift in Sources */,
 				8E42EF902134D9C900F66546 /* AddMissionObjectiveCell.swift in Sources */,
 				8E87FAA22125022A00C8AD47 /* UIViewController+gesture.swift in Sources */,
 				8E4B020C212122EF00986215 /* IntroItemProtocols.swift in Sources */,
 				8E766BD32122A09300A76E15 /* UITextField+Padding.swift in Sources */,
+				8E42EFC62134FB8500F66546 /* PartnerViewController.swift in Sources */,
 				8EE92DD62122CF360037BADB /* TeamInteractor.swift in Sources */,
 				8E87FADC2125675B00C8AD47 /* Mission.swift in Sources */,
 				8E4B01FE2121228300986215 /* IntroPresenter.swift in Sources */,
 				8E766BD92122B8BE00A76E15 /* PortraitViewController.swift in Sources */,
 				8E8823C0212A59410068C718 /* MissionCoreData.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,
+				8E42EF9F2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift in Sources */,
 				8EE92DD92122CF360037BADB /* TeamRouter.swift in Sources */,
+				8E42EFB92134FB6F00F66546 /* NoteRouter.swift in Sources */,
+				8E42EFAD2134FB1E00F66546 /* ObjectiveRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

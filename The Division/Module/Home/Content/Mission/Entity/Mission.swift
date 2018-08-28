@@ -16,6 +16,7 @@ struct Mission {
     var progress: Int = 0
     var avatarURL: URL? = nil
     var assignee: Member? = nil
+    var objective: [Objective] = []
     
     init(id: String, name: String, description: String, state: MissionState) {
         self.id = id

@@ -20,7 +20,7 @@ class CreateMissioPopupViewController: UIViewController {
     var objectives: [Objective] = []
     var agents: [Member] = []
     var selectedAgent: Member?
-    var completion: ((Mission) -> Void)!
+    var completion: ((String, String, Member, [Objective]) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,15 +59,13 @@ class CreateMissioPopupViewController: UIViewController {
     }
     
     @IBAction func createMission(_ sender: Any) {
-        var mission = Mission(id: "\(Date().timeIntervalSince1970)", name: tfMissionName.text!, description: tvMissionDescription.text, state: .New)
-        
         guard let assignee = selectedAgent else {
             HUDUtils.showError(with: "Choose Assignee")
             return
         }
         
-        mission.assignee = assignee
-        completion(mission)
+        dismiss(animated: true, completion: nil)
+        completion(tfMissionName.text!, tvMissionDescription.text, assignee, objectives)
     }
     
     @IBAction func cancel(_ sender: UIButton) {
