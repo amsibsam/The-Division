@@ -16,7 +16,7 @@ class MissionDetailRouter: MissionDetailWireframeProtocol {
 
     static func createModule(with mission: Mission) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: HomeViewControllers.MissionDetail.rawValue) as! MissionDetailViewController
+        let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: MissionViewControllers.MissionDetail.rawValue) as! MissionDetailViewController
         view.mission = mission
         let interactor = MissionDetailInteractor()
         let router = MissionDetailRouter()
@@ -27,5 +27,15 @@ class MissionDetailRouter: MissionDetailWireframeProtocol {
         router.viewController = view
 
         return view
+    }
+    
+    func presentObjective(from view: MissionDetailViewProtocol) {
+        let objectiveVC = ObjectiveRouter.createModule()
+        objectiveVC.modalPresentationStyle = .overCurrentContext
+        
+        if let sourceView = view as? UIViewController {
+            sourceView.present(objectiveVC, animated: true, completion: nil)
+        }
+        
     }
 }

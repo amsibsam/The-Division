@@ -10,6 +10,7 @@ target 'The Division' do
   pod 'AlamofireImage'
   pod 'RxSwift'
   pod 'IQKeyboardManager'
+  pod 'M13Checkbox'
 
   target 'The DivisionTests' do
     inherit! :search_paths

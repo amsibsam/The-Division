@@ -1,4 +1,4 @@
-//
+ //
 //  ObjectiveRouter.swift
 //  The Division
 //
@@ -16,7 +16,7 @@ class ObjectiveRouter: ObjectiveWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ObjectiveViewController(nibName: nil, bundle: nil)
+        let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: MissionViewControllers.Objective.rawValue) as! ObjectiveViewController
         let interactor = ObjectiveInteractor()
         let router = ObjectiveRouter()
         let presenter = ObjectivePresenter(interface: view, interactor: interactor, router: router)

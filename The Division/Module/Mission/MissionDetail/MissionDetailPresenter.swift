@@ -12,6 +12,7 @@ import UIKit
 
 class MissionDetailPresenter: MissionDetailPresenterProtocol, MissionDetailInteractorOutputProtocol {
 
+
     weak private var view: MissionDetailViewProtocol?
     var interactor: MissionDetailInteractorInputProtocol?
     private let router: MissionDetailWireframeProtocol
@@ -22,4 +23,8 @@ class MissionDetailPresenter: MissionDetailPresenterProtocol, MissionDetailInter
         self.router = router
     }
 
+    func presentObjective(from view: MissionDetailViewProtocol) {
+        router.presentObjective(from: view)
+    }
+    
 }

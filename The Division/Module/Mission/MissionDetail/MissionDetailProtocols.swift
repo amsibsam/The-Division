@@ -12,12 +12,15 @@ import Foundation
 
 //MARK: Wireframe -
 protocol MissionDetailWireframeProtocol: class {
-
+    func presentObjective(from view: MissionDetailViewProtocol)
 }
 //MARK: Presenter -
 protocol MissionDetailPresenterProtocol: class {
 
     var interactor: MissionDetailInteractorInputProtocol? { get set }
+    
+    /* ViewController -> Presenter */
+    func presentObjective(from view: MissionDetailViewProtocol)
 }
 
 //MARK: Interactor -

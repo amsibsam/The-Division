@@ -9,13 +9,52 @@
 //
 
 import UIKit
+import M13Checkbox
 
-class ObjectiveViewController: LandscapeViewController, ObjectiveViewProtocol {
-
-	var presenter: ObjectivePresenterProtocol?
+class ObjectiveViewController: LandscapeViewController {
+    @IBOutlet var tableViewObjective: UITableView!
+    var presenter: ObjectivePresenterProtocol?
+    let dummyObj = ["mencari kayu", "mencari batu", "mencari pasir"]
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableViewObjective.delegate = self
+        tableViewObjective.dataSource = self
+        tableViewObjective.tableFooterView = UIView()
     }
 
+    @IBAction func save(_ sender: UIButton) {
+    }
+    
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ObjectiveViewController: ObjectiveViewProtocol {
+    
+}
+
+extension ObjectiveViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummyObj.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectiveCell", for: indexPath) as! ObjectiveCell
+        cell.lbObjective.text = dummyObj[indexPath.row]
+        
+        return cell
+    }
+    
+}
+
+extension ObjectiveViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
