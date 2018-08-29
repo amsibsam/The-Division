@@ -37,7 +37,7 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
     }
     
     @IBAction func showObjective(_ sender: UIButton) {
-        presenter?.presentObjective(from: self)
+        presenter?.presentObjective(from: self, on: mission)
     }
     
     private func setupUI() {

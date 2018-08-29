@@ -29,8 +29,8 @@ class MissionDetailRouter: MissionDetailWireframeProtocol {
         return view
     }
     
-    func presentObjective(from view: MissionDetailViewProtocol) {
-        let objectiveVC = ObjectiveRouter.createModule()
+    func presentObjective(from view: MissionDetailViewProtocol, on mission: Mission) {
+        let objectiveVC = ObjectiveRouter.createModule(on: mission)
         objectiveVC.modalPresentationStyle = .overCurrentContext
         
         if let sourceView = view as? UIViewController {

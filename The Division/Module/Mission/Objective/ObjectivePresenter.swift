@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ObjectivePresenter: ObjectivePresenterProtocol, ObjectiveInteractorOutputProtocol {
+class ObjectivePresenter: ObjectivePresenterProtocol {
 
     weak private var view: ObjectiveViewProtocol?
     var interactor: ObjectiveInteractorInputProtocol?
@@ -22,4 +22,30 @@ class ObjectivePresenter: ObjectivePresenterProtocol, ObjectiveInteractorOutputP
         self.router = router
     }
 
+    func saveObjective(with title: String) {
+        interactor?.saveObjective(with: Objective(id: "\(Date().timeIntervalSince1970)", name: title))
+    }
+    
+    func getObjective(on mission: Mission) {
+        interactor?.getObjective(on: mission)
+    }
+    
+    func updateObjectives(with objectives: [Objective]) {
+        interactor?.updateObjectives(with: objectives)
+    }
+    
+}
+
+extension ObjectivePresenter: ObjectiveInteractorOutputProtocol {
+    func onGetObjectiveSucceeded(with objectives: [Objective]) {
+        view?.onGetObjectiveSucceeded(with: objectives)
+    }
+    
+    func onAddOrUpdateSucceeded(with objective: Objective) {
+        
+    }
+    
+    func onSaveObjectiveSucceeded(with objective: Objective) {
+        view?.onSaveObjectiveSucceeded(with: objective)
+    }
 }

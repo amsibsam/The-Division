@@ -35,6 +35,12 @@ class MissionCoreData: BaseCoreData {
                 }
                 
                 try context.save()
+                
+                for objective in mission.objective {
+                    let objectiveEntity = self.getObjectiveEntity(by: objective, context: context)
+                    objectiveEntity?.mission = missionEntity
+                    try context.save()
+                }
                 DispatchQueue.main.async {
                     completion(true)
                 }
@@ -176,5 +182,19 @@ class MissionCoreData: BaseCoreData {
             print("error fetch \(error), \(error.userInfo)")
             return nil
         }
+    }
+    
+    private func getObjectiveEntity(by objective: Objective, context: NSManagedObjectContext) -> ObjectiveEntity? {
+        do {
+            let req = ObjectiveEntity.fetchRequest() as NSFetchRequest
+            req.predicate = NSPredicate(format: "id = %@", objective.id)
+            let objectiveEntity = try context.fetch(req)
+            
+            return objectiveEntity.first
+        } catch let error as NSError {
+            print("failed to get objectiveEntity by id \(error), \(error.userInfo)")
+            return nil
+        }
+        
     }
 }

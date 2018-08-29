@@ -12,10 +12,15 @@ import UIKit
 
 class NoteViewController: LandscapeViewController, NoteViewProtocol {
 
-	var presenter: NotePresenterProtocol?
+    @IBOutlet var tableViewNotes: UITableView!
+    
+    var presenter: NotePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    @IBAction func addNote(_ sender: UIButton) {
+        
+    }
 }

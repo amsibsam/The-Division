@@ -13,12 +13,16 @@ import M13Checkbox
 
 class ObjectiveViewController: LandscapeViewController {
     @IBOutlet var tableViewObjective: UITableView!
+    @IBOutlet var lbCompletion: UILabel!
+    
     var presenter: ObjectivePresenterProtocol?
-    let dummyObj = ["mencari kayu", "mencari batu", "mencari pasir"]
+    var mission: Mission!
+    var missionObjective: [Objective] = []
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        presenter?.getObjective(on: mission)
     }
     
     private func setupTableView() {
@@ -28,6 +32,7 @@ class ObjectiveViewController: LandscapeViewController {
     }
 
     @IBAction func save(_ sender: UIButton) {
+        presenter?.updateObjectives(with: missionObjective)
         dismiss(animated: true, completion: nil)
     }
     
@@ -37,17 +42,28 @@ class ObjectiveViewController: LandscapeViewController {
 }
 
 extension ObjectiveViewController: ObjectiveViewProtocol {
+    func onGetObjectiveSucceeded(with objectives: [Objective]) {
+        missionObjective.append(contentsOf: objectives)
+    }
     
+    func onSaveObjectiveSucceeded(with objective: Objective) {
+        
+    }
 }
 
 extension ObjectiveViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyObj.count
+        return missionObjective.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let objective = missionObjective[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectiveCell", for: indexPath) as! ObjectiveCell
-        cell.lbObjective.text = dummyObj[indexPath.row]
+        cell.bindDataToView(with: objective)
+        cell.checkboxStateChange = { isChecked in
+            print("is checked \(isChecked)")
+            objective.isComplete = isChecked
+        }
         
         return cell
     }

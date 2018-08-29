@@ -20,6 +20,7 @@
 		8E34822B212E99820025764A /* HomeContainerInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */; };
 		8E34822F212EA0C90025764A /* MissionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34822E212EA0C90025764A /* MissionPresenterTest.swift */; };
 		8E348231212EA0D60025764A /* MissionInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348230212EA0D60025764A /* MissionInteractorTest.swift */; };
+		8E3B4AF421362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B4AF221362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift */; };
 		8E42097F212FB03700E7F697 /* LoginDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */; };
 		8E420981212FB23200E7F697 /* TestingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420980212FB23200E7F697 /* TestingConstant.swift */; };
 		8E420983212FD52E00E7F697 /* HomeContainerDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */; };
@@ -34,7 +35,6 @@
 		8E42EF942134E78800F66546 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF932134E78800F66546 /* Objective.swift */; };
 		8E42EF9E2134F92900F66546 /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */; };
 		8E42EF9F2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */; };
-		8E42EFA02134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9C2134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift */; };
 		8E42EFAA2134FB1E00F66546 /* ObjectiveInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */; };
 		8E42EFAB2134FB1E00F66546 /* ObjectivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */; };
 		8E42EFAC2134FB1E00F66546 /* ObjectiveProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA62134FB1E00F66546 /* ObjectiveProtocols.swift */; };
@@ -52,6 +52,8 @@
 		8E42EFC62134FB8500F66546 /* PartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFC02134FB8500F66546 /* PartnerViewController.swift */; };
 		8E42EFC921351B6B00F66546 /* ObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFC821351B6B00F66546 /* ObjectiveCell.swift */; };
 		8E42EFCB21353B2100F66546 /* PartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFCA21353B2100F66546 /* PartnerCell.swift */; };
+		8E42EFCE213540BB00F66546 /* ObjectiveDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFCD213540BB00F66546 /* ObjectiveDataManager.swift */; };
+		8E42EFD22135452100F66546 /* ObjectiveCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFD12135452100F66546 /* ObjectiveCoreData.swift */; };
 		8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01CE212118ED00986215 /* AppDelegate.swift */; };
 		8E4B01D4212118ED00986215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B01D2212118ED00986215 /* Main.storyboard */; };
 		8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B01D5212118ED00986215 /* The_Division.xcdatamodeld */; };
@@ -155,6 +157,7 @@
 		8E34822A212E99820025764A /* HomeContainerInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerInteractorTest.swift; sourceTree = "<group>"; };
 		8E34822E212EA0C90025764A /* MissionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionPresenterTest.swift; sourceTree = "<group>"; };
 		8E348230212EA0D60025764A /* MissionInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractorTest.swift; sourceTree = "<group>"; };
+		8E3B4AF221362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTest.swift; sourceTree = "<group>"; };
 		8E420980212FB23200E7F697 /* TestingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingConstant.swift; sourceTree = "<group>"; };
 		8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerDataManagerTest.swift; sourceTree = "<group>"; };
@@ -169,7 +172,6 @@
 		8E42EF932134E78800F66546 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
 		8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8E42EF9C2134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveInteractor.swift; sourceTree = "<group>"; };
 		8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivePresenter.swift; sourceTree = "<group>"; };
 		8E42EFA62134FB1E00F66546 /* ObjectiveProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveProtocols.swift; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		8E42EFC02134FB8500F66546 /* PartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewController.swift; sourceTree = "<group>"; };
 		8E42EFC821351B6B00F66546 /* ObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveCell.swift; sourceTree = "<group>"; };
 		8E42EFCA21353B2100F66546 /* PartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCell.swift; sourceTree = "<group>"; };
+		8E42EFCD213540BB00F66546 /* ObjectiveDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveDataManager.swift; sourceTree = "<group>"; };
+		8E42EFD12135452100F66546 /* ObjectiveCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveCoreData.swift; sourceTree = "<group>"; };
 		8E4B01CB212118ED00986215 /* The Division.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Division.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4B01CE212118ED00986215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E4B01D3212118ED00986215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -362,6 +366,8 @@
 		8E42EFA12134FAE700F66546 /* Objective */ = {
 			isa = PBXGroup;
 			children = (
+				8E42EFD02135450700F66546 /* Entity */,
+				8E42EFCC213540A500F66546 /* DataManager */,
 				8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */,
 				8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */,
 				8E42EFA62134FB1E00F66546 /* ObjectiveProtocols.swift */,
@@ -395,6 +401,33 @@
 				8E42EFCA21353B2100F66546 /* PartnerCell.swift */,
 			);
 			path = Partner;
+			sourceTree = "<group>";
+		};
+		8E42EFCC213540A500F66546 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E42EFCF213544E500F66546 /* CoreData */,
+				8E42EFCD213540BB00F66546 /* ObjectiveDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8E42EFCF213544E500F66546 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8E3B4AF221362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift */,
+				8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */,
+				8E42EFD12135452100F66546 /* ObjectiveCoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8E42EFD02135450700F66546 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8E42EF932134E78800F66546 /* Objective.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		8E4B01C2212118EC00986215 = {
@@ -692,7 +725,6 @@
 			isa = PBXGroup;
 			children = (
 				8E87FADB2125675B00C8AD47 /* Mission.swift */,
-				8E42EF932134E78800F66546 /* Objective.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -708,8 +740,6 @@
 		8E8823C4212A733F0068C718 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */,
-				8E42EF9C2134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift */,
 				8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */,
 				8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */,
 				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
@@ -971,7 +1001,9 @@
 				8E4B022821215CC300986215 /* LoginInteractor.swift in Sources */,
 				8E42EFAE2134FB1E00F66546 /* ObjectiveViewController.swift in Sources */,
 				8E4B020A212122EF00986215 /* IntroItemInteractor.swift in Sources */,
+				8E42EFD22135452100F66546 /* ObjectiveCoreData.swift in Sources */,
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
+				8E3B4AF421362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift in Sources */,
 				8E8823E6212AAAAB0068C718 /* MissionDetailRouter.swift in Sources */,
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
 				8E8823D7212A764C0068C718 /* MissionEntity+CoreDataClass.swift in Sources */,
@@ -986,7 +1018,6 @@
 				8E4B01FD2121228300986215 /* IntroInteractor.swift in Sources */,
 				8E87FAD4212563A100C8AD47 /* MissionRouter.swift in Sources */,
 				8EE92DD72122CF360037BADB /* TeamPresenter.swift in Sources */,
-				8E42EFA02134F92900F66546 /* ObjectiveEntity+CoreDataProperties.swift in Sources */,
 				8E87FACA2125540200C8AD47 /* UIImageView+AsyncLoad.swift in Sources */,
 				8E42EF902134D9C900F66546 /* AddMissionObjectiveCell.swift in Sources */,
 				8E87FAA22125022A00C8AD47 /* UIViewController+gesture.swift in Sources */,
@@ -1000,6 +1031,7 @@
 				8E8823C0212A59410068C718 /* MissionCoreData.swift in Sources */,
 				8E4B02012121228300986215 /* IntroViewController.swift in Sources */,
 				8E42EF9F2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift in Sources */,
+				8E42EFCE213540BB00F66546 /* ObjectiveDataManager.swift in Sources */,
 				8EE92DD92122CF360037BADB /* TeamRouter.swift in Sources */,
 				8E42EFB92134FB6F00F66546 /* NoteRouter.swift in Sources */,
 				8E42EFAD2134FB1E00F66546 /* ObjectiveRouter.swift in Sources */,

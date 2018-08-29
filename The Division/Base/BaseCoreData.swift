@@ -12,9 +12,11 @@ import UIKit
 
 class BaseCoreData {
     let managedContext: NSManagedObjectContext!
+    let backgroundContext: NSManagedObjectContext!
     
     init() {
         managedContext = UIApplication.appDelegate.persistentContainer.viewContext
+        backgroundContext = UIApplication.appDelegate.persistentContainer.newBackgroundContext()
     }
     
     func save() {

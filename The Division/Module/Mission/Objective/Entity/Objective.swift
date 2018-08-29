@@ -8,6 +8,13 @@
 
 import Foundation
 
-struct Objective {
+class Objective {
+    var id: String = ""
     var name: String = ""
+    var isComplete: Bool = false
+    
+    init(id: String, name: String) {
+        self.id = id
+        self.name = name
+    }
 }

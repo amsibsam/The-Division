@@ -2,7 +2,7 @@
 //  ObjectiveEntity+CoreDataProperties.swift
 //  The Division
 //
-//  Created by MTMAC16 on 28/08/18.
+//  Created by MTMAC16 on 29/08/18.
 //  Copyright © 2018 bism. All rights reserved.
 //
 //
@@ -19,6 +19,7 @@ extension ObjectiveEntity {
 
     @NSManaged public var isComplete: Bool
     @NSManaged public var objective: String
+    @NSManaged public var id: String
     @NSManaged public var mission: MissionEntity?
 
 }

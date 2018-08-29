@@ -18,6 +18,12 @@ class MissionDataManager: MissionDataManagerInputProtocol {
         var mission = Mission(id: "\(NSDate().timeIntervalSince1970)", name: name, description: description, state: .New)
         mission.objective = objective
         mission.assignee = assignee
+        
+        for objtv in objective {
+            ObjectiveCoreData.shared.saveObjective(with: objtv) { (objective) in
+                print("save objective \(objtv.name) to persistance storage")
+            }
+        }
         self.interactor?.onCreateMissionSucceeded(with: mission)
         MissionCoreData.shared.add(mission: mission) { missions in
             

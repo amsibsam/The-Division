@@ -48,7 +48,7 @@ class CreateMissioPopupViewController: UIViewController {
             tfName.placeholder = "Objective name"
         }
         alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action) in
-            self.objectives.append(Objective(name: alert.textFields![0].text!))
+            self.objectives.append(Objective(id: "\(Date().timeIntervalSince1970)", name: alert.textFields![0].text!))
             self.tableViewObjective.reloadData()
             self.tableViewObjective.scrollToRow(at: IndexPath(item: self.objectives.count, section: 0), at: .bottom, animated: true)
         }))
