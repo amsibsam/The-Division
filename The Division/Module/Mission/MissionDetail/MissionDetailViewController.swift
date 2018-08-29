@@ -56,7 +56,7 @@ class MissionDetailViewController: UIViewController {
         lbMissionDescription.text = mission.description
         lbAgentName.text = mission.assignee?.name ?? "-"
         ivAgentAvatar.image = mission.assignee?.pict
-        lbMisisonProgress.text = "\(mission.progress)%"
+        lbMisisonProgress.text = "\(Int(mission.progress))%"
     }
 }
 

@@ -14,16 +14,27 @@ import M13Checkbox
 class ObjectiveViewController: LandscapeViewController {
     @IBOutlet var tableViewObjective: UITableView!
     @IBOutlet var lbCompletion: UILabel!
+    @IBOutlet var lbObjectiveCount: UILabel!
     
     var presenter: ObjectivePresenterProtocol?
     var mission: Mission!
     var missionObjective: [Objective] = []
+    var completedObjectiveCount: Int = 0 {
+        didSet {
+            lbObjectiveCount.text = "\(completedObjectiveCount)/\(missionObjective.count)"
+        }
+    }
     var dismissHandler: (() -> Void)!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupUI()
         presenter?.getObjective(on: mission)
+    }
+    
+    private func setupUI() {
+        lbObjectiveCount.text = "0/\(missionObjective.count)"
     }
     
     private func setupTableView() {
@@ -66,10 +77,17 @@ extension ObjectiveViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let objective = missionObjective[indexPath.row]
+        if objective.isComplete {
+            completedObjectiveCount += 1
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectiveCell", for: indexPath) as! ObjectiveCell
         cell.bindDataToView(with: objective)
         cell.checkboxStateChange = { isChecked in
-            print("is checked \(isChecked)")
+            if isChecked {
+                self.completedObjectiveCount += 1
+            } else {
+                self.completedObjectiveCount -= 1
+            }
             objective.isComplete = isChecked
         }
         
