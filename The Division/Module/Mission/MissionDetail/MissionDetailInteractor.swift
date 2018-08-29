@@ -11,6 +11,18 @@
 import UIKit
 
 class MissionDetailInteractor: MissionDetailInteractorInputProtocol {
-
+    var dataManager: MissionDetailDataManagerInputProtocol?
+    
     weak var presenter: MissionDetailInteractorOutputProtocol?
+    
+    func getUpdatedMission(from mission: Mission) {
+        dataManager?.getUpdatedMission(from: mission)
+    }
+    
+}
+
+extension MissionDetailInteractor: MissionDetailDataManagerOutputProtocol {
+    func onGetUpdatedMission(with mission: Mission?) {
+        presenter?.onGetUpdatedMission(with: mission)
+    }
 }

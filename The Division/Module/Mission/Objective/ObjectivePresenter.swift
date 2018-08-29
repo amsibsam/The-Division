@@ -42,7 +42,7 @@ extension ObjectivePresenter: ObjectiveInteractorOutputProtocol {
     }
     
     func onAddOrUpdateSucceeded(with objective: Objective) {
-        
+        view?.onSucceedUpdateObjective()
     }
     
     func onSaveObjectiveSucceeded(with objective: Objective) {

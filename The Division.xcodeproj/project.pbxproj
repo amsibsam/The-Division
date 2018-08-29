@@ -21,6 +21,7 @@
 		8E34822F212EA0C90025764A /* MissionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34822E212EA0C90025764A /* MissionPresenterTest.swift */; };
 		8E348231212EA0D60025764A /* MissionInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348230212EA0D60025764A /* MissionInteractorTest.swift */; };
 		8E3B4AF421362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B4AF221362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift */; };
+		8E3B4AF721369766005EE53D /* MissionDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B4AF621369766005EE53D /* MissionDetailDataManager.swift */; };
 		8E42097F212FB03700E7F697 /* LoginDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */; };
 		8E420981212FB23200E7F697 /* TestingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420980212FB23200E7F697 /* TestingConstant.swift */; };
 		8E420983212FD52E00E7F697 /* HomeContainerDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */; };
@@ -158,6 +159,7 @@
 		8E34822E212EA0C90025764A /* MissionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionPresenterTest.swift; sourceTree = "<group>"; };
 		8E348230212EA0D60025764A /* MissionInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractorTest.swift; sourceTree = "<group>"; };
 		8E3B4AF221362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E3B4AF621369766005EE53D /* MissionDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailDataManager.swift; sourceTree = "<group>"; };
 		8E42097E212FB03700E7F697 /* LoginDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerTest.swift; sourceTree = "<group>"; };
 		8E420980212FB23200E7F697 /* TestingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingConstant.swift; sourceTree = "<group>"; };
 		8E420982212FD52E00E7F697 /* HomeContainerDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerDataManagerTest.swift; sourceTree = "<group>"; };
@@ -339,6 +341,14 @@
 				8E420984212FE60300E7F697 /* MissionDataManagerTest.swift */,
 			);
 			path = MissionTest;
+			sourceTree = "<group>";
+		};
+		8E3B4AF521369731005EE53D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E3B4AF621369766005EE53D /* MissionDetailDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		8E420986212FF1AB00E7F697 /* TeamTest */ = {
@@ -622,6 +632,7 @@
 		8E58BE49212BDD1D00CA7CF6 /* MissionDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8E3B4AF521369731005EE53D /* DataManager */,
 				8E8823DD212AAAAB0068C718 /* MissionDetailInteractor.swift */,
 				8E8823DE212AAAAB0068C718 /* MissionDetailPresenter.swift */,
 				8E8823DF212AAAAB0068C718 /* MissionDetailProtocols.swift */,
@@ -1006,6 +1017,7 @@
 				8E3B4AF421362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift in Sources */,
 				8E8823E6212AAAAB0068C718 /* MissionDetailRouter.swift in Sources */,
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
+				8E3B4AF721369766005EE53D /* MissionDetailDataManager.swift in Sources */,
 				8E8823D7212A764C0068C718 /* MissionEntity+CoreDataClass.swift in Sources */,
 				8E8823E5212AAAAB0068C718 /* MissionDetailProtocols.swift in Sources */,
 				8E4B01D7212118ED00986215 /* The_Division.xcdatamodeld in Sources */,

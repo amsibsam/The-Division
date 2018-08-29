@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
+class MissionDetailViewController: UIViewController {
     
     @IBOutlet var ivAgentAvatar: UIImageView!
     @IBOutlet var lbAgentName: UILabel!
@@ -25,6 +25,10 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         bindDataToView()
     }
     
@@ -52,5 +56,20 @@ class MissionDetailViewController: UIViewController, MissionDetailViewProtocol {
         lbMissionDescription.text = mission.description
         lbAgentName.text = mission.assignee?.name ?? "-"
         ivAgentAvatar.image = mission.assignee?.pict
+        lbMisisonProgress.text = "\(mission.progress)%"
     }
+}
+
+extension MissionDetailViewController: MissionDetailViewProtocol {
+    func onGetUpdatedMission(with mission: Mission?) {
+        if let updatedMission = mission {
+            self.mission = updatedMission
+            bindDataToView()
+        }
+    }
+    
+    func onFinishUpdateObjective() {
+        presenter?.getUpdatedMission(from: mission)
+    }
+    
 }

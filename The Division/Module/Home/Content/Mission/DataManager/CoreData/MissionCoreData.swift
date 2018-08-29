@@ -86,6 +86,7 @@ class MissionCoreData: BaseCoreData {
                 
                 if let filterEntityResult = filteredEntity.first {
                     var mission = Mission(id: filterEntityResult.id, name: filterEntityResult.name, description: filterEntityResult.missionDescription , state: MissionState(rawValue: filterEntityResult.state)!)
+                    mission.progress = filterEntityResult.progress
                     
                     if let pic = filterEntityResult.pic {
                         mission.assignee = Member(id: pic.id, name: pic.name, division: TeamDivision(rawValue: pic.division)!, missionCount: 0, avatarURL: nil, pict: pic.pict)
@@ -118,6 +119,7 @@ class MissionCoreData: BaseCoreData {
                 
                 let filteredMission: [Mission] = filteredEntity.map { (missionEntity) -> Mission in
                     var mission = Mission(id: missionEntity.id, name: missionEntity.name, description: missionEntity.missionDescription , state: MissionState(rawValue: missionEntity.state)!)
+                    mission.progress = missionEntity.progress
                     
                     if let pic = missionEntity.pic {
                         mission.assignee = Member(id: pic.id, name: pic.name, division: TeamDivision(rawValue: pic.division)!, missionCount: 0, avatarURL: nil, pict: pic.pict)

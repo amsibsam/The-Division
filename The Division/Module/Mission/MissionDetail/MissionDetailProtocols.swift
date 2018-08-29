@@ -12,9 +12,18 @@ import Foundation
 
 //MARK: Wireframe -
 protocol MissionDetailWireframeProtocol: class {
+    var presenter: MissionDetailWireframeOutputProtocol? { get set }
+    
+    /* Presenter -> Router */
     func presentObjective(from view: MissionDetailViewProtocol, on mission: Mission)
     func presentPartner(from view: MissionDetailViewProtocol)
 }
+
+protocol MissionDetailWireframeOutputProtocol: class {
+    /* router presenter */
+    func onFinishUpdateObjective()
+}
+
 //MARK: Presenter -
 protocol MissionDetailPresenterProtocol: class {
 
@@ -23,19 +32,23 @@ protocol MissionDetailPresenterProtocol: class {
     /* ViewController -> Presenter */
     func presentObjective(from view: MissionDetailViewProtocol, on: Mission)
     func presentPartner(from view: MissionDetailViewProtocol)
+    func getUpdatedMission(from mission: Mission)
 }
 
 //MARK: Interactor -
 protocol MissionDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func onGetUpdatedMission(with mission: Mission?)
 }
 
 protocol MissionDetailInteractorInputProtocol: class {
 
     var presenter: MissionDetailInteractorOutputProtocol?  { get set }
+    var dataManager: MissionDetailDataManagerInputProtocol? { get set }
 
     /* Presenter -> Interactor */
+    func getUpdatedMission(from mission: Mission)
 }
 
 //MARK: View -
@@ -44,4 +57,19 @@ protocol MissionDetailViewProtocol: class {
     var presenter: MissionDetailPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func onFinishUpdateObjective()
+    func onGetUpdatedMission(with mission: Mission?)
+}
+
+//MARK: DataManager-
+protocol MissionDetailDataManagerInputProtocol: class {
+    var interactor: MissionDetailDataManagerOutputProtocol? { get set }
+    
+    /* Interactor -> DataManager */
+    func getUpdatedMission(from mission: Mission)
+}
+
+protocol MissionDetailDataManagerOutputProtocol: class {
+    /* DataManager -> Interactor */
+    func onGetUpdatedMission(with mission: Mission?)
 }

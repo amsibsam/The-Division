@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Mission {
+class Mission {
     var id: String = ""
     var name: String = ""
     var description: String = ""
     var state: MissionState = .New
-    var progress: Int = 0
+    var progress: Double = 0
     var avatarURL: URL? = nil
     var assignee: Member? = nil
     var objective: [Objective] = []

@@ -11,7 +11,8 @@
 import UIKit
 
 class MissionDetailRouter: MissionDetailWireframeProtocol {
-
+    var presenter: MissionDetailWireframeOutputProtocol?
+    
     weak var viewController: UIViewController?
 
     static func createModule(with mission: Mission) -> UIViewController {
@@ -20,22 +21,26 @@ class MissionDetailRouter: MissionDetailWireframeProtocol {
         view.mission = mission
         let interactor = MissionDetailInteractor()
         let router = MissionDetailRouter()
+        let dataManager = MissionDetailDataManager()
         let presenter = MissionDetailPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        router.presenter = presenter
+        interactor.dataManager = dataManager
+        dataManager.interactor = interactor
 
         return view
     }
     
     func presentObjective(from view: MissionDetailViewProtocol, on mission: Mission) {
-        let objectiveVC = ObjectiveRouter.createModule(on: mission)
+        let objectiveVC = ObjectiveRouter.createModule(on: mission) {
+            self.presenter?.onFinishUpdateObjective()
+        }
         objectiveVC.modalPresentationStyle = .overCurrentContext
         
-        if let sourceView = view as? UIViewController {
-            sourceView.present(objectiveVC, animated: true, completion: nil)
-        }
+        self.viewController?.present(objectiveVC, animated: true, completion: nil)
     }
     
     func presentPartner(from view: MissionDetailViewProtocol) {

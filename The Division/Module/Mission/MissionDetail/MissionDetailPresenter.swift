@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MissionDetailPresenter: MissionDetailPresenterProtocol, MissionDetailInteractorOutputProtocol {
+class MissionDetailPresenter: MissionDetailPresenterProtocol {
     weak private var view: MissionDetailViewProtocol?
     var interactor: MissionDetailInteractorInputProtocol?
     private let router: MissionDetailWireframeProtocol
@@ -29,6 +29,20 @@ class MissionDetailPresenter: MissionDetailPresenterProtocol, MissionDetailInter
         router.presentPartner(from: view)
     }
     
+    func getUpdatedMission(from mission: Mission) {
+        interactor?.getUpdatedMission(from: mission)
+    }
+}
 
-    
+extension MissionDetailPresenter: MissionDetailInteractorOutputProtocol {
+    func onGetUpdatedMission(with mission: Mission?) {
+        view?.onGetUpdatedMission(with: mission)
+    }
+
+}
+
+extension MissionDetailPresenter: MissionDetailWireframeOutputProtocol {
+    func onFinishUpdateObjective() {
+        view?.onFinishUpdateObjective()
+    }
 }

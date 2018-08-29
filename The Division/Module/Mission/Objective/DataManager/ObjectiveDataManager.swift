@@ -16,6 +16,7 @@ class ObjectiveDataManager: ObjectiveDataManagerInputProtocol {
         for objective in objectives {
             ObjectiveCoreData.shared.update(with: objective)
         }
+        interactor?.onAddOrUpdateSucceeded(with: objectives[0])
     }
     
     func saveObjective(with objective: Objective) {

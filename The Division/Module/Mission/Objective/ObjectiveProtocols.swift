@@ -53,6 +53,7 @@ protocol ObjectiveViewProtocol: class {
     /* Presenter -> ViewController */
     func onSaveObjectiveSucceeded(with objective: Objective)
     func onGetObjectiveSucceeded(with objectives: [Objective])
+    func onSucceedUpdateObjective()
 }
 
 //MARK: DataManager -

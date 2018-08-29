@@ -14,10 +14,11 @@ class ObjectiveRouter: ObjectiveWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(on mission: Mission) -> UIViewController {
+    static func createModule(on mission: Mission, dismissHandler: @escaping () -> Void) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: MissionViewControllers.Objective.rawValue) as! ObjectiveViewController
         view.mission = mission
+        view.dismissHandler = dismissHandler
         let interactor = ObjectiveInteractor()
         let router = ObjectiveRouter()
         let dataManager = ObjectiveDataManager()

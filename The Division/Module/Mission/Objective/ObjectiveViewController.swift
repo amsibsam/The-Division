@@ -18,6 +18,7 @@ class ObjectiveViewController: LandscapeViewController {
     var presenter: ObjectivePresenterProtocol?
     var mission: Mission!
     var missionObjective: [Objective] = []
+    var dismissHandler: (() -> Void)!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,9 @@ class ObjectiveViewController: LandscapeViewController {
     }
 
     @IBAction func save(_ sender: UIButton) {
+        mission.objective = missionObjective
         presenter?.updateObjectives(with: missionObjective)
-        dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -42,6 +44,12 @@ class ObjectiveViewController: LandscapeViewController {
 }
 
 extension ObjectiveViewController: ObjectiveViewProtocol {
+    func onSucceedUpdateObjective() {
+        dismiss(animated: true) {
+            self.dismissHandler()
+        }
+    }
+    
     func onGetObjectiveSucceeded(with objectives: [Objective]) {
         missionObjective.append(contentsOf: objectives)
     }

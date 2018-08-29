@@ -42,7 +42,7 @@ extension ObjectiveInteractor: ObjectiveDataManagerOutputProtocol {
     }
     
     func onAddOrUpdateSucceeded(with objective: Objective) {
-        
+        presenter?.onAddOrUpdateSucceeded(with: objective)
     }
     
     
