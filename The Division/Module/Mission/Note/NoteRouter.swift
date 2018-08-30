@@ -16,7 +16,7 @@ class NoteRouter: NoteWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = NoteViewController(nibName: nil, bundle: nil)
+        let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: MissionViewControllers.Note.rawValue) as! NoteViewController
         let interactor = NoteInteractor()
         let router = NoteRouter()
         let presenter = NotePresenter(interface: view, interactor: interactor, router: router)

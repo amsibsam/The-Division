@@ -12,15 +12,56 @@ import UIKit
 
 class NoteViewController: LandscapeViewController, NoteViewProtocol {
 
+    @IBOutlet var viewContainer: UIView!
     @IBOutlet var tableViewNotes: UITableView!
     
     var presenter: NotePresenterProtocol?
+    var notes: [String] = []
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(NoteViewController.dismissView))
+        viewContainer.addGestureRecognizer(tapGesture)
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableViewNotes.delegate = self
+        tableViewNotes.dataSource = self
     }
 
+    @objc func dismissView() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addNote(_ sender: UIButton) {
+        notes.append("new")
+        tableViewNotes.beginUpdates()
+        tableViewNotes.insertRows(at: [IndexPath(row: notes.count - 1, section: 0)], with: .fade)
+        tableViewNotes.endUpdates()
+    }
+}
+
+extension NoteViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
+        
+        return cell
+    }
+    
+    
+}
+
+extension NoteViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }

@@ -11,6 +11,7 @@
 import UIKit
 
 class MissionDetailRouter: MissionDetailWireframeProtocol {
+
     var presenter: MissionDetailWireframeOutputProtocol?
     
     weak var viewController: UIViewController?
@@ -51,4 +52,11 @@ class MissionDetailRouter: MissionDetailWireframeProtocol {
             sourceView.present(partnerVC, animated: true, completion: nil)
         }
     }
+    
+    func presentNote() {
+        let noteVC = NoteRouter.createModule()
+        noteVC.modalPresentationStyle = .overCurrentContext
+        viewController?.present(noteVC, animated: true, completion: nil)
+    }
+    
 }

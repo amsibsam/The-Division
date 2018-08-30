@@ -12,6 +12,7 @@
 		8E0585E1213789610078F88B /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585DD213789610078F88B /* MissionEntity+CoreDataProperties.swift */; };
 		8E0585E4213790590078F88B /* PartnerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585E3213790590078F88B /* PartnerDataManager.swift */; };
 		8E0585E7213790910078F88B /* PartnerCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585E6213790910078F88B /* PartnerCoreData.swift */; };
+		8E0585E92137EE270078F88B /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585E82137EE270078F88B /* NoteCell.swift */; };
 		8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348217212E7C8D0025764A /* LoginPresenterTest.swift */; };
 		8E34821A212E8AF00025764A /* LoginInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348219212E8AF00025764A /* LoginInteractorTest.swift */; };
 		8E34821C212E8C770025764A /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34821B212E8C770025764A /* MockInteractor.swift */; };
@@ -152,6 +153,7 @@
 		8E0585DD213789610078F88B /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E0585E3213790590078F88B /* PartnerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDataManager.swift; sourceTree = "<group>"; };
 		8E0585E6213790910078F88B /* PartnerCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCoreData.swift; sourceTree = "<group>"; };
+		8E0585E82137EE270078F88B /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		8E348217212E7C8D0025764A /* LoginPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
 		8E348219212E8AF00025764A /* LoginInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTest.swift; sourceTree = "<group>"; };
 		8E34821B212E8C770025764A /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				8E42EFB22134FB6F00F66546 /* NoteProtocols.swift */,
 				8E42EFB32134FB6F00F66546 /* NoteRouter.swift */,
 				8E42EFB42134FB6F00F66546 /* NoteViewController.swift */,
+				8E0585E82137EE270078F88B /* NoteCell.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				8E58BE4B212BDD6800CA7CF6 /* CreateMemberPopupViewController.swift in Sources */,
 				8E42EF942134E78800F66546 /* Objective.swift in Sources */,
 				8E4B020D212122EF00986215 /* IntroItemRouter.swift in Sources */,
+				8E0585E92137EE270078F88B /* NoteCell.swift in Sources */,
 				8E42EFAB2134FB1E00F66546 /* ObjectivePresenter.swift in Sources */,
 				8E8823C2212A5A5C0068C718 /* BaseCoreData.swift in Sources */,
 				8E766BC321226FED00A76E15 /* HUDUtils.swift in Sources */,

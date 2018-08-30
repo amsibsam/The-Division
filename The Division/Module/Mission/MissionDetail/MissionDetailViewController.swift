@@ -33,7 +33,7 @@ class MissionDetailViewController: UIViewController {
     }
     
     @IBAction func showNote(_ sender: UIButton) {
-        
+        presenter?.presentNote()
     }
     
     @IBAction func showPartner(_ sender: UIButton) {

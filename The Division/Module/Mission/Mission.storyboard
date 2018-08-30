@@ -462,12 +462,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wt8-Rd-xQT">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DUl-z0-sRW">
                                 <rect key="frame" x="20" y="92" width="627" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29029668328220859" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="107" id="Nss-NP-be8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="107" id="Nss-NP-be8" customClass="NoteCell" customModule="The_Division" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="627" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nss-NP-be8" id="4dv-0t-3sv">
@@ -557,13 +561,18 @@
                         <constraints>
                             <constraint firstItem="e0G-Ta-Vb2" firstAttribute="centerX" secondItem="oTP-uz-9Wm" secondAttribute="centerX" id="2am-8X-nt8"/>
                             <constraint firstItem="VqU-P3-HZN" firstAttribute="leading" secondItem="oTP-uz-9Wm" secondAttribute="leading" constant="20" id="2eH-FS-L8U"/>
+                            <constraint firstItem="wt8-Rd-xQT" firstAttribute="bottom" secondItem="oTP-uz-9Wm" secondAttribute="bottom" id="6Cr-8g-dOf"/>
                             <constraint firstItem="VqU-P3-HZN" firstAttribute="bottom" secondItem="e0G-Ta-Vb2" secondAttribute="bottom" constant="22" id="DAM-Yd-tzK"/>
+                            <constraint firstItem="wt8-Rd-xQT" firstAttribute="leading" secondItem="oTP-uz-9Wm" secondAttribute="leading" id="GxE-Hi-e1S"/>
                             <constraint firstItem="e0G-Ta-Vb2" firstAttribute="top" secondItem="oTP-uz-9Wm" secondAttribute="top" constant="20" id="P3p-9F-NpZ"/>
+                            <constraint firstItem="wt8-Rd-xQT" firstAttribute="trailing" secondItem="oTP-uz-9Wm" secondAttribute="trailing" id="PAd-AB-XXa"/>
+                            <constraint firstItem="wt8-Rd-xQT" firstAttribute="top" secondItem="oTP-uz-9Wm" secondAttribute="top" id="UVD-CU-N5Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oTP-uz-9Wm"/>
                     </view>
                     <connections>
                         <outlet property="tableViewNotes" destination="DUl-z0-sRW" id="TYi-xt-Q6b"/>
+                        <outlet property="viewContainer" destination="wt8-Rd-xQT" id="915-df-bJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHO-Qs-FeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
