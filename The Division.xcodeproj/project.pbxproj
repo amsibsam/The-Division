@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7DDB68A34FB9459E302E7AC8 /* Pods_The_Division.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84365F5ACB55DDF07A888DF8 /* Pods_The_Division.framework */; };
-		8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */; };
+		8E0585DF213789610078F88B /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585DB213789610078F88B /* MemberEntity+CoreDataProperties.swift */; };
+		8E0585E1213789610078F88B /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585DD213789610078F88B /* MissionEntity+CoreDataProperties.swift */; };
+		8E0585E4213790590078F88B /* PartnerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585E3213790590078F88B /* PartnerDataManager.swift */; };
+		8E0585E7213790910078F88B /* PartnerCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0585E6213790910078F88B /* PartnerCoreData.swift */; };
 		8E348218212E7C8D0025764A /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348217212E7C8D0025764A /* LoginPresenterTest.swift */; };
 		8E34821A212E8AF00025764A /* LoginInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E348219212E8AF00025764A /* LoginInteractorTest.swift */; };
 		8E34821C212E8C770025764A /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34821B212E8C770025764A /* MockInteractor.swift */; };
@@ -34,7 +37,6 @@
 		8E42EF902134D9C900F66546 /* AddMissionObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF8F2134D9C900F66546 /* AddMissionObjectiveCell.swift */; };
 		8E42EF922134D9D700F66546 /* MissionObjectiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF912134D9D700F66546 /* MissionObjectiveCell.swift */; };
 		8E42EF942134E78800F66546 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF932134E78800F66546 /* Objective.swift */; };
-		8E42EF9E2134F92900F66546 /* MissionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */; };
 		8E42EF9F2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */; };
 		8E42EFAA2134FB1E00F66546 /* ObjectiveInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */; };
 		8E42EFAB2134FB1E00F66546 /* ObjectivePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */; };
@@ -146,7 +148,10 @@
 		5D5590A8F03858026C5CCCFB /* Pods_The_DivisionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_DivisionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7D34AF34C3D27F6710C78F /* Pods-The Division.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Division.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Division/Pods-The Division.release.xcconfig"; sourceTree = "<group>"; };
 		84365F5ACB55DDF07A888DF8 /* Pods_The_Division.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Division.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E0585DB213789610078F88B /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E0585DD213789610078F88B /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E0585E3213790590078F88B /* PartnerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDataManager.swift; sourceTree = "<group>"; };
+		8E0585E6213790910078F88B /* PartnerCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCoreData.swift; sourceTree = "<group>"; };
 		8E348217212E7C8D0025764A /* LoginPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
 		8E348219212E8AF00025764A /* LoginInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTest.swift; sourceTree = "<group>"; };
 		8E34821B212E8C770025764A /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
@@ -172,7 +177,6 @@
 		8E42EF8F2134D9C900F66546 /* AddMissionObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionObjectiveCell.swift; sourceTree = "<group>"; };
 		8E42EF912134D9D700F66546 /* MissionObjectiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionObjectiveCell.swift; sourceTree = "<group>"; };
 		8E42EF932134E78800F66546 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
-		8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MissionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E42EF9B2134F92900F66546 /* ObjectiveEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectiveEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8E42EFA42134FB1E00F66546 /* ObjectiveInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveInteractor.swift; sourceTree = "<group>"; };
 		8E42EFA52134FB1E00F66546 /* ObjectivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivePresenter.swift; sourceTree = "<group>"; };
@@ -301,6 +305,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E0585E2213790180078F88B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E0585E5213790850078F88B /* CoreData */,
+				8E0585E3213790590078F88B /* PartnerDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8E0585E5213790850078F88B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8E0585E6213790910078F88B /* PartnerCoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		8E348223212E8D4E0025764A /* MockClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +424,7 @@
 		8E42EFA32134FAF500F66546 /* Partner */ = {
 			isa = PBXGroup;
 			children = (
+				8E0585E2213790180078F88B /* DataManager */,
 				8E42EFBC2134FB8500F66546 /* PartnerInteractor.swift */,
 				8E42EFBD2134FB8500F66546 /* PartnerPresenter.swift */,
 				8E42EFBE2134FB8500F66546 /* PartnerProtocols.swift */,
@@ -622,7 +644,7 @@
 		8E58BE2A212BA7F400CA7CF6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E348214212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift */,
+				8E0585DB213789610078F88B /* MemberEntity+CoreDataProperties.swift */,
 				8E58BE2F212BA84F00CA7CF6 /* MemberEntity+CoreDataClass.swift */,
 				8E58BE33212BA95700CA7CF6 /* TeamCoreData.swift */,
 			);
@@ -751,7 +773,7 @@
 		8E8823C4212A733F0068C718 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E42EF9A2134F92900F66546 /* MissionEntity+CoreDataProperties.swift */,
+				8E0585DD213789610078F88B /* MissionEntity+CoreDataProperties.swift */,
 				8E8823D5212A764C0068C718 /* MissionEntity+CoreDataClass.swift */,
 				8E8823BF212A59410068C718 /* MissionCoreData.swift */,
 			);
@@ -979,20 +1001,20 @@
 				8E8823E3212AAAAB0068C718 /* MissionDetailInteractor.swift in Sources */,
 				8E87FAD3212563A100C8AD47 /* MissionProtocols.swift in Sources */,
 				8E42EFB62134FB6F00F66546 /* NoteInteractor.swift in Sources */,
-				8E42EF9E2134F92900F66546 /* MissionEntity+CoreDataProperties.swift in Sources */,
 				8E8823BE212A58870068C718 /* NSManagedObject+Helper.swift in Sources */,
 				8E87FAD1212563A100C8AD47 /* MissionInteractor.swift in Sources */,
 				8E4B0235212173FF00986215 /* LoginDataManager.swift in Sources */,
 				8E42EF922134D9D700F66546 /* MissionObjectiveCell.swift in Sources */,
 				8E42EFC22134FB8500F66546 /* PartnerInteractor.swift in Sources */,
 				8E42EF8D2134D56800F66546 /* CreateMissionPopupViewController.swift in Sources */,
+				8E0585E1213789610078F88B /* MissionEntity+CoreDataProperties.swift in Sources */,
 				8E42EFB82134FB6F00F66546 /* NoteProtocols.swift in Sources */,
 				8E766BCB212278F000A76E15 /* HomeContainerInteractor.swift in Sources */,
+				8E0585E4213790590078F88B /* PartnerDataManager.swift in Sources */,
 				8E8823E7212AAAAB0068C718 /* MissionDetailViewController.swift in Sources */,
 				8E87FAD92125668400C8AD47 /* MissionDataManager.swift in Sources */,
 				8E42EFC52134FB8500F66546 /* PartnerRouter.swift in Sources */,
 				8E4B022921215CC300986215 /* LoginPresenter.swift in Sources */,
-				8E348216212E5F0B0025764A /* MemberEntity+CoreDataProperties.swift in Sources */,
 				8E766BCD212278F000A76E15 /* HomeContainerProtocols.swift in Sources */,
 				8E4B020E212122EF00986215 /* IntroItemViewController.swift in Sources */,
 				8E42EFC32134FB8500F66546 /* PartnerPresenter.swift in Sources */,
@@ -1005,6 +1027,7 @@
 				8E766BDC2122BA3300A76E15 /* MenuItem.swift in Sources */,
 				8E766BCF212278F000A76E15 /* HomeContainerViewController.swift in Sources */,
 				8E4B02002121228300986215 /* IntroRouter.swift in Sources */,
+				8E0585E7213790910078F88B /* PartnerCoreData.swift in Sources */,
 				8E58BE31212BA85000CA7CF6 /* MemberEntity+CoreDataClass.swift in Sources */,
 				8E87FAD2212563A100C8AD47 /* MissionPresenter.swift in Sources */,
 				8E766BD52122B4EC00A76E15 /* HomeContainerDataManager.swift in Sources */,
@@ -1016,6 +1039,7 @@
 				8E4B020B212122EF00986215 /* IntroItemPresenter.swift in Sources */,
 				8E3B4AF421362E26005EE53D /* ObjectiveEntity+CoreDataProperties.swift in Sources */,
 				8E8823E6212AAAAB0068C718 /* MissionDetailRouter.swift in Sources */,
+				8E0585DF213789610078F88B /* MemberEntity+CoreDataProperties.swift in Sources */,
 				8E4B01CF212118ED00986215 /* AppDelegate.swift in Sources */,
 				8E3B4AF721369766005EE53D /* MissionDetailDataManager.swift in Sources */,
 				8E8823D7212A764C0068C718 /* MissionEntity+CoreDataClass.swift in Sources */,

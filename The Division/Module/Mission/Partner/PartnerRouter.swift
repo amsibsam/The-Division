@@ -14,16 +14,20 @@ class PartnerRouter: PartnerWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(on mission: Mission) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AppStoryBoard.Mission.instance.instantiateViewController(withIdentifier: MissionViewControllers.Partner.rawValue) as! PartnerViewController
+        view.mission = mission
         let interactor = PartnerInteractor()
         let router = PartnerRouter()
+        let dataManager = PartnerDataManager()
         let presenter = PartnerPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        interactor.dataManager = dataManager
+        dataManager.interactor = interactor
 
         return view
     }

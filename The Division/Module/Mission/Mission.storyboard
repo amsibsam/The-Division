@@ -265,7 +265,24 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P5-uS-o1X">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc9-gP-GU0">
+                                        <rect key="frame" x="322" y="337" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="3YY-oT-zj1"/>
+                                            <constraint firstAttribute="width" constant="22" id="Yo1-ms-wZy"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.9921094184" blue="0.37501056960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="addPartner:" destination="b3t-hR-mdv" eventType="touchUpInside" id="o7y-Q2-rDn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.91134250383435578" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Wc9-gP-GU0" firstAttribute="centerX" secondItem="6P5-uS-o1X" secondAttribute="centerX" id="Y4H-ZE-vJZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wc9-gP-GU0" secondAttribute="bottom" constant="16" id="zlB-AE-N1f"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PARTNER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmr-s6-Enq">
                                 <rect key="frame" x="278" y="37" width="111" height="21"/>
@@ -382,6 +399,11 @@
                                                     <constraint firstItem="QRh-cF-6tR" firstAttribute="leading" secondItem="Leu-yl-aj8" secondAttribute="leading" id="qVH-5Z-cHn"/>
                                                     <constraint firstItem="Leu-yl-aj8" firstAttribute="leading" secondItem="cwT-dK-7jU" secondAttribute="trailing" constant="13" id="yow-c6-Fyc"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="ivPartnerAvatar" destination="cwT-dK-7jU" id="qeZ-S8-Pej"/>
+                                                    <outlet property="lbPartnerDivision" destination="l5w-ln-nv3" id="tpT-7E-Qv1"/>
+                                                    <outlet property="lbPartnerName" destination="wxT-GC-lMG" id="Uha-KU-Rxt"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -396,8 +418,8 @@
                                     <constraint firstItem="Apz-gl-uwB" firstAttribute="leading" secondItem="KKS-rs-H7r" secondAttribute="leading" id="st9-F1-uOW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxW-so-tyo">
-                                <rect key="frame" x="312" y="283" width="42" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxW-so-tyo">
+                                <rect key="frame" x="309.5" y="283" width="48" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -424,6 +446,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewPartner" destination="Apz-gl-uwB" id="UqN-nZ-8UY"/>
+                        <outlet property="lbPartnerCount" destination="QxW-so-tyo" id="74c-i2-JjK"/>
                         <outlet property="mainContainer" destination="6P5-uS-o1X" id="2oG-Z9-gRh"/>
                     </connections>
                 </viewController>

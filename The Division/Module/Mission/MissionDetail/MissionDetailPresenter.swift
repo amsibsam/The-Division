@@ -25,8 +25,8 @@ class MissionDetailPresenter: MissionDetailPresenterProtocol {
         router.presentObjective(from: view, on: mission)
     }
     
-    func presentPartner(from view: MissionDetailViewProtocol) {
-        router.presentPartner(from: view)
+    func presentPartner(from view: MissionDetailViewProtocol, on mission: Mission) {
+        router.presentPartner(from: view, on: mission)
     }
     
     func getUpdatedMission(from mission: Mission) {

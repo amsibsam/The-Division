@@ -2,7 +2,7 @@
 //  MemberEntity+CoreDataProperties.swift
 //  The Division
 //
-//  Created by MTMAC16 on 23/08/18.
+//  Created by MTMAC16 on 30/08/18.
 //  Copyright © 2018 bism. All rights reserved.
 //
 //
@@ -23,6 +23,7 @@ extension MemberEntity {
     @NSManaged public var name: String
     @NSManaged public var pictData: NSData?
     @NSManaged public var assignedMission: NSSet?
+    @NSManaged public var sideMission: NSSet?
 
 }
 
@@ -40,5 +41,22 @@ extension MemberEntity {
 
     @objc(removeAssignedMission:)
     @NSManaged public func removeFromAssignedMission(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for sideMission
+extension MemberEntity {
+
+    @objc(addSideMissionObject:)
+    @NSManaged public func addToSideMission(_ value: MissionEntity)
+
+    @objc(removeSideMissionObject:)
+    @NSManaged public func removeFromSideMission(_ value: MissionEntity)
+
+    @objc(addSideMission:)
+    @NSManaged public func addToSideMission(_ values: NSSet)
+
+    @objc(removeSideMission:)
+    @NSManaged public func removeFromSideMission(_ values: NSSet)
 
 }

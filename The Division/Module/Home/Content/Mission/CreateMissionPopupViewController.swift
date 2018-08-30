@@ -89,8 +89,10 @@ extension CreateMissioPopupViewController: UIPickerViewDataSource {
 
 extension CreateMissioPopupViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedAgent = agents[row]
-        tfAssignee.text = selectedAgent?.name
+        if agents.count > 0 {
+            selectedAgent = agents[row]
+            tfAssignee.text = selectedAgent?.name
+        }
     }
 }
 

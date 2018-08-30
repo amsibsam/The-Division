@@ -16,7 +16,7 @@ protocol MissionDetailWireframeProtocol: class {
     
     /* Presenter -> Router */
     func presentObjective(from view: MissionDetailViewProtocol, on mission: Mission)
-    func presentPartner(from view: MissionDetailViewProtocol)
+    func presentPartner(from view: MissionDetailViewProtocol, on mission: Mission)
 }
 
 protocol MissionDetailWireframeOutputProtocol: class {
@@ -31,7 +31,7 @@ protocol MissionDetailPresenterProtocol: class {
     
     /* ViewController -> Presenter */
     func presentObjective(from view: MissionDetailViewProtocol, on: Mission)
-    func presentPartner(from view: MissionDetailViewProtocol)
+    func presentPartner(from view: MissionDetailViewProtocol, on mission: Mission)
     func getUpdatedMission(from mission: Mission)
 }
 

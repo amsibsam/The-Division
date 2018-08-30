@@ -18,19 +18,31 @@ protocol PartnerWireframeProtocol: class {
 protocol PartnerPresenterProtocol: class {
 
     var interactor: PartnerInteractorInputProtocol? { get set }
+    
+    /* ViewController -> Presenter */
+    func getAllAgent()
+    func getPartner(on mission: Mission)
+    func addPartner(on mission: Mission, with partner: Member)
 }
 
 //MARK: Interactor -
 protocol PartnerInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func onGetAllAgentSucceeded(with agents: [Member])
+    func onGetPartnerSucceeded(with partners: [Member])
+    func onAddPartnerSucceeded(with partner: Member)
 }
 
 protocol PartnerInteractorInputProtocol: class {
 
     var presenter: PartnerInteractorOutputProtocol?  { get set }
+    var dataManager: PartnerDataManagerInputProtocol? { get set }
 
     /* Presenter -> Interactor */
+    func getAllAgent()
+    func getPartner(on mission: Mission)
+    func addPartner(on mission: Mission, with partner: Member)
 }
 
 //MARK: View -
@@ -39,4 +51,25 @@ protocol PartnerViewProtocol: class {
     var presenter: PartnerPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func onGetAllAgentSucceeded(with agents: [Member])
+    func onGetPartnerSucceeded(with partners: [Member])
+    func onAddPartnerSucceeded(with partner: Member)
+}
+
+//MARK: DataManager -
+protocol PartnerDataManagerInputProtocol: class {
+    var interactor: PartnerDataManagerOutputProtocol? { get set }
+    
+    /* Interactor -> DataManager */
+    func getAllAgent()
+    func getPartner(on mission: Mission)
+    func addPartner(on mission: Mission, with partner: Member)
+}
+
+protocol PartnerDataManagerOutputProtocol: class {
+    
+    /* DataManager -> Interactor */
+    func onGetAllAgentSucceeded(with agents: [Member])
+    func onGetPartnerSucceeded(with partners: [Member])
+    func onAddPartnerSucceeded(with partner: Member)
 }

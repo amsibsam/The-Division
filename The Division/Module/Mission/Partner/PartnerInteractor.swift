@@ -11,6 +11,34 @@
 import UIKit
 
 class PartnerInteractor: PartnerInteractorInputProtocol {
-
+    
+    var dataManager: PartnerDataManagerInputProtocol?
     weak var presenter: PartnerInteractorOutputProtocol?
+    
+    func getAllAgent() {
+        dataManager?.getAllAgent()
+    }
+    
+    func getPartner(on mission: Mission) {
+        dataManager?.getPartner(on: mission)
+    }
+    
+    func addPartner(on mission: Mission, with partner: Member) {
+        dataManager?.addPartner(on: mission, with: partner)
+    }
+    
+}
+
+extension PartnerInteractor: PartnerDataManagerOutputProtocol {
+    func onGetPartnerSucceeded(with partners: [Member]) {
+        presenter?.onGetPartnerSucceeded(with: partners)
+    }
+    
+    func onGetAllAgentSucceeded(with agents: [Member]) {
+        presenter?.onGetAllAgentSucceeded(with: agents)
+    }
+    
+    func onAddPartnerSucceeded(with partner: Member) {
+        presenter?.onAddPartnerSucceeded(with: partner)
+    }
 }

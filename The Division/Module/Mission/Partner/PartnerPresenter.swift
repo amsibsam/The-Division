@@ -10,7 +10,7 @@
 
 import UIKit
 
-class PartnerPresenter: PartnerPresenterProtocol, PartnerInteractorOutputProtocol {
+class PartnerPresenter: PartnerPresenterProtocol {
 
     weak private var view: PartnerViewProtocol?
     var interactor: PartnerInteractorInputProtocol?
@@ -22,4 +22,30 @@ class PartnerPresenter: PartnerPresenterProtocol, PartnerInteractorOutputProtoco
         self.router = router
     }
 
+    func getAllAgent() {
+        interactor?.getAllAgent()
+    }
+
+    func getPartner(on mission: Mission) {
+        interactor?.getPartner(on: mission)
+    }
+    
+    func addPartner(on mission: Mission, with partner: Member) {
+        interactor?.addPartner(on: mission, with: partner)
+    }
+
+}
+
+extension PartnerPresenter: PartnerInteractorOutputProtocol {
+    func onAddPartnerSucceeded(with partner: Member) {
+        view?.onAddPartnerSucceeded(with: partner)
+    }
+    
+    func onGetPartnerSucceeded(with partners: [Member]) {
+        view?.onGetPartnerSucceeded(with: partners)
+    }
+    
+    func onGetAllAgentSucceeded(with agents: [Member]) {
+        view?.onGetAllAgentSucceeded(with: agents)
+    }
 }
