@@ -9,6 +9,21 @@
 import Foundation
 @testable import The_Division
 
+class MockRegisterPresenter: RegisterInteractorOutputProtocol {
+    var callbackResult = [String: AnyObject]()
+    
+    
+    func onRegisterSucceeded() {
+        callbackResult["onRegisterSucceeded"] = "" as AnyObject
+    }
+    
+    func onRegisterError(with message: String) {
+        callbackResult["onRegisterError"] = message as AnyObject
+    }
+    
+    
+}
+
 class MockLoginPresenter: LoginInteractorOutputProtocol {
     var callbackResult = [String: AnyObject]()
     

@@ -26,11 +26,30 @@ class LoginViewController: PortraitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfEmail.setLeftPaddingPoints(10)
-        tfPassword.setLeftPaddingPoints(10)
-        
+        print("tes base url \(TheDivisionConstant.BASE_URL)")
+        setupUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+    }
+    
+    private func setupUI() {
+        tfEmail.setLeftPaddingPoints(10)
+        tfPassword.setLeftPaddingPoints(10)
+    }
+    
+    private func setupNavBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1490196078, green: 0.1607843137, blue: 0.1764705882, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.9921094184, blue: 0.3750105696, alpha: 1)
+    }
+    
+    @IBAction func doRegister(_ sender: UIButton) {
+        presenter?.goToRegister()
+    }
+    
     @IBAction func doLogin(_ sender: UIButton) {
         presenter?.login(email: tfEmail.text!, password: tfPassword.text!)
     }

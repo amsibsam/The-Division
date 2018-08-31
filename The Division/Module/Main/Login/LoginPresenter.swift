@@ -36,6 +36,10 @@ class LoginPresenter: LoginPresenterProtocol {
         router.goToHome()
     }
     
+    func goToRegister() {
+        router.goToRegister()
+    }
+    
     func isValidLoginData(email: String, password: String) -> Bool {
         return !email.isEmpty && !password.isEmpty
     }

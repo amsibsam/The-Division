@@ -22,18 +22,26 @@ class LoginRouter: LoginWireframeProtocol {
             let interactor = LoginInteractor()
             let router = LoginRouter()
             let dataManager = LoginDataManager()
+            let networkManager = NetworkServiceManager()
             let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
             
             view.presenter = presenter
             interactor.presenter = presenter
             interactor.dataManager = dataManager
             dataManager.interactor = interactor
+            networkManager.delegate = dataManager
+            dataManager.networkManager = networkManager
             router.viewController = view
             
             return navigation
         }
         
         return UIViewController()
+    }
+    
+    func goToRegister() {
+        let registerVC = RegisterRouter.createModule()
+        viewController?.navigationController?.pushViewController(registerVC, animated: true)
     }
     
     static func createModuleAsRoot() {

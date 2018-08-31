@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol LoginWireframeProtocol: class {
     func goToHome()
+    func goToRegister()
 }
 //MARK: Presenter -
 protocol LoginPresenterProtocol: class {
@@ -22,6 +23,7 @@ protocol LoginPresenterProtocol: class {
     /* ViewController -> Presenter */
     func login(email: String, password: String)
     func goToHome()
+    func goToRegister()
 }
 
 //MARK: Interactor -
@@ -43,6 +45,7 @@ protocol LoginInteractorInputProtocol: class {
 //MARK: DataManager -
 protocol LoginDataManagerInputProtocol: class {
     var interactor: LoginDataManagerOutputProtocol? { get set }
+    var networkManager: NetworkService? { get set }
     func login(email: String, password: String)
 }
 

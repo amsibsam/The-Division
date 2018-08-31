@@ -20,9 +20,14 @@ class HUDUtils {
         dismiss()
     }
     
+    static func showInfo(with message: String) {
+        HUD.flash(.label(message))
+    }
+    
     static func dismiss() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             HUD.hide()
         }
     }
+    
 }

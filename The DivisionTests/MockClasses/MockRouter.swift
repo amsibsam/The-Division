@@ -9,16 +9,27 @@
 import Foundation
 @testable import The_Division
 
-class MockLoginRouter : LoginWireframeProtocol {
+class MockRegisterRouter: RegisterWireframeProtocol {
+    var callbackResult = [String: AnyObject]()
+    
+}
+
+class MockLoginRouter: LoginWireframeProtocol {
+
     var callbackResult = [String: AnyObject]()
     
     func goToHome() {
         callbackResult["goToHome"] = "" as AnyObject
     }
+    
+    func goToRegister() {
+        callbackResult["goToRegister"] = "" as AnyObject
+    }
+    
 }
 
 
-class MockHomeContainerRouter : HomeContainerWireframeProtocol {
+class MockHomeContainerRouter: HomeContainerWireframeProtocol {
     var callbackResult = [String: AnyObject]()
     
 }

@@ -9,7 +9,21 @@
 import Foundation
 @testable import The_Division
 
+class MockRegisterDataManager: RegisterDataManagerInputProtocol {
+    var interactor: RegisterDataManagerOutputProtocol?
+    
+    var networkManager: NetworkService?
+    
+    func register(name: String, password: String, passwordConfirmation: String, email: String) {
+        interactor?.onRegisterSucceeded()
+    }
+    
+    
+}
+
 class MockLoginDataManager: LoginDataManagerInputProtocol {
+    var networkManager: NetworkService?
+    
     var interactor: LoginDataManagerOutputProtocol?
     
     func login(email: String, password: String) {

@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>STAG_BASE_URL</key>
+	<string>http://172.19.13.156/api</string>
+	<key>PROD_BASE_URL</key>
+	<string>http://172.19.13.156/api</string>
 </dict>
 </plist>

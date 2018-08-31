@@ -10,6 +10,29 @@ import Foundation
 import XCTest
 @testable import The_Division
 
+class MockRegisterViewController: UIViewController, RegisterViewProtocol {
+    var presenter: RegisterPresenterProtocol?
+    var callbackResult = [String: AnyObject]()
+    
+    func onRegisterSucceeded() {
+        callbackResult["onRegisterSucceeded"] = "" as AnyObject
+    }
+    
+    func onRegisterError(with message: String) {
+        callbackResult["onRegisterError"] = message as AnyObject
+    }
+    
+    func showLoading() {
+        callbackResult["showLoading"] = "" as AnyObject
+    }
+    
+    func dismissLoading() {
+        callbackResult["dismissLoading"] = "" as AnyObject
+    }
+    
+    
+}
+
 class MockLoginViewController: UIViewController, LoginViewProtocol {
     var presenter: LoginPresenterProtocol?
     var callbackResult = [String: AnyObject]()

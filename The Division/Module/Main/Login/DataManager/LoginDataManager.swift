@@ -10,13 +10,20 @@ import Foundation
 
 class LoginDataManager: LoginDataManagerInputProtocol {
     var interactor: LoginDataManagerOutputProtocol?
+    var networkManager: NetworkService?
     
     func login(email: String, password: String) {
-        DataCacheManager.shared.saveUserCredential(token: password)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.interactor?.showLoginSucceeded()
-        }
+        networkManager?.login(username: email, password: password)
+    }
+}
+
+extension LoginDataManager: NetworkServiceDelegate {
+    func onError(with error: String) {
+        interactor?.showError(with: error)
     }
     
-    
+    func onLoginSuccess(accessToken: String) {
+        interactor?.showLoginSucceeded()
+        DataCacheManager.shared.saveUserCredential(token: accessToken)
+    }
 }

@@ -97,7 +97,7 @@ class PartnerViewController: LandscapeViewController {
     private func removeParticipantFromAvailableAgent(participants: [Member]) {
         for participant in participants {
             if let indexToBeRemove = agents.index(where: { (agent) -> Bool in
-                return agent.id == participant.id
+                return agent.id == participant.id && agent.id != mission.assignee?.id
             }) {
                 agents.remove(at: indexToBeRemove)
             }
