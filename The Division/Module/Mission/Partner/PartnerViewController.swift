@@ -95,13 +95,20 @@ class PartnerViewController: LandscapeViewController {
     }
     
     private func removeParticipantFromAvailableAgent(participants: [Member]) {
+        if let assigneeIndex = agents.index(where: { (agent) -> Bool in
+            return agent.id == mission.assignee!.id
+        }) {
+            agents.remove(at: assigneeIndex)
+        }
+        
         for participant in participants {
             if let indexToBeRemove = agents.index(where: { (agent) -> Bool in
-                return agent.id == participant.id && agent.id != mission.assignee?.id
+                return agent.id == participant.id
             }) {
                 agents.remove(at: indexToBeRemove)
             }
         }
+        
         agentPicker.reloadAllComponents()
     }
 }
@@ -126,6 +133,7 @@ extension PartnerViewController: PartnerViewProtocol {
     
     func onGetAllAgentSucceeded(with agents: [Member]) {
         self.agents.append(contentsOf: agents)
+        removeParticipantFromAvailableAgent(participants: [])
         agentPicker.reloadAllComponents()
     }
 }
