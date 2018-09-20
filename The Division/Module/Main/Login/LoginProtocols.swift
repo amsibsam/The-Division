@@ -49,7 +49,7 @@ protocol LoginDataManagerInputProtocol: class {
     func login(email: String, password: String)
 }
 
-protocol LoginDataManagerOutputProtocol {
+protocol LoginDataManagerOutputProtocol: class {
     func showLoginSucceeded()
     func showError(with message: String)
 }

@@ -12,7 +12,7 @@ import UIKit
 
 class MissionInteractor: MissionInteractorInputProtocol {
 
-    weak var presenter: MissionInteractorOutputProtocol?
+    var presenter: MissionInteractorOutputProtocol?
     var dataManager: MissionDataManagerInputProtocol?
     
     func getMission(with state: MissionState) {

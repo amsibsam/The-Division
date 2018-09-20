@@ -28,13 +28,31 @@ class HomeContainerViewController: LandscapeViewController {
         return UIInterfaceOrientationMask.landscape
     }
     
+    class User {
+        weak var phone: Phone?
+        
+        init() { }
+    }
+    
+    class Phone {
+        let owner: User
+        
+        init(owner: User) {
+            self.owner = owner
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         presenter?.getMenuItem()
+        let user = User()
+        let phone = Phone(owner: user)
+        user.phone = phone
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.displaySelectedMenu()
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 
 class LoginDataManager: LoginDataManagerInputProtocol {
-    var interactor: LoginDataManagerOutputProtocol?
+    weak var interactor: LoginDataManagerOutputProtocol?
     var networkManager: NetworkService?
     
     func login(email: String, password: String) {
